@@ -9,7 +9,7 @@ info:
   description: |
     This is service providing decryption and conversion functionality to Service Providers in the BSNk domain.
     All input and output ASN.1 values mentioned in the API are further specified in the file *pp.asn1*.
-  version: "1.0-quarkus"
+  version: "1.0"
 
 ########################################################################################################################
 # Servers

@@ -9,7 +9,7 @@
 
   <groupId>nl.logius</groupId>
   <artifactId>pep-crypto-pom</artifactId>
-  <version>@@NEXT-VERSION@@</version>
+  <version>1.0-quarkus</version>
 
   <packaging>pom</packaging>
 
@@ -30,7 +30,7 @@
     <version.maven-jar-plugin>3.1.1</version.maven-jar-plugin>
     <version.maven-war-plugin>3.2.2</version.maven-war-plugin>
     <version.download-maven-plugin>1.4.0</version.download-maven-plugin>
-    <version.maven-surefire-plugin>2.18.1</version.maven-surefire-plugin>
+    <version.maven-surefire-plugin>2.22.0</version.maven-surefire-plugin>
     <maven-compiler-plugin.version>3.8.0</maven-compiler-plugin.version>
     <version.maven-clean-plugin>3.1.0</version.maven-clean-plugin>
     <version.maven-failsafe-plugin>2.19.1</version.maven-failsafe-plugin>

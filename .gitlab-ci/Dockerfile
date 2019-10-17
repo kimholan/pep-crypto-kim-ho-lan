@@ -4,7 +4,7 @@ FROM ${PCBA_DOCKER_REGISTRY}pep-crypto-build-environment/openjdk11-hotspot:lates
 FROM debian:buster-slim
 
 COPY --from=runtime-image-java /opt/java/openjdk/ /usr/java/default
-COPY ./pep-crypto-thorntail-@@NEXT-VERSION@@-thorntail.jar /
+COPY ./pep-crypto-thorntail-1.0-quarkus-thorntail.jar /
 COPY --chown=65534:65534 ./files /
 COPY ./jacocoagent.jar /
 

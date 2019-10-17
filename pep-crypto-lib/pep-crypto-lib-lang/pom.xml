@@ -8,7 +8,7 @@
   <parent>
     <artifactId>pep-crypto-lib</artifactId>
     <groupId>nl.logius</groupId>
-    <version>@@NEXT-VERSION@@</version>
+    <version>1.0-quarkus</version>
   </parent>
 
   <name>PEP decryption - Library - Language utilities</name>

@@ -14,7 +14,7 @@ echo "[COMMAND]" ${@}
 
 NODE_NAME=$(hostname -i | md5sum | cut -f 1 -d' ')
 
-JAR_FILE=${JAR_FILE:-pep-crypto-thorntail-@@NEXT-VERSION@@-thorntail.jar}
+JAR_FILE=${JAR_FILE:-pep-crypto-thorntail-1.0-quarkus-thorntail.jar}
 JAVA_HOME=${JAVA_HOME:-/usr/java/default}
 JAVA_OPTS=${JAVA_OPTS:--XX:+UseParallelGC -XX:+UseParallelOldGC -XX:-TieredCompilation -XX:ActiveProcessorCount=2 -Xms128M -Xmx384M -Djava.net.preferIPv4Stack=true -Dresteasy.preferJacksonOverJsonB -Djboss.node.name=${NODE_NAME}}
 JAR_OPTS=${JAR_OPTS:-}

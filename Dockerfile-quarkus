@@ -1,0 +1,18 @@
+## Stage 1 : build with maven builder image with native capabilities
+FROM adoptopenjdk/maven-openjdk11 AS build
+RUN mkdir /workspace
+ADD / /workspace
+RUN mvn clean install -pl ':pep-crypto-quarkus' -am -f /workspace/pom.xml
+
+
+## Stage 2 : create the docker final image
+FROM openjdk:11.0.4-jre-slim
+
+EXPOSE 8080
+WORKDIR /work/
+RUN chmod 775 /work
+COPY --from=build /workspace/pep-crypto-quarkus/target/*.jar /work/
+COPY --from=build /workspace/pep-crypto-quarkus/target/lib /work/lib/
+
+
+CMD ["java", "-jar", "/work/pep-crypto-quarkus-1.0-quarkus-runner.jar"]

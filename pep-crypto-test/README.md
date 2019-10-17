@@ -47,7 +47,7 @@ $ mvn clean install
 ### Start the app server
 
 ```bash
-$ java -jar ./pep-crypto-thorntail/target/pep-crypto-thorntail-@@NEXT-VERSION@@-thorntail.jar 
+$ java -jar ./pep-crypto-thorntail/target/pep-crypto-thorntail-1.0-quarkus-thorntail.jar 
 ```
 
 ### Run testspecifications using Gauge

@@ -8,14 +8,14 @@
   <parent>
     <artifactId>pep-crypto-pom</artifactId>
     <groupId>nl.logius</groupId>
-    <version>@@NEXT-VERSION@@</version>
+    <version>1.0-quarkus</version>
     <relativePath>pep-crypto-pom</relativePath>
   </parent>
 
   <name>PEP decryption - Aggregator</name>
 
   <artifactId>pep-crypto</artifactId>
-  <version>@@NEXT-VERSION@@</version>
+  <version>1.0-quarkus</version>
   <packaging>pom</packaging>
 
   <modules>
@@ -26,6 +26,7 @@
     <module>pep-crypto-microprofile</module>
     <module>pep-crypto-thorntail</module>
     <module>pep-crypto-test</module>
+    <module>pep-crypto-quarkus</module>
   </modules>
 
 

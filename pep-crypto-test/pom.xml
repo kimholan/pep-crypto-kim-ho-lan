@@ -8,7 +8,7 @@
   <parent>
     <groupId>nl.logius</groupId>
     <artifactId>pep-crypto-pom-test</artifactId>
-    <version>@@NEXT-VERSION@@</version>
+    <version>1.0-quarkus</version>
     <relativePath>../pep-crypto-pom/pep-crypto-pom-test</relativePath>
   </parent>
 
