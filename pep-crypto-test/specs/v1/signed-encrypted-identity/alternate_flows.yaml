@@ -1,0 +1,98 @@
+scenario_1:
+  request:
+    signedEncryptedIdentity: "/v1/alternate_flows/e_ei01.asn1"
+    serviceProviderKeys:
+      - "/v1/keys/idd_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+    schemeKeys:
+      "urn:nl-gdi-eid:1.0:pp-key:ENVIRONMENT:1:IP_P:1": "/v1/keys/ipp_sksv_1_kv_1.pem"
+  expectations:
+    statusCode: "500"
+
+scenario_2:
+  request:
+    signedEncryptedIdentity: "/v1/happy_flow/ei07.asn1"
+    serviceProviderKeys:
+      - "/v1/keys/idd_sksv_10_oin_99990020000000000003_kv_20180420.pem"
+    schemeKeys:
+      "urn:nl-gdi-eid:1.0:pp-key:ENVIRONMENT:10:IP_P:10": "/v1/keys/ipp_sksv_10_kv_10.pem"
+  expectations:
+    statusCode: "500"
+
+scenario_3:
+  request:
+    signedEncryptedIdentity: "/v1/happy_flow/ei01.asn1"
+    serviceProviderKeys:
+      - "/v1/keys/idd_sksv_10_oin_99990020000000000001_kv_20180420.pem"
+    schemeKeys:
+      "urn:nl-gdi-eid:1.0:pp-key:ENVIRONMENT:1:IP_P:1": "/v1/keys/ipp_sksv_1_kv_1.pem"
+  expectations:
+    statusCode: "500"
+
+scenario_4:
+  request:
+    signedEncryptedIdentity: "/v1/happy_flow/ei01.asn1"
+    serviceProviderKeys:
+      - "/v1/keys/idd_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+    schemeKeys:
+      "urn:nl-gdi-eid:1.0:pp-key:ENVIRONMENT:10:IP_P:10": "/v1/keys/ipp_sksv_10_kv_10.pem"
+  expectations:
+    statusCode: "500"
+
+scenario_5:
+  request:
+    signedEncryptedIdentity: "/v1/happy_flow/ep01.asn1"
+    serviceProviderKeys:
+      - "/v1/keys/idd_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+    schemeKeys:
+      "urn:nl-gdi-eid:1.0:pp-key:ENVIRONMENT:1:IP_P:1": "/v1/keys/ipp_sksv_1_kv_1.pem"
+  expectations:
+    statusCode: "500"
+
+scenario_6:
+  request:
+    signedEncryptedIdentity: "/v1/alternate_flows/e_ei02.asn1"
+    serviceProviderKeys:
+      - "/v1/keys/idd_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+    schemeKeys:
+      "urn:nl-gdi-eid:1.0:pp-key:ENVIRONMENT:1:IP_P:1": "/v1/keys/ipp_sksv_1_kv_1.pem"
+  expectations:
+    statusCode: "500"
+
+scenario_7:
+  request:
+    signedEncryptedIdentity: "/v1/happy_flow/ei01.asn1"
+    serviceProviderKeys:
+    schemeKeys:
+      "urn:nl-gdi-eid:1.0:pp-key:ENVIRONMENT:1:IP_P:1": "/v1/keys/ipp_sksv_1_kv_1.pem"
+  expectations:
+    statusCode: "500"
+
+scenario_8:
+  request:
+    signedEncryptedIdentity: "/v1/happy_flow/ei01.asn1"
+    serviceProviderKeys:
+      - "/v1/keys/idd_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+    schemeKeys:
+  expectations:
+    statusCode: "500"
+
+scenario_9:
+  request:
+    signedEncryptedIdentity: "/v1/alternate_flows/e_ei06.asn1"
+    serviceProviderKeys:
+      - "/v1/keys/idd_sksv_10_oin_99990020000000000001_kv_20211207.pem"
+    schemeKeys:
+      "urn:nl-gdi-eid:1.0:pp-key:ENVIRONMENT:10:IP_P:10": "/v1/keys/ipp_sksv_10_kv_10.pem"
+  expectations:
+    statusCode: "500"
+
+scenario_10:
+  request:
+    signedEncryptedIdentity: "/v1/happy_flow/ei01.asn1"
+    serviceProviderKeys:
+      - "/v1/keys/idd_sksv_1_oin_99990020000000000001_kv_20211207.pem"
+    schemeKeys:
+      "urn:nl-gdi-eid:1.0:pp-key:ENVIRONMENT:1:IP_P:1": "/v1/keys/ipp_sksv_1_kv_1.pem"
+  expectations:
+    statusCode: "500"
+

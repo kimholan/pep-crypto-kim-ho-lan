@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <artifactId>pep-crypto-pom</artifactId>
+    <groupId>nl.logius</groupId>
+    <version>@@NEXT-VERSION@@</version>
+  </parent>
+
+  <artifactId>pep-crypto-pom-thorntail</artifactId>
+  <packaging>pom</packaging>
+  <name>PEP decryption - Dependencies - Thorntail</name>
+
+  <properties>
+    <thorntail.version>2.5.0.Final</thorntail.version>
+    <swagger-ui.version>1.0.2</swagger-ui.version>
+  </properties>
+
+  <dependencyManagement>
+    <dependencies>
+      <!-- Imported -->
+      <dependency>
+        <artifactId>pep-crypto-pom-microprofile</artifactId>
+        <groupId>nl.logius</groupId>
+        <version>${project.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>io.thorntail</groupId>
+        <artifactId>bom</artifactId>
+        <version>${thorntail.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.microprofile-ext.openapi-ext</groupId>
+        <artifactId>swagger-ui</artifactId>
+        <version>${swagger-ui.version}</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+  <build>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>io.thorntail</groupId>
+          <artifactId>thorntail-maven-plugin</artifactId>
+          <version>${thorntail.version}</version>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+  </build>
+
+
+</project>

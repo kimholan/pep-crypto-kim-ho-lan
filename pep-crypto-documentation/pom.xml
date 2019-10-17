@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>nl.logius</groupId>
+    <artifactId>pep-crypto-pom</artifactId>
+    <version>@@NEXT-VERSION@@</version>
+    <relativePath>../pep-crypto-pom</relativePath>
+  </parent>
+
+  <name>PEP decryption - Documentation</name>
+
+  <artifactId>pep-crypto-documentation</artifactId>
+  <packaging>jar</packaging>
+
+  <build>
+    <resources>
+      <resource>
+        <directory>${project.basedir}/35-Schema</directory>
+      </resource>
+      <resource>
+        <directory>${project.basedir}/60-Test/data</directory>
+      </resource>
+    </resources>
+  </build>
+
+</project>

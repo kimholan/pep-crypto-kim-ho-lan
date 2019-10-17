@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <artifactId>pep-crypto-pom</artifactId>
+    <groupId>nl.logius</groupId>
+    <version>@@NEXT-VERSION@@</version>
+    <relativePath>pep-crypto-pom</relativePath>
+  </parent>
+
+  <name>PEP decryption - Aggregator</name>
+
+  <artifactId>pep-crypto</artifactId>
+  <version>@@NEXT-VERSION@@</version>
+  <packaging>pom</packaging>
+
+  <modules>
+    <module>pep-crypto-pom</module>
+    <module>pep-crypto-documentation</module>
+    <module>pep-crypto-lib</module>
+    <module>pep-crypto-api</module>
+    <module>pep-crypto-microprofile</module>
+    <module>pep-crypto-thorntail</module>
+    <module>pep-crypto-test</module>
+  </modules>
+
+
+</project>

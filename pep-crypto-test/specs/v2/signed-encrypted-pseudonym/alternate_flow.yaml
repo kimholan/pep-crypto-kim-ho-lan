@@ -1,0 +1,203 @@
+scenario_1:
+  request:
+    signedEncryptedPseudonym: "/v2/alternate_flows/e_ep02.asn1"
+    serviceProviderKeys:
+      - "/v2/keys/pdd_sksv_1_oin_99990020000000000002_kv_20191103.pem"
+      - "/v2/keys/pcd_sksv_1_oin_99990020000000000002_ckv_20191103.pem"
+    schemeKeys:
+      "urn:nl-gdi-eid:1.0:pp-key:ENVIRONMENT:1:PP_P:1": "/v2/keys/ppp_sksv_1_kv_1.pem"
+  expectations:
+    statusCode: "500"
+    token: SIGNATURE_VERIFICATION_FAILED
+
+
+
+scenario_2:
+  request:
+    signedEncryptedPseudonym: "/v2/happy_flow/ep07.asn1"
+    serviceProviderKeys:
+      - "/v2/keys/pdd_sksv_10_oin_99990020000000000003_kv_20180420.pem"
+      - "/v2/keys/pcd_sksv_10_oin_99990020000000000001_ckv_20180420.pem"
+    schemeKeys:
+      "urn:nl-gdi-eid:1.0:pp-key:ENVIRONMENT:10:PP_P:10": "/v2/keys/ppp_sksv_10_kv_10.pem"
+  expectations:
+    statusCode: "500"
+
+
+
+scenario_3:
+  request:
+    signedEncryptedPseudonym: "/v2/happy_flow/ep07.asn1"
+    serviceProviderKeys:
+      - "/v2/keys/pdd_sksv_10_oin_99990020000000000001_kv_20180420.pem"
+      - "/v2/keys/pcd_sksv_10_oin_99990020000000000003_ckv_20180420.pem"
+    schemeKeys:
+      "urn:nl-gdi-eid:1.0:pp-key:ENVIRONMENT:10:PP_P:10": "/v2/keys/ppp_sksv_10_kv_10.pem"
+  expectations:
+    statusCode: "500"
+
+
+
+scenario_4:
+  request:
+    signedEncryptedPseudonym: "/v2/happy_flow/ep07.asn1"
+    serviceProviderKeys:
+      - "/v2/keys/pdd_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+      - "/v2/keys/pcd_sksv_10_oin_99990020000000000001_ckv_20180420.pem"
+    schemeKeys:
+      "urn:nl-gdi-eid:1.0:pp-key:ENVIRONMENT:10:PP_P:10": "/v2/keys/ppp_sksv_10_kv_10.pem"
+  expectations:
+    statusCode: "500"
+
+
+
+scenario_5:
+  request:
+    signedEncryptedPseudonym: "/v2/happy_flow/ep07.asn1"
+    serviceProviderKeys:
+      - "/v2/keys/pdd_sksv_10_oin_99990020000000000001_kv_20180420.pem"
+      - "/v2/keys/pcd_sksv_1_oin_99990020000000000001_ckv_20180420.pem"
+    schemeKeys:
+      "urn:nl-gdi-eid:1.0:pp-key:ENVIRONMENT:10:PP_P:10": "/v2/keys/ppp_sksv_10_kv_10.pem"
+  expectations:
+    statusCode: "500"
+
+
+
+scenario_6:
+  request:
+    signedEncryptedPseudonym: "/v2/happy_flow/ep07.asn1"
+    serviceProviderKeys:
+      - "/v2/keys/pdd_sksv_10_oin_99990020000000000001_kv_20180420.pem"
+      - "/v2/keys/pcd_sksv_10_oin_99990020000000000001_ckv_20180420.pem"
+    schemeKeys:
+      "urn:nl-gdi-eid:1.0:pp-key:ENVIRONMENT:1:PP_P:1": "/v2/keys/ppp_sksv_1_kv_1.pem"
+  expectations:
+    statusCode: "500"
+
+
+
+scenario_7:
+  request:
+    signedEncryptedPseudonym: "/v2/happy_flow/ep07.asn1"
+    serviceProviderKeys:
+      - "/v2/keys/pdd_sksv_10_oin_99990020000000000001_kv_20211207.pem"
+      - "/v2/keys/pcd_sksv_10_oin_99990020000000000001_ckv_20180420.pem"
+    schemeKeys:
+      "urn:nl-gdi-eid:1.0:pp-key:ENVIRONMENT:10:PP_P:10": "/v2/keys/ppp_sksv_10_kv_10.pem"
+  expectations:
+    statusCode: "500"
+
+
+
+scenario_8:
+  request:
+    signedEncryptedPseudonym: "/v2/happy_flow/ep07.asn1"
+    serviceProviderKeys:
+      - "/v2/keys/pdd_sksv_10_oin_99990020000000000001_kv_20180420.pem"
+      - "/v2/keys/pcd_sksv_10_oin_99990020000000000001_ckv_20211207.pem"
+    schemeKeys:
+      "urn:nl-gdi-eid:1.0:pp-key:ENVIRONMENT:10:PP_P:10": "/v2/keys/ppp_sksv_10_kv_10.pem"
+  expectations:
+    statusCode: "500"
+
+
+
+scenario_9:
+  request:
+    targetClosingKey: "20180421"
+    signedEncryptedPseudonym: "/v2/happy_flow/ep07.asn1"
+    serviceProviderKeys:
+      - "/v2/keys/pdd_sksv_10_oin_99990020000000000001_kv_20180420.pem"
+      - "/v2/keys/pcd_sksv_10_oin_99990020000000000001_ckv_20180420.pem"
+    schemeKeys:
+      "urn:nl-gdi-eid:1.0:pp-key:ENVIRONMENT:10:PP_P:10": "/v2/keys/ppp_sksv_10_kv_10.pem"
+  expectations:
+    statusCode: "500"
+
+
+
+scenario_10:
+  request:
+    signedEncryptedPseudonym: "/v2/happy_flow/ei01.asn1"
+    serviceProviderKeys:
+      - "/v2/keys/pdd_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+      - "/v2/keys/pcd_sksv_1_oin_99990020000000000001_ckv_20180420.pem"
+    schemeKeys:
+      "urn:nl-gdi-eid:1.0:pp-key:ENVIRONMENT:1:PP_P:1": "/v2/keys/ppp_sksv_1_kv_1.pem"
+  expectations:
+    statusCode: "500"
+
+
+
+scenario_11:
+  request:
+    signedEncryptedPseudonym: "/v2/alternate_flows/e_ep04.asn1"
+    serviceProviderKeys:
+      - "/v2/keys/pdd_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+      - "/v2/keys/pcd_sksv_1_oin_99990020000000000001_ckv_20180420.pem"
+    schemeKeys:
+      "urn:nl-gdi-eid:1.0:pp-key:ENVIRONMENT:1:PP_P:1": "/v2/keys/ppp_sksv_1_kv_1.pem"
+  expectations:
+    statusCode: "500"
+
+
+
+scenario_12:
+  request:
+    signedEncryptedPseudonym: "/v2/happy_flow/ep07.asn1"
+    serviceProviderKeys:
+      - "/v2/keys/pcd_sksv_10_oin_99990020000000000001_ckv_20180420.pem"
+    schemeKeys:
+      "urn:nl-gdi-eid:1.0:pp-key:ENVIRONMENT:10:PP_P:10": "/v2/keys/ppp_sksv_10_kv_10.pem"
+  expectations:
+    statusCode: "500"
+
+
+
+scenario_13:
+  request:
+    signedEncryptedPseudonym: "/v2/happy_flow/ep07.asn1"
+    serviceProviderKeys:
+      - "/v2/keys/pdd_sksv_10_oin_99990020000000000001_kv_20180420.pem"
+    schemeKeys:
+      "urn:nl-gdi-eid:1.0:pp-key:ENVIRONMENT:10:PP_P:10": "/v2/keys/ppp_sksv_10_kv_10.pem"
+  expectations:
+    statusCode: "500"
+
+
+
+scenario_14:
+  request:
+    signedEncryptedPseudonym: "/v2/happy_flow/ep07.asn1"
+    serviceProviderKeys:
+      - "/v2/keys/pdd_sksv_10_oin_99990020000000000001_kv_20180420.pem"
+      - "/v2/keys/pcd_sksv_10_oin_99990020000000000001_ckv_20180420.pem"
+    schemeKeys:
+  expectations:
+    statusCode: "500"
+
+
+scenario_15:
+  request:
+    signedEncryptedPseudonym: "/v2/alternate_flows/e_ep01.asn1"
+    serviceProviderKeys:
+      - "/v2/keys/pdd_sksv_1_oin_99990020000000000002_kv_20191103.pem"
+      - "/v2/keys/pcd_sksv_1_oin_99990020000000000002_ckv_20191103.pem"
+    schemeKeys:
+      "urn:nl-gdi-eid:1.0:pp-key:ENVIRONMENT:1:PP_P:1": "/v2/keys/ppp_sksv_1_kv_1.pem"
+  expectations:
+    statusCode: "500"
+
+
+scenario_17:
+  request:
+    signedEncryptedPseudonym: "/v2/alternate_flows/e_ep02_div1.asn1"
+    serviceProviderKeys:
+      - "/v2/keys/pdd_sksv_1_oin_99990020000000000002_kv_20191103.pem"
+      - "/v2/keys/pcd_sksv_1_oin_99990020000000000002_ckv_20191103.pem"
+    schemeKeys:
+      "urn:nl-gdi-eid:1.0:pp-key:ENVIRONMENT:1:PP_P:1": "/v2/keys/ppp_sksv_1_kv_1.pem"
+  expectations:
+    statusCode: "500"
+    token: SIGNATURE_VERIFICATION_FAILED

@@ -1,0 +1,85 @@
+"PTC_4952_1":
+  "request":
+    "pseudonym": "/v1/pseudonyms/p_01.asn1"
+    "serviceProviderKeys":
+    - "/v1/keys/pcd_sksv_1_oin_99990020000000000001_ckv_20211207.pem"
+    - "/v1/keys/pcd_sksv_1_oin_99990020000000000001_ckv_20180420.pem"
+    - "/v1/keys/pcd_sksv_1_oin_99990020000000000001_ckv_20190502.pem"
+    "targetClosingKey": "20180420"
+  "expectations":
+    "statusCode": "200"
+    "pseudonym": "/v1/pseudonyms/p_01.asn1"
+    "responseBody":
+      "decodedInput":
+        "notationIdentifier": "2.16.528.1.1003.10.1.3.2"
+        "schemeVersion": "1"
+        "schemeKeySetVersion": "1"
+        "recipient": "99990020000000000001"
+        "recipientKeySetVersion": "20180420"
+        "type": "B"
+        "pseudonymValue": "BNLKtfAra3hV3AehCNWYozIp/nksMDFwRlXFvDc/4l1a/AyTwFqyV2h6KUwouRUqq2cIRzS7Caj/JCsUf/rHb7VaRr1sK6qJWLxdOzUr2VhC"
+      "pseudonym": "MIGfBgpghBABh2sKAQMCAgEBAgEBFhQ5OTk5MDAyMDAwMDAwMDAwMDAwMQIEATPtxAIBQhZsQk5MS3RmQXJhM2hWM0FlaENOV1lveklwL25rc01ERndSbFhGdkRjLzRsMWEvQXlUd0ZxeVYyaDZLVXdvdVJVcXEyY0lSelM3Q2FqL0pDc1VmL3JIYjdWYVJyMXNLNnFKV0x4ZE96VXIyVmhD"
+      "decodedPseudonym":
+        "notationIdentifier": "2.16.528.1.1003.10.1.3.2"
+        "schemeVersion": "1"
+        "schemeKeySetVersion": "1"
+        "recipient": "99990020000000000001"
+        "recipientKeySetVersion": "20180420"
+        "type": "B"
+        "pseudonymValue": "BNLKtfAra3hV3AehCNWYozIp/nksMDFwRlXFvDc/4l1a/AyTwFqyV2h6KUwouRUqq2cIRzS7Caj/JCsUf/rHb7VaRr1sK6qJWLxdOzUr2VhC"
+"PTC_4952_2":
+  "request":
+    "pseudonym": "/v1/pseudonyms/p_16.asn1"
+    "serviceProviderKeys":
+    - "/v1/keys/pcd_sksv_10_oin_99990020000000000001_ckv_20211207.pem"
+    - "/v1/keys/pcd_sksv_10_oin_99990020000000000001_ckv_20180420.pem"
+    "targetClosingKey": "20180420"
+  "expectations":
+    "statusCode": "200"
+    "pseudonym": "/v1/pseudonyms/p_07.asn1"
+    "responseBody":
+      "decodedInput":
+        "notationIdentifier": "2.16.528.1.1003.10.1.3.2"
+        "schemeVersion": "1"
+        "schemeKeySetVersion": "10"
+        "recipient": "99990020000000000001"
+        "recipientKeySetVersion": "20211207"
+        "type": "B"
+        "pseudonymValue": "BCPPdfiTZwPalZLVi2yBZCVykKIArUsPZr+Q1IIIvWHzXVFj9+RNrRZujGlyXci2Tx3L2vrxEE2RDL+aC0ujLz37JJ+Gx9PwulgqDHAeXH9X"
+      "pseudonym": "MIGfBgpghBABh2sKAQMCAgEBAgEKFhQ5OTk5MDAyMDAwMDAwMDAwMDAwMQIEATPtxAIBQhZsQklpSlBNMG40Qmx1a0ltbEpUYWtXRzg2YW42d1BHZGFnRkhsQXpkR1A3dHVwTElpUzA1bzRFMGNITUFyT0hac051Mzg5S29UMWFDWldTYUoyNU5QK2pHUVBDMVNPeGdZampzUVdza0dTamdp"
+      "decodedPseudonym":
+        "notationIdentifier": "2.16.528.1.1003.10.1.3.2"
+        "schemeVersion": "1"
+        "schemeKeySetVersion": "10"
+        "recipient": "99990020000000000001"
+        "recipientKeySetVersion": "20180420"
+        "type": "B"
+        "pseudonymValue": "BIiJPM0n4BlukImlJTakWG86an6wPGdagFHlAzdGP7tupLIiS05o4E0cHMArOHZsNu389KoT1aCZWSaJ25NP+jGQPC1SOxgYjjsQWskGSjgi"
+"PTC_4952_3":
+  "request":
+    "pseudonym": "/v1/pseudonyms/p_17.asn1"
+    "serviceProviderKeys":
+    - "/v1/keys/pcd_sksv_1_oin_99990020000000000001_ckv_20190502.pem"
+    - "/v1/keys/pcd_sksv_1_oin_99990020000000000001_ckv_20211207.pem"
+    "targetClosingKey": "20211207"
+  "expectations":
+    "statusCode": "200"
+    "pseudonym": "/v1/pseudonyms/p_03.asn1"
+    "responseBody":
+      "decodedInput":
+        "notationIdentifier": "2.16.528.1.1003.10.1.3.2"
+        "schemeVersion": "1"
+        "schemeKeySetVersion": "1"
+        "recipient": "99990020000000000001"
+        "recipientKeySetVersion": "20190502"
+        "type": "E"
+        "pseudonymValue": "BAHRTzP7BECWqWOiTz2XRYNhXK4X8lveWDK0ZHEg/xGYJI8eE0DRWNJnGUKMXPLi3YGfAmTtGa8prGsAB1lv1qvDAc0KgdzZubxJkG4h4gs9"
+      "pseudonym": "MIGfBgpghBABh2sKAQMCAgEBAgEBFhQ5OTk5MDAyMDAwMDAwMDAwMDAwMQIEATRmBwIBRRZsQkRic3FOTExQQm9mck91a0N1dGdiQmF4NkVJSWs4SVVDdkxndVA3U2RhMkdqb1crK2xiSXhMdGJDM21jclRRNlpaT1NNZmxGSldvOGtxVjdsTDc2VFcvbFdZQ3drcUwvbjBFOHpFeDZMS1pC"
+      "decodedPseudonym":
+        "notationIdentifier": "2.16.528.1.1003.10.1.3.2"
+        "schemeVersion": "1"
+        "schemeKeySetVersion": "1"
+        "recipient": "99990020000000000001"
+        "recipientKeySetVersion": "20211207"
+        "type": "E"
+        "pseudonymValue": "BDbsqNLLPBofrOukCutgbBax6EIIk8IUCvLguP7Sda2GjoW++lbIxLtbC3mcrTQ6ZZOSMflFJWo8kqV7lL76TW/lWYCwkqL/n0E8zEx6LKZB"

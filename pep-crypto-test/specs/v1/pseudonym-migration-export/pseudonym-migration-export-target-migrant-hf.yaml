@@ -1,0 +1,116 @@
+"PTC_5270_1":
+  "request":
+    "pseudonym": "/v1/pseudonyms/p21_div1.asn1"
+    "serviceProviderKeys":
+    - "/v1/keys/migration_99990020000000000001_20180420_to_99990020000000000001_20211207_sksv_1_div1.source.pem"
+    "migrationID": "A78DC453-D62C293E-5D5F5E47"
+    "targetMigrant": "99990020000000000001"
+    "targetMigrantKeySetVersion": "20211207"
+  "expectations":
+    "statusCode": "200"
+    "migrationIntermediaryPseudonym": "/v1/pseudonyms/mip_99990020000000000001_20180420_to_99990020000000000001_20211207_from_21_to_22_div1.asn1"
+    "responseBody":
+      "decodedInput":
+        "notationIdentifier": "2.16.528.1.1003.10.1.3.2"
+        "schemeVersion": "1"
+        "schemeKeySetVersion": "1"
+        "recipient": "99990020000000000001"
+        "recipientKeySetVersion": "20180420"
+        "type": "B"
+        "pseudonymValue": "BDLZuvns5Sr8TSo4kEcGH1geqJ/vX2PS42JzbPMlW7ZQpgZHZBi2+fuhk0WIq3xCnq1saAuMivPzVYXrkM1QzrnLKfpt3UpaQ/07w27nBZBa"
+        "diversifier":
+        - "key": "Role"
+          "value": "Company"
+      "migrationIntermediaryPseudonym": "MIHqBgpghBABh2sKAQMDAgEBAgEBFhQ5OTk5MDAyMDAwMDAwMDAwMDAwMQIEATPtxBYUOTk5OTAwMjAwMDAwMDAwMDAwMDECBAE0ZgcWGkE3OERDNDUzLUQ2MkMyOTNFLTVENUY1RTQ3AgFCFmxCSWxnZ0k0UzgzMkRPbmZIWDJHSkhJVjBEY2JLN2llSmFRWHNUV0tWV3YrakFvYXAxL1VTRWUxQU4wL1k5RDZ0ZGNHQUNNclB6azZVRWU1bWRUWm1WNkFtSm8zODl5ZDJUam54VXJOQmE4czGgETAPFgRSb2xlFgdDb21wYW55"
+      "decodedMigrationIntermediaryPseudonym":
+        "notationIdentifier": "2.16.528.1.1003.10.1.3.3"
+        "schemeVersion": "1"
+        "schemeKeySetVersion": "1"
+        "source": "99990020000000000001"
+        "sourceKeySetVersion": "20180420"
+        "target": "99990020000000000001"
+        "targetKeySetVersion": "20211207"
+        "type": "B"
+        "migrationID": "A78DC453-D62C293E-5D5F5E47"
+        "pseudonymValue": "BIlggI4S832DOnfHX2GJHIV0DcbK7ieJaQXsTWKVWv+jAoap1/USEe1AN0/Y9D6tdcGACMrPzk6UEe5mdTZmV6AmJo389yd2TjnxUrNBa8s1"
+        "diversifier":
+        - "key": "Role"
+          "value": "Company"
+"PTC_5270_2":
+  "request":
+    "pseudonym": "/v1/pseudonyms/p18_div2.asn1"
+    "serviceProviderKeys":
+    - "/v1/keys/migration_99990020000000000002_20191103_to_99990020000000000003_20180420_sksv_10_div2.source.pem"
+    "migrationID": "AB839A2E-B7B21213-9E4B673C"
+    "targetMigrant": "99990020000000000003"
+    "targetMigrantKeySetVersion": "20180420"
+  "expectations":
+    "statusCode": "200"
+    "migrationIntermediaryPseudonym": "/v1/pseudonyms/mip_99990020000000000002_20191103_to_99990020000000000003_20180420_from_18_to_19_div2.asn1"
+    "responseBody":
+      "decodedInput":
+        "notationIdentifier": "2.16.528.1.1003.10.1.3.2"
+        "schemeVersion": "1"
+        "schemeKeySetVersion": "10"
+        "recipient": "99990020000000000002"
+        "recipientKeySetVersion": "20191103"
+        "type": "E"
+        "pseudonymValue": "BL21ts6Schq0vUvz3Iu+mB5artLP64hbC0D6GVj6qUzX6kxhhtYuknOIi6joJnLviNEOm+WmfyB/N1Kh9M4oFKU4+Ev06EChrpsj2l4Q9bOk"
+        "diversifier":
+        - "key": "Function"
+          "value": "Controller"
+        - "key": "Group"
+          "value": "Finance"
+      "migrationIntermediaryPseudonym": "MIIBAwYKYIQQAYdrCgEDAwIBAQIBChYUOTk5OTAwMjAwMDAwMDAwMDAwMDICBAE0F38WFDk5OTkwMDIwMDAwMDAwMDAwMDAzAgQBM+3EFhpBQjgzOUEyRS1CN0IyMTIxMy05RTRCNjczQwIBRRZsQktnZ1AvSk84eDFEMExDYzVrQkVPd0NFcUFiQzRiZXNhcCtqVnNwNmlpWVdHaVllKzF5eEp5UlpJY0d0QWU0S25TanRhcDhsY2N0U21kNUxaRTlwS2lMYlZ4K25aQk15cHVEWEdBQ0ZHV3lBoCowFhYIRnVuY3Rpb24WCkNvbnRyb2xsZXIwEBYFR3JvdXAWB0ZpbmFuY2U="
+      "decodedMigrationIntermediaryPseudonym":
+        "notationIdentifier": "2.16.528.1.1003.10.1.3.3"
+        "schemeVersion": "1"
+        "schemeKeySetVersion": "10"
+        "source": "99990020000000000002"
+        "sourceKeySetVersion": "20191103"
+        "target": "99990020000000000003"
+        "targetKeySetVersion": "20180420"
+        "type": "E"
+        "migrationID": "AB839A2E-B7B21213-9E4B673C"
+        "pseudonymValue": "BKggP/JO8x1D0LCc5kBEOwCEqAbC4besap+jVsp6iiYWGiYe+1yxJyRZIcGtAe4KnSjtap8lcctSmd5LZE9pKiLbVx+nZBMypuDXGACFGWyA"
+        "diversifier":
+        - "key": "Function"
+          "value": "Controller"
+        - "key": "Group"
+          "value": "Finance"
+"PTC_5270_3":
+  "request":
+    "pseudonym": "/v1/pseudonyms/p_04.asn1"
+    "serviceProviderKeys":
+    - "/v1/keys/e_diff_src_migrant_ksv_migration_99990020000000000001_20180420_to_99990020000000000002_20191103_sksv_1_mid01.source.pem"
+    - "/v1/keys/e_diff_src_sksv_migration_99990020000000000001_20180420_to_99990020000000000002_20191103_sksv_1_mid01.source.pem"
+    - "/v1/keys/e_diff_trgt_migrant_ksv_migration_99990020000000000001_20180420_to_99990020000000000002_20191103_sksv_1_mid01.source.pem"
+    - "/v1/keys/e_diff_trgt_migrant_oin_migration_99990020000000000001_20180420_to_99990020000000000002_20191103_sksv_1_mid01.source.pem"
+    - "/v1/keys/extra_label_migration_99990020000000000001_20180420_to_99990020000000000002_20191103_sksv_1_mid01.source.pem"
+    "migrationID": "1FDD3455-3D721438-2F5DEBD1"
+    "targetMigrant": "99990020000000000002"
+    "targetMigrantKeySetVersion": "20191103"
+  "expectations":
+    "statusCode": "200"
+    "migrationIntermediaryPseudonym": "/v1/pseudonyms/mip_99990020000000000001_20180420_to_99990020000000000002_20191103_from_4_to_2_mid01.asn1"
+    "responseBody":
+      "decodedInput":
+        "notationIdentifier": "2.16.528.1.1003.10.1.3.2"
+        "schemeVersion": "1"
+        "schemeKeySetVersion": "1"
+        "recipient": "99990020000000000001"
+        "recipientKeySetVersion": "20180420"
+        "type": "B"
+        "pseudonymValue": "BLL+BgpKMpcMz5A/YsfVyRpNIzqVI/O5G1IFkATUAhdQYYea1i9kPllbwR+kxq8EFzBHCOTkP6f6Op0KX/Jm74c0MltSXTUBoUuE5c10UXdx"
+      "migrationIntermediaryPseudonym": "MIHXBgpghBABh2sKAQMDAgEBAgEBFhQ5OTk5MDAyMDAwMDAwMDAwMDAwMQIEATPtxBYUOTk5OTAwMjAwMDAwMDAwMDAwMDICBAE0F38WGjFGREQzNDU1LTNENzIxNDM4LTJGNURFQkQxAgFCFmxCSzVnL3R5WnQwTVZSSi9qOGhnTUtPTjdrSm0vZlZGRnBEUGkrSk9KM1YrZ0MvaDNOR3BtY1BBVXNqOEVrME1VN3pMeDJFUWJVS2lJdWoyZllwQ0xLNEJkNEsxd3ZXcW56WDBNdEpEN3RkcmY="
+      "decodedMigrationIntermediaryPseudonym":
+        "notationIdentifier": "2.16.528.1.1003.10.1.3.3"
+        "schemeVersion": "1"
+        "schemeKeySetVersion": "1"
+        "source": "99990020000000000001"
+        "sourceKeySetVersion": "20180420"
+        "target": "99990020000000000002"
+        "targetKeySetVersion": "20191103"
+        "type": "B"
+        "migrationID": "1FDD3455-3D721438-2F5DEBD1"
+        "pseudonymValue": "BK5g/tyZt0MVRJ/j8hgMKON7kJm/fVFFpDPi+JOJ3V+gC/h3NGpmcPAUsj8Ek0MU7zLx2EQbUKiIuj2fYpCLK4Bd4K1wvWqnzX0MtJD7tdrf"

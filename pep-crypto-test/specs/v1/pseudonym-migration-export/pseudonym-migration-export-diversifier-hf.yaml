@@ -1,0 +1,80 @@
+"PTC_5241_1":
+  "request":
+    "pseudonym": "/v1/pseudonyms/p21_div1.asn1"
+    "serviceProviderKeys":
+    - "/v1/keys/migration_99990020000000000001_20180420_to_99990020000000000001_20211207_sksv_1_div1.source.pem"
+    "migrationID": "A78DC453-D62C293E-5D5F5E47"
+  "expectations":
+    "statusCode": "200"
+    "migrationIntermediaryPseudonym": "/v1/pseudonyms/mip_99990020000000000001_20180420_to_99990020000000000001_20211207_from_21_to_22_div1.asn1"
+    "responseBody":
+      "decodedInput":
+        "notationIdentifier": "2.16.528.1.1003.10.1.3.2"
+        "schemeVersion": "1"
+        "schemeKeySetVersion": "1"
+        "recipient": "99990020000000000001"
+        "recipientKeySetVersion": "20180420"
+        "type": "B"
+        "pseudonymValue": "BDLZuvns5Sr8TSo4kEcGH1geqJ/vX2PS42JzbPMlW7ZQpgZHZBi2+fuhk0WIq3xCnq1saAuMivPzVYXrkM1QzrnLKfpt3UpaQ/07w27nBZBa"
+        "diversifier":
+        - "key": "Role"
+          "value": "Company"
+      "migrationIntermediaryPseudonym": "MIHqBgpghBABh2sKAQMDAgEBAgEBFhQ5OTk5MDAyMDAwMDAwMDAwMDAwMQIEATPtxBYUOTk5OTAwMjAwMDAwMDAwMDAwMDECBAE0ZgcWGkE3OERDNDUzLUQ2MkMyOTNFLTVENUY1RTQ3AgFCFmxCSWxnZ0k0UzgzMkRPbmZIWDJHSkhJVjBEY2JLN2llSmFRWHNUV0tWV3YrakFvYXAxL1VTRWUxQU4wL1k5RDZ0ZGNHQUNNclB6azZVRWU1bWRUWm1WNkFtSm8zODl5ZDJUam54VXJOQmE4czGgETAPFgRSb2xlFgdDb21wYW55"
+      "decodedMigrationIntermediaryPseudonym":
+        "notationIdentifier": "2.16.528.1.1003.10.1.3.3"
+        "schemeVersion": "1"
+        "schemeKeySetVersion": "1"
+        "source": "99990020000000000001"
+        "sourceKeySetVersion": "20180420"
+        "target": "99990020000000000001"
+        "targetKeySetVersion": "20211207"
+        "type": "B"
+        "migrationID": "A78DC453-D62C293E-5D5F5E47"
+        "pseudonymValue": "BIlggI4S832DOnfHX2GJHIV0DcbK7ieJaQXsTWKVWv+jAoap1/USEe1AN0/Y9D6tdcGACMrPzk6UEe5mdTZmV6AmJo389yd2TjnxUrNBa8s1"
+        "diversifier":
+        - "key": "Role"
+          "value": "Company"
+"PTC_5241_2":
+  "request":
+    "pseudonym": "/v1/pseudonyms/p18_div3.asn1"
+    "serviceProviderKeys":
+    - "/v1/keys/migration_99990020000000000002_20191103_to_99990020000000000003_20180420_sksv_10_div3.source.pem"
+    "migrationID": "4FA08203-AAA33FCF-E7432CDD"
+  "expectations":
+    "statusCode": "200"
+    "migrationIntermediaryPseudonym": "/v1/pseudonyms/mip_99990020000000000002_20191103_to_99990020000000000003_20180420_from_18_to_19_div3.asn1"
+    "responseBody":
+      "decodedInput":
+        "notationIdentifier": "2.16.528.1.1003.10.1.3.2"
+        "schemeVersion": "1"
+        "schemeKeySetVersion": "10"
+        "recipient": "99990020000000000002"
+        "recipientKeySetVersion": "20191103"
+        "type": "E"
+        "pseudonymValue": "BChreb1l7FnSbOuCYfx0Mq53M03hdyFQCGblYqk9EApDfBALG7RQ7uyYLlhBSsGHx5cm4+eF3P3iFV/RA35Enk8FW28yAjGVcJZvi/KkTu0T"
+        "diversifier":
+        - "key": "O"
+          "value": "Logius"
+        - "key": "R"
+          "value": "Tester"
+        - "key": "U"
+          "value": "Bsnk"
+      "migrationIntermediaryPseudonym": "MIH+BgpghBABh2sKAQMDAgEBAgEKFhQ5OTk5MDAyMDAwMDAwMDAwMDAwMgIEATQXfxYUOTk5OTAwMjAwMDAwMDAwMDAwMDMCBAEz7cQWGjRGQTA4MjAzLUFBQTMzRkNGLUU3NDMyQ0REAgFFFmxCSUZxZDN5NG5hL0xwTHVDd2UrTDBuMSsrQmFXQmtZaVJzTG9TSkV5enAvUEMvM3F3WWhOeHA1aGh0ZE80Y2F6YVBIR0RuSGU4VUNVQkUwMmJGbHVPMzdCTXA5UksrNnJzZUR5d2ZjYnMwcUOgJTALFgFPFgZMb2dpdXMwCxYBUhYGVGVzdGVyMAkWAVUWBEJzbms="
+      "decodedMigrationIntermediaryPseudonym":
+        "notationIdentifier": "2.16.528.1.1003.10.1.3.3"
+        "schemeVersion": "1"
+        "schemeKeySetVersion": "10"
+        "source": "99990020000000000002"
+        "sourceKeySetVersion": "20191103"
+        "target": "99990020000000000003"
+        "targetKeySetVersion": "20180420"
+        "type": "E"
+        "migrationID": "4FA08203-AAA33FCF-E7432CDD"
+        "pseudonymValue": "BIFqd3y4na/LpLuCwe+L0n1++BaWBkYiRsLoSJEyzp/PC/3qwYhNxp5hhtdO4cazaPHGDnHe8UCUBE02bFluO37BMp9RK+6rseDywfcbs0qC"
+        "diversifier":
+        - "key": "O"
+          "value": "Logius"
+        - "key": "R"
+          "value": "Tester"
+        - "key": "U"
+          "value": "Bsnk"

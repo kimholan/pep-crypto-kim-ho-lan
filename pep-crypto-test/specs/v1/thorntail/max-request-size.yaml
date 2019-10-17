@@ -1,0 +1,43 @@
+"PTC_4839_1":
+  request:
+    signedEncryptedPseudonym: "/v1/happy_flow/ep02.asn1"
+    schemeKeys:
+      "urn:nl-gdi-eid:1.0:pp-key:ENVIRONMENT:1:PP_P:1": "/v1/keys/ppp_sksv_1_kv_1.pem"
+    serviceProviderKeys:
+      - "/v1/keys/pdd_sksv_1_oin_99990020000000000002_kv_20191103.pem"
+      - "/v1/keys/pcd_sksv_1_oin_99990020000000000002_ckv_20191103.pem"
+  expectations:
+    statusCode: "200"
+    auditValue: "/v1/happy_flow/ep02.audit"
+    signatureValue: "/v1/happy_flow/ep02.signature"
+
+
+"PTC_4839_2":
+  request:
+    signedEncryptedIdentity: "/v1/happy_flow/ei02.asn1"
+    serviceProviderKeys:
+      - "/v1/keys/idd_sksv_1_oin_99990020000000000002_kv_20191103.pem"
+    schemeKeys:
+      "urn:nl-gdi-eid:1.0:pp-key:ENVIRONMENT:1:IP_P:1": "/v1/keys/ipp_sksv_1_kv_1.pem"
+  expectations:
+    statusCode: "200"
+    auditValue: "/v1/happy_flow/ei02.audit"
+    signatureValue: "/v1/happy_flow/ei02.signature"
+
+
+"PTC_4839_3":
+  request:
+    signedDirectEncryptedPseudonym: "/v1/happy_flow/dep12.asn1"
+    serviceProviderKeys:
+      - "/v1/keys/pdd_sksv_1_oin_99990030000000000001_kv_20170916.pem"
+      - "/v1/keys/pcd_sksv_1_oin_99990030000000000001_ckv_20170916.pem"
+      - "/v1/keys/drki_sksv_1_oin_99990030000000000001_kv_20170916.pem"
+    schemeKeys:
+      "urn:nl-gdi-eid:1.0:pp-key:ENVIRONMENT:1:U:1": "/v1/keys/u_sksv_1_kv_1.pem"
+    targetClosingKey:
+    authorizedParty: "99990040000000000001"
+  expectations:
+    statusCode: "200"
+    auditValue: "/v1/happy_flow/dep12.audit"
+    signatureValue: "/v1/happy_flow/dep12.signature"
+

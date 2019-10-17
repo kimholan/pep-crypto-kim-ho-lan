@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+
+  <name>PEP decryption - Root POM</name>
+
+  <groupId>nl.logius</groupId>
+  <artifactId>pep-crypto-pom</artifactId>
+  <version>@@NEXT-VERSION@@</version>
+
+  <packaging>pom</packaging>
+
+  <licenses>
+    <license>
+      <name>European Union Public Licence (EUPL) 1.2</name>
+      <url>https://joinup.ec.europa.eu/sites/default/files/inline-files/EUPL%20v1_2%20EN(1).txt</url>
+    </license>
+  </licenses>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    <maven.compiler.source>11</maven.compiler.source>
+    <maven.compiler.target>11</maven.compiler.target>
+
+    <!-- Plugins -->
+    <version.maven-jar-plugin>3.1.1</version.maven-jar-plugin>
+    <version.maven-war-plugin>3.2.2</version.maven-war-plugin>
+    <version.download-maven-plugin>1.4.0</version.download-maven-plugin>
+    <version.maven-surefire-plugin>2.18.1</version.maven-surefire-plugin>
+    <maven-compiler-plugin.version>3.8.0</maven-compiler-plugin.version>
+    <version.maven-clean-plugin>3.1.0</version.maven-clean-plugin>
+    <version.maven-failsafe-plugin>2.19.1</version.maven-failsafe-plugin>
+    <version.jacoco-maven-plugin>0.8.3</version.jacoco-maven-plugin>
+    <version.license-maven-plugin>1.19</version.license-maven-plugin>
+    <version.maven-dependency-plugin>3.1.1</version.maven-dependency-plugin>
+    <build-helper-maven-plugin.version>3.0.0</build-helper-maven-plugin.version>
+    <version.openapi-generator-maven-plugin>3.3.4</version.openapi-generator-maven-plugin>
+    <version.javadoc-plugin>3.1.0</version.javadoc-plugin>
+    <version.nl.talsmasoftware.umldoclet>2.0.2</version.nl.talsmasoftware.umldoclet>
+    <version.maven-site-plugin>3.7.1</version.maven-site-plugin>
+    <version.maven-project-info-reports-plugin>3.0.0</version.maven-project-info-reports-plugin>
+
+    <!-- Dependencies -->
+    <version.org.bouncycastle>1.60</version.org.bouncycastle>
+
+    <!-- Output directories -->
+    <dependencies.dir>${project.basedir}/dependencies</dependencies.dir>
+    <javadoc.outputDir>${project.reporting.outputDirectory}/apidocs</javadoc.outputDir>
+  </properties>
+
+
+  <modules>
+    <module>pep-crypto-pom-lib</module>
+    <module>pep-crypto-pom-api</module>
+    <module>pep-crypto-pom-test</module>
+    <module>pep-crypto-pom-microprofile</module>
+    <module>pep-crypto-pom-thorntail</module>
+  </modules>
+
+  <build>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-war-plugin</artifactId>
+          <version>${version.maven-war-plugin}</version>
+          <configuration>
+            <failOnMissingWebXml>false</failOnMissingWebXml>
+            <archiveClasses>true</archiveClasses>
+          </configuration>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-jar-plugin</artifactId>
+          <version>${version.maven-jar-plugin}</version>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <version>${maven-compiler-plugin.version}</version>
+          <configuration>
+            <source>${maven.compiler.source}</source>
+            <target>${maven.compiler.target}</target>
+          </configuration>
+        </plugin>
+        <plugin>
+          <artifactId>maven-surefire-plugin</artifactId>
+          <version>${version.maven-surefire-plugin}</version>
+          <configuration>
+            <systemPropertyVariables>
+              <jacoco-agent.destfile>target/jacoco.exec</jacoco-agent.destfile>
+            </systemPropertyVariables>
+          </configuration>
+        </plugin>
+        <plugin>
+          <groupId>org.codehaus.mojo</groupId>
+          <artifactId>license-maven-plugin</artifactId>
+        </plugin>
+        <plugin>
+          <groupId>org.jacoco</groupId>
+          <artifactId>jacoco-maven-plugin</artifactId>
+          <version>${version.jacoco-maven-plugin}</version>
+          <executions>
+            <execution>
+              <goals>
+                <goal>prepare-agent</goal>
+              </goals>
+            </execution>
+          </executions>
+        </plugin>
+        <plugin>
+          <artifactId>maven-clean-plugin</artifactId>
+          <version>${version.maven-clean-plugin}</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-failsafe-plugin</artifactId>
+          <version>${version.maven-failsafe-plugin}</version>
+        </plugin>
+        <plugin>
+          <groupId>org.codehaus.mojo</groupId>
+          <artifactId>build-helper-maven-plugin</artifactId>
+          <version>${build-helper-maven-plugin.version}</version>
+        </plugin>
+        <plugin>
+          <groupId>org.openapitools</groupId>
+          <artifactId>openapi-generator-maven-plugin</artifactId>
+          <version>${version.openapi-generator-maven-plugin}</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-dependency-plugin</artifactId>
+          <version>${version.maven-dependency-plugin}</version>
+          <executions>
+            <execution>
+              <id>copy-dependencies</id>
+              <phase>package</phase>
+              <goals>
+                <goal>copy-dependencies</goal>
+              </goals>
+            </execution>
+          </executions>
+          <configuration>
+            <outputDirectory>${dependencies.dir}</outputDirectory>
+            <overWriteReleases>false</overWriteReleases>
+            <overWriteSnapshots>false</overWriteSnapshots>
+            <overWriteIfNewer>true</overWriteIfNewer>
+          </configuration>
+        </plugin>
+        <plugin>
+          <artifactId>maven-javadoc-plugin</artifactId>
+          <version>${version.javadoc-plugin}</version>
+          <configuration>
+            <show>protected</show>
+            <source>${maven.compiler.source}</source>
+            <outputDirectory>${javadoc.outputDir}</outputDirectory>
+            <reportOutputDirectory>${javadoc.outputDir}</reportOutputDirectory>
+            <doclet>nl.talsmasoftware.umldoclet.UMLDoclet</doclet>
+            <docletArtifact>
+              <groupId>nl.talsmasoftware</groupId>
+              <artifactId>umldoclet</artifactId>
+              <version>${version.nl.talsmasoftware.umldoclet}</version>
+            </docletArtifact>
+          </configuration>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-site-plugin</artifactId>
+          <version>${version.maven-site-plugin}</version>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-project-info-reports-plugin</artifactId>
+          <version>${version.maven-project-info-reports-plugin}</version>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+  </build>
+
+
+</project>

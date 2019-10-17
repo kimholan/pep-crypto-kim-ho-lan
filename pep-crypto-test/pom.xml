@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>nl.logius</groupId>
+    <artifactId>pep-crypto-pom-test</artifactId>
+    <version>@@NEXT-VERSION@@</version>
+    <relativePath>../pep-crypto-pom/pep-crypto-pom-test</relativePath>
+  </parent>
+
+  <artifactId>pep-crypto-test</artifactId>
+  <name>PEP decryption - Testsuite</name>
+
+
+  <dependencies>
+    <dependency>
+      <groupId>io.swagger.parser.v3</groupId>
+      <artifactId>swagger-parser</artifactId>
+      <version>2.0.14</version>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <resources>
+      <resource>
+        <directory>specs</directory>
+      </resource>
+      <resource>
+        <directory>${project.basedir}/../pep-crypto-documentation/60-Test/data</directory>
+      </resource>
+    </resources>
+    <plugins>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>build-helper-maven-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>add-source</id>
+            <phase>generate-sources</phase>
+            <goals>
+              <goal>add-source</goal>
+            </goals>
+            <configuration>
+              <sources>
+                <source>${project.build.directory}/generated-sources/openapi</source>
+              </sources>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.openapitools</groupId>
+        <artifactId>openapi-generator-maven-plugin</artifactId>
+        <executions>
+          <execution>
+            <goals>
+              <goal>generate</goal>
+            </goals>
+            <configuration>
+              <generateApis>false</generateApis>
+              <language>jaxrs-spec</language>
+              <inputSpec>${project.basedir}/../pep-crypto-documentation/35-Schema/openapi.yaml</inputSpec>
+              <output>${project.build.directory}</output>
+              <modelPackage>generated.nl.logius.pepcrypto.openapi.model</modelPackage>
+              <configOptions>
+                <dateLibrary>java8</dateLibrary>
+                <java8>true</java8>
+                <hideGenerationTimestamp>true</hideGenerationTimestamp>
+                <!-- Do not generate the JAX-RS resources  -->
+                <interfaceOnly>true</interfaceOnly>
+                <sourceFolder>generated-sources</sourceFolder>
+                <bigDecimalAsString>true</bigDecimalAsString>
+                <generateModels>true</generateModels>
+                <generateApis>false</generateApis>
+                <generateApiTests>false</generateApiTests>
+                <generateApiDocumentation>true</generateApiDocumentation>
+                <generateModelTests>false</generateModelTests>
+                <generatePom>false</generatePom>
+                <useSwaggerAnnotations>false</useSwaggerAnnotations>
+                <useBeanValidation>false</useBeanValidation>
+              </configOptions>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+
+  <profiles>
+    <profile>
+      <id>gauge</id>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>com.thoughtworks.gauge.maven</groupId>
+            <artifactId>gauge-maven-plugin</artifactId>
+            <executions>
+              <execution>
+                <phase>test</phase>
+                <configuration>
+                  <specsDir>specs</specsDir>
+                </configuration>
+                <goals>
+                  <goal>execute</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
+
+</project>

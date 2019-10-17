@@ -1,0 +1,199 @@
+"scenario_1":
+  "request":
+    "signedDirectEncryptedPseudonym": "/v1/happy_flow/dep12.asn1"
+    "serviceProviderKeys":
+    - "/v1/keys/pdd_sksv_1_oin_99990030000000000001_kv_20170916.pem"
+    - "/v1/keys/pcd_sksv_1_oin_99990030000000000001_ckv_20170916.pem"
+    - "/v1/keys/drki_sksv_1_oin_99990030000000000001_kv_20170916.pem"
+    "schemeKeys":
+      "urn:nl-gdi-eid:1.0:pp-key:ENVIRONMENT:1:U:1": "/v1/keys/u_sksv_1_kv_1.pem"
+    "targetClosingKey": !!null "null"
+    "authorizedParty": "99990040000000000001"
+  "expectations":
+    "statusCode": "200"
+    "pseudonymValue": "/v1/pseudonyms/p_dep_12.txt"
+    "auditValue": "/v1/happy_flow/dep12.audit"
+    "signatureValue": "/v1/happy_flow/dep12.signature"
+    "responseBody":
+      "decodedInput":
+        "notationIdentifier": "2.16.528.1.1003.10.1.2.6"
+        "signedDEP":
+          "directEncryptedPseudonym":
+            "notationIdentifier": "2.16.528.1.1003.10.1.2.5"
+            "schemeVersion": "1"
+            "schemeKeySetVersion": "1"
+            "creator": "99000001231234567890"
+            "recipient": "99990030000000000001"
+            "recipientKeySetVersion": "20170916"
+            "type": "B"
+            "points":
+            - "BMbco1oiSOAXZGDsaRUUZYrdfFCya+IsJs44BUZuBo3UZf651hn8wQ90YV3Glu+mE01dxHs3U0oh4LIlD5UfeIcEeJPqxKOo9KDAFsXiYq7B"
+            - "BM4vI3QJqD5xq4fO0g5En8KGC/tDj+brdSYrp4Gle/A/aUoSU90aF2Vq0ApAtZLeBM8xcG9ZLohSAhCZedP9LuJ34iViqJuRxo/UKvz/j3cC"
+            - "BAYt34+c+VEVBV9LEn8Tg4QPFEDKpwEjbPVF/GEfOSgkd+lSKarXFUJ8mCmN4jHqRu69voqTx4a9fAS3MEV3PVhPaxWndjUG3yEMijcfryLx"
+            "authorizedParty": "99990040000000000001"
+          "auditElement": "40PeAyZvYaDs7nZMRZSu6w=="
+          "signingKeyVersion": "1"
+        "signatureValue":
+          "signatureType": "1.2.840.10045.4.3.3"
+          "r": "AKzne1HhN67qTPqQPkVCdGvXKgPlK00MwbGxuNl7YLaDdoFe+0ILkg8="
+          "s": "YjH433bB8DCd9qzAkq95fPVT3vJ6HkWo6Sp5cEIUco2Vhr6pDJgrwQ=="
+      "pseudonym": "MIGfBgpghBABh2sKAQMCAgEBAgEBFhQ5OTk5MDAzMDAwMDAwMDAwMDAwMQIEATPIpAIBQhZsQkVtRXM3Qy9LRlpwYUFMWjJZamRUQng1UlBHa0FNRldOTjZnaDcxcC9MYUFMYnR5T3h6TEZOZERKZDU1RHFEVmtyYWxSTHRVN281U3QzYmd6aGxlck9TcXA4ZkRBanlvUks0dE4vc2VONU9o"
+      "decodedPseudonym":
+        "notationIdentifier": "2.16.528.1.1003.10.1.3.2"
+        "schemeVersion": "1"
+        "schemeKeySetVersion": "1"
+        "recipient": "99990030000000000001"
+        "recipientKeySetVersion": "20170916"
+        "type": "B"
+        "pseudonymValue": "BEmEs7C/KFZpaALZ2YjdTBx5RPGkAMFWNN6gh71p/LaALbtyOxzLFNdDJd55DqDVkralRLtU7o5St3bgzhlerOSqp8fDAjyoRK4tN/seN5Oh"
+"scenario_2":
+  "request":
+    "signedDirectEncryptedPseudonym": "/v1/happy_flow/dep13.asn1"
+    "serviceProviderKeys":
+    - "/v1/keys/pdd_sksv_10_oin_99990030000000000002_kv_20190226.pem"
+    - "/v1/keys/pcd_sksv_10_oin_99990030000000000002_ckv_20190226.pem"
+    - "/v1/keys/drki_sksv_10_oin_99990030000000000002_kv_20190226.pem"
+    "schemeKeys":
+      "urn:nl-gdi-eid:1.0:pp-key:ENVIRONMENT:10:U:10": "/v1/keys/u_sksv_10_kv_10.pem"
+    "targetClosingKey": "20190226"
+    "authorizedParty": "99990040000000000002"
+  "expectations":
+    "statusCode": "200"
+    "pseudonymValue": "/v1/pseudonyms/p_dep_13.txt"
+    "auditValue": "/v1/happy_flow/dep13.audit"
+    "signatureValue": "/v1/happy_flow/dep13.signature"
+    "responseBody":
+      "decodedInput":
+        "notationIdentifier": "2.16.528.1.1003.10.1.2.6"
+        "signedDEP":
+          "directEncryptedPseudonym":
+            "notationIdentifier": "2.16.528.1.1003.10.1.2.5"
+            "schemeVersion": "1"
+            "schemeKeySetVersion": "10"
+            "creator": "99000001231234567890"
+            "recipient": "99990030000000000002"
+            "recipientKeySetVersion": "20190226"
+            "type": "B"
+            "points":
+            - "BDinPb8hGhh9XdqneLPbXDEXLbvfaVa+MUqa47Y+cMn6+WWjsbHpnzcOWvr6nGFY9twCPQuPLXm3YwSkbp+FUd6iJw6Q0FvyPLub/2WAZegc"
+            - "BJ4DSQmA5aV7G5W1C71sj6/3fTwXMxQhXxGi+vLkWsRvu/Q4wVOlq0nDsyCQsGJ3brEunnT6W4dDijvp0YiQ+Xpm7srTyQSJS951Xp7Lgud5"
+            - "BKvnXCoD2pA5aehlY5zONzwjObz/utEMwHx2zpSqztreR6HqSOTZjzmBfEPGHLwrZZSmObIqOb9MiUwrKPHCOoriKly+RaOq5NUya4DhUAEz"
+            "authorizedParty": "99990040000000000002"
+          "auditElement": "ANrQ5GxZ0+VFXclDXdRK6A=="
+          "signingKeyVersion": "10"
+        "signatureValue":
+          "signatureType": "1.2.840.10045.4.3.3"
+          "r": "Xwy1Nbu4Z6AVkHbRFRxDAqW/DkzBKlEHYu2e9kUbC1IPw55/uzwnVw=="
+          "s": "KZw/qJJuRY0raj4MSx9+luW9fljUizSJPcRqg1Eu4o88o6JQ+Zuzyg=="
+      "pseudonym": "MIGfBgpghBABh2sKAQMCAgEBAgEKFhQ5OTk5MDAzMDAwMDAwMDAwMDAwMgIEATQUEgIBQhZsQkxsMVR3ajFlSWx0NWxYNXRMa1k5UlR0RmRFcVh5cEhtd0pkOHBqK2R1d1Bia2ZJVUcwVVJaMi9zL2tuUEJCazgxVkVyRDJ3Q0tJUmxCTi9HWUNqaUd1TFdUUFZnY0VnS3l3NzhNb2c3b1JP"
+      "decodedPseudonym":
+        "notationIdentifier": "2.16.528.1.1003.10.1.3.2"
+        "schemeVersion": "1"
+        "schemeKeySetVersion": "10"
+        "recipient": "99990030000000000002"
+        "recipientKeySetVersion": "20190226"
+        "type": "B"
+        "pseudonymValue": "BLl1Twj1eIlt5lX5tLkY9RTtFdEqXypHmwJd8pj+duwPbkfIUG0URZ2/s/knPBBk81VErD2wCKIRlBN/GYCjiGuLWTPVgcEgKyw78Mog7oRO"
+"scenario_3":
+  "request_1":
+    "signedDirectEncryptedPseudonym": "/v1/happy_flow/dep13.asn1"
+    "serviceProviderKeys":
+    - "/v1/keys/pdd_sksv_1_oin_99990030000000000002_kv_20190226.pem"
+    - "/v1/keys/pcd_sksv_1_oin_99990030000000000002_ckv_20190811.pem"
+    - "/v1/keys/drki_sksv_1_oin_99990030000000000002_kv_20190226.pem"
+    - "/v1/keys/pdd_sksv_10_oin_99990030000000000002_kv_20190226.pem"
+    - "/v1/keys/pcd_sksv_10_oin_99990030000000000002_ckv_20190811.pem"
+    - "/v1/keys/drki_sksv_10_oin_99990030000000000002_kv_20190226.pem"
+    "schemeKeys":
+      "urn:nl-gdi-eid:1.0:pp-key:ENVIRONMENT:1:U:1": "/v1/keys/u_sksv_1_kv_1.pem"
+      "urn:nl-gdi-eid:1.0:pp-key:ENVIRONMENT:10:U:9": "/v1/keys/u_sksv_1_kv_1.pem"
+      "urn:nl-gdi-eid:1.0:pp-key:ENVIRONMENT:10:U:8": "/v1/keys/u_sksv_1_kv_1.pem"
+      "urn:nl-gdi-eid:1.0:pp-key:ENVIRONMENT:10:U:6": "/v1/keys/u_sksv_1_kv_1.pem"
+      "urn:nl-gdi-eid:1.0:pp-key:ENVIRONMENT:10:U:10": "/v1/keys/u_sksv_10_kv_10.pem"
+      "urn:nl-gdi-eid:1.0:pp-key:ENVIRONMENT:10:U:1": "/v1/keys/u_sksv_1_kv_1.pem"
+    "targetClosingKey": "20190811"
+    "authorizedParty": "99990040000000000002"
+  "expectations_1":
+    "statusCode": "200"
+    "pseudonymValue": "/v1/pseudonyms/p_dep_14.txt"
+    "auditValue": "/v1/happy_flow/dep13.audit"
+    "signatureValue": "/v1/happy_flow/dep13.signature"
+    "responseBody":
+      "decodedInput":
+        "notationIdentifier": "2.16.528.1.1003.10.1.2.6"
+        "signedDEP":
+          "directEncryptedPseudonym":
+            "notationIdentifier": "2.16.528.1.1003.10.1.2.5"
+            "schemeVersion": "1"
+            "schemeKeySetVersion": "10"
+            "creator": "99000001231234567890"
+            "recipient": "99990030000000000002"
+            "recipientKeySetVersion": "20190226"
+            "type": "B"
+            "points":
+            - "BDinPb8hGhh9XdqneLPbXDEXLbvfaVa+MUqa47Y+cMn6+WWjsbHpnzcOWvr6nGFY9twCPQuPLXm3YwSkbp+FUd6iJw6Q0FvyPLub/2WAZegc"
+            - "BJ4DSQmA5aV7G5W1C71sj6/3fTwXMxQhXxGi+vLkWsRvu/Q4wVOlq0nDsyCQsGJ3brEunnT6W4dDijvp0YiQ+Xpm7srTyQSJS951Xp7Lgud5"
+            - "BKvnXCoD2pA5aehlY5zONzwjObz/utEMwHx2zpSqztreR6HqSOTZjzmBfEPGHLwrZZSmObIqOb9MiUwrKPHCOoriKly+RaOq5NUya4DhUAEz"
+            "authorizedParty": "99990040000000000002"
+          "auditElement": "ANrQ5GxZ0+VFXclDXdRK6A=="
+          "signingKeyVersion": "10"
+        "signatureValue":
+          "signatureType": "1.2.840.10045.4.3.3"
+          "r": "Xwy1Nbu4Z6AVkHbRFRxDAqW/DkzBKlEHYu2e9kUbC1IPw55/uzwnVw=="
+          "s": "KZw/qJJuRY0raj4MSx9+luW9fljUizSJPcRqg1Eu4o88o6JQ+Zuzyg=="
+      "pseudonym": "MIGfBgpghBABh2sKAQMCAgEBAgEKFhQ5OTk5MDAzMDAwMDAwMDAwMDAwMgIEATQWWwIBQhZsQkVJOUo0UUVYTnFidnNrcFdHV2RiVm4wYjErMzNmYk1FMG9GOEJQRzJPejM1dC9USk50dkNtUEZSaHdjV0pyb0JrVWpFelp1VFdMS3F0Q214SDJJelZpME9iNlpjUzBEK2hZSTBlTkhEcUJS"
+      "decodedPseudonym":
+        "notationIdentifier": "2.16.528.1.1003.10.1.3.2"
+        "schemeVersion": "1"
+        "schemeKeySetVersion": "10"
+        "recipient": "99990030000000000002"
+        "recipientKeySetVersion": "20190811"
+        "type": "B"
+        "pseudonymValue": "BEI9J4QEXNqbvskpWGWdbVn0b1+33fbME0oF8BPG2Oz35t/TJNtvCmPFRhwcWJroBkUjEzZuTWLKqtCmxH2IzVi0Ob6ZcS0D+hYI0eNHDqBR"
+  "request_2":
+    "signedDirectEncryptedPseudonym": "/v1/happy_flow/dep14.asn1"
+    "serviceProviderKeys":
+    - "/v1/keys/pdd_sksv_10_oin_99990030000000000002_kv_20190811.pem"
+    - "/v1/keys/pcd_sksv_10_oin_99990030000000000002_ckv_20190811.pem"
+    - "/v1/keys/drki_sksv_10_oin_99990030000000000002_kv_20190811.pem"
+    "schemeKeys":
+      "urn:nl-gdi-eid:1.0:pp-key:ENVIRONMENT:10:U:10": "/v1/keys/u_sksv_10_kv_10.pem"
+    "targetClosingKey": !!null "null"
+    "authorizedParty": "99990040000000000002"
+  "expectations_2":
+    "statusCode": "200"
+    "pseudonymValue": "/v1/pseudonyms/p_dep_14.txt"
+    "auditValue": "/v1/happy_flow/dep14.audit"
+    "signatureValue": "/v1/happy_flow/dep14.signature"
+    "responseBody":
+      "decodedInput":
+        "notationIdentifier": "2.16.528.1.1003.10.1.2.6"
+        "signedDEP":
+          "directEncryptedPseudonym":
+            "notationIdentifier": "2.16.528.1.1003.10.1.2.5"
+            "schemeVersion": "1"
+            "schemeKeySetVersion": "10"
+            "creator": "99000001231234567890"
+            "recipient": "99990030000000000002"
+            "recipientKeySetVersion": "20190811"
+            "type": "B"
+            "points":
+            - "BFNtXXQRER5o9MxRrYeXzFOncAmbvBYZWG6J6hsTWNK5uVCgy9nJ5JKZZp5ksgkqGt42ALFhZvaKm+nM/nDKFU9fAKcjwCC46qjEQ+P49UhB"
+            - "BJXNVXeAok+phnQ9QfGz7Ab1+S8mitIkeSR+WLgBXX51njhG4w/MtkTQqvFN15VbcivESbXAZgnCTxpvD/halvitg6Ga+Ijc+NztjGKQiwtC"
+            - "BAehCZ/qFpTe2RwTpTZaN7i7kBiOuq2MwfmRlHOZxJ7kLagCsi/kLYGfPMJfzkIjCjcpkkDZOs4GR2Ihf/ZrNC/nhaX4PTAru2XgcvqMz9jr"
+            "authorizedParty": "99990040000000000002"
+          "auditElement": "RvevhFgrWeNuHAu/BftgIA=="
+          "signingKeyVersion": "10"
+        "signatureValue":
+          "signatureType": "1.2.840.10045.4.3.3"
+          "r": "Y/Eq9IvYUnHHNvc+2fE3TyjpWAk4bV++AuPQlYrz5YTLQCyU21f0XA=="
+          "s": "AMtUWL1wLCMbTCl5hnkFUwz+S6S7cqGkXlII7YB7UpRhGXKirCexGgw="
+      "pseudonym": "MIGfBgpghBABh2sKAQMCAgEBAgEKFhQ5OTk5MDAzMDAwMDAwMDAwMDAwMgIEATQWWwIBQhZsQkVJOUo0UUVYTnFidnNrcFdHV2RiVm4wYjErMzNmYk1FMG9GOEJQRzJPejM1dC9USk50dkNtUEZSaHdjV0pyb0JrVWpFelp1VFdMS3F0Q214SDJJelZpME9iNlpjUzBEK2hZSTBlTkhEcUJS"
+      "decodedPseudonym":
+        "notationIdentifier": "2.16.528.1.1003.10.1.3.2"
+        "schemeVersion": "1"
+        "schemeKeySetVersion": "10"
+        "recipient": "99990030000000000002"
+        "recipientKeySetVersion": "20190811"
+        "type": "B"
+        "pseudonymValue": "BEI9J4QEXNqbvskpWGWdbVn0b1+33fbME0oF8BPG2Oz35t/TJNtvCmPFRhwcWJroBkUjEzZuTWLKqtCmxH2IzVi0Ob6ZcS0D+hYI0eNHDqBR"

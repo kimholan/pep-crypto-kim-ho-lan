@@ -1,0 +1,163 @@
+"scenario_1":
+  "request":
+    "signedEncryptedPseudonym": "/v1/happy_flow/ep02_div1.asn1"
+    "schemeKeys":
+      "urn:nl-gdi-eid:1.0:pp-key:ENVIRONMENT:1:PP_P:1": "/v1/keys/ppp_sksv_1_kv_1.pem"
+    "serviceProviderKeys":
+    - "/v1/keys/pdd_sksv_1_oin_99990020000000000002_kv_20191103.pem"
+    - "/v1/keys/pcd_sksv_1_oin_99990020000000000002_ckv_20191103.pem"
+  "expectations":
+    "statusCode": "200"
+    "auditValue": "/v1/happy_flow/ep02_div1.audit"
+    "signatureValue": "/v1/happy_flow/ep02_div1.signature"
+    "pseudonymValue": "/v1/pseudonyms/p02_div1.txt"
+    "responseBody":
+      "decodedInput":
+        "notationIdentifier": "2.16.528.1.1003.10.1.2.4"
+        "signedEP":
+          "encryptedPseudonym":
+            "notationIdentifier": "2.16.528.1.1003.10.1.2.2"
+            "schemeVersion": "1"
+            "schemeKeySetVersion": "1"
+            "creator": "99000001231234567890"
+            "recipient": "99990020000000000002"
+            "recipientKeySetVersion": "20191103"
+            "type": "B"
+            "points":
+            - "BGDu3DCWlSCeuQAHt8K9z0uMmU4kzBiHYzRm6px+SFeco8UBKgLTDqw9sy+TvnOxUK7Ce5QCI3gSXk4n1mJNr+MYKHYQKpQGHKBvQ3nFYuoB"
+            - "BJilqOO9IbN6lQzJ6L8FxPYUSAvKUrEc7GSPV1/56ZdyLu2fYrLNR3K3YS6vIPJqMfUDAvOCMQxYHij6LUn2UpYOMEHs/9iRkyVLlACyfrqD"
+            - "BAbnblfvOd8paIBaYdSBMmO643qjiBlziIxxVwWiVgMgGEv/X+6tZqBBbodHVWjUvzC4qqjhkJimrxagdwllgFCkttJUfMjq56/o9u+OscsO"
+            "diversifier":
+            - "key": "Role"
+              "value": "Company"
+          "auditElement": "zofPgBR2A84MvkZkVjbEuw=="
+        "signatureValue":
+          "signatureType": "0.4.0.127.0.7.1.1.4.3.3"
+          "r": "AKb9yixia31d9Bl5sF10xUr3bAetoCTgKE4xKeKyaYHwlCfVQPltfS8="
+          "s": "W0koLsD7XKh/bz6pWRL+kN96vIjsiRZY0l4xPiwK+DnYgz/QPN+7pA=="
+      "pseudonym": "MIGyBgpghBABh2sKAQMCAgEBAgEBFhQ5OTk5MDAyMDAwMDAwMDAwMDAwMgIEATQXfwIBQhZsQkdwL1RuVUZxMXhBQ0tCUE8wU3JGdTdzRTVteUl5Sm5IbWVYTnhSZzFWeEdHeUM2dUVpMFRML0ZNdmxDcitMUnkwUXkzTkJML2E0cmxWTU9JV2NBd3g5NCtlbzY3QzhBazkreXBVOWt0c2d4oBEwDxYEUm9sZRYHQ29tcGFueQ=="
+      "decodedPseudonym":
+        "notationIdentifier": "2.16.528.1.1003.10.1.3.2"
+        "schemeVersion": "1"
+        "schemeKeySetVersion": "1"
+        "recipient": "99990020000000000002"
+        "recipientKeySetVersion": "20191103"
+        "type": "B"
+        "pseudonymValue": "BGp/TnUFq1xACKBPO0SrFu7sE5myIyJnHmeXNxRg1VxGGyC6uEi0TL/FMvlCr+LRy0Qy3NBL/a4rlVMOIWcAwx94+eo67C8Ak9+ypU9ktsgx"
+        "diversifier":
+        - "key": "Role"
+          "value": "Company"
+"scenario_2":
+  "request":
+    "signedEncryptedPseudonym": "/v1/happy_flow/ep08_div2.asn1"
+    "targetClosingKey": "20211207"
+    "schemeKeys":
+      "urn:nl-gdi-eid:1.0:pp-key:ENVIRONMENT:10:PP_P:10": "/v1/keys/ppp_sksv_10_kv_10.pem"
+    "serviceProviderKeys":
+    - "/v1/keys/pdd_sksv_10_oin_99990020000000000001_kv_20211207.pem"
+    - "/v1/keys/pcd_sksv_10_oin_99990020000000000001_ckv_20211207.pem"
+  "expectations":
+    "statusCode": "200"
+    "auditValue": "/v1/happy_flow/ep08_div2.audit"
+    "signatureValue": "/v1/happy_flow/ep08_div2.signature"
+    "pseudonymValue": "/v1/pseudonyms/p08_div2.txt"
+    "responseBody":
+      "decodedInput":
+        "notationIdentifier": "2.16.528.1.1003.10.1.2.4"
+        "signedEP":
+          "encryptedPseudonym":
+            "notationIdentifier": "2.16.528.1.1003.10.1.2.2"
+            "schemeVersion": "1"
+            "schemeKeySetVersion": "10"
+            "creator": "99000001231234567890"
+            "recipient": "99990020000000000001"
+            "recipientKeySetVersion": "20211207"
+            "type": "E"
+            "points":
+            - "BCbz4ULKihgom1uRA+Sy94kMZoPl6J2nX1NXjtMYu+9dEB2Dxy+XHGNIUhhnKEDx2m87jLxSmuLYIBgaVZggWlzH9xEdanLiO+MOlFFEMpdI"
+            - "BCPSyJURqBu5qWWSqv07eeBg0lKVlOXAdyUdb7OhRrv/i0xA8ena3m5H2nhzkomH6GvF80SCQkEjx/pJzE0jvbN90s7AgrkJ7lyua+MIg6dL"
+            - "BJKaGBHxC0ekPnn3WsfChb5VlWl5Cssy/+ISsJ5Du9T8d08zWsL4OZnRPm8Nk7g4jh/+9DLwHVib16zRSdMu72Yo8yjpgSh+xl+9K/NtmyO+"
+            "diversifier":
+            - "key": "Function"
+              "value": "Controller"
+            - "key": "Group"
+              "value": "Finance"
+          "auditElement": "i8FkHoxwnhaU1ED/EGJvFA=="
+        "signatureValue":
+          "signatureType": "0.4.0.127.0.7.1.1.4.3.3"
+          "r": "APzncx/zbFKF5hKQZHJ+7/Byl0jBOM298yqEuQqChfXH51PdoxPPiX0="
+          "s": "AKw3qwqcyLrkYZV22SVjon3Jj6li739LVyAosImGuXrhcX8IHHoGOO8="
+      "pseudonym": "MIHLBgpghBABh2sKAQMCAgEBAgEKFhQ5OTk5MDAyMDAwMDAwMDAwMDAwMQIEATRmBwIBRRZsQkpNNjJjUnd4YjBGbTIwVHVxbTlRN0dzd2VkcEFDZlBpdEpRYkEyNjNzdEIxanlyeEp0Wk83NXlXakx3VXlsZkpNTTVUQ1FkVlZnSFVZcWZZUTRXV0Vad2ZkbWRkVGtOM2RmWnlJMENHQVk2oCowFhYIRnVuY3Rpb24WCkNvbnRyb2xsZXIwEBYFR3JvdXAWB0ZpbmFuY2U="
+      "decodedPseudonym":
+        "notationIdentifier": "2.16.528.1.1003.10.1.3.2"
+        "schemeVersion": "1"
+        "schemeKeySetVersion": "10"
+        "recipient": "99990020000000000001"
+        "recipientKeySetVersion": "20211207"
+        "type": "E"
+        "pseudonymValue": "BJM62cRwxb0Fm20Tuqm9Q7GswedpACfPitJQbA263stB1jyrxJtZO75yWjLwUylfJMM5TCQdVVgHUYqfYQ4WWEZwfdmddTkN3dfZyI0CGAY6"
+        "diversifier":
+        - "key": "Function"
+          "value": "Controller"
+        - "key": "Group"
+          "value": "Finance"
+"scenario_3":
+  "request":
+    "signedEncryptedPseudonym": "/v1/happy_flow/ep04_div3.asn1"
+    "schemeKeys":
+      "urn:nl-gdi-eid:1.0:pp-key:ENVIRONMENT:10:PP_P:10": "/v1/keys/ppp_sksv_10_kv_10.pem"
+      "urn:nl-gdi-eid:1.0:pp-key:ENVIRONMENT:1:PP_P:1": "/v1/keys/ppp_sksv_1_kv_1.pem"
+    "serviceProviderKeys":
+    - "/v1/keys/pdd_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+    - "/v1/keys/pdd_sksv_10_oin_99990020000000000001_kv_20180420.pem"
+    - "/v1/keys/pcd_sksv_1_oin_99990020000000000001_ckv_20180420.pem"
+    - "/v1/keys/pcd_sksv_10_oin_99990020000000000001_ckv_20180420.pem"
+  "expectations":
+    "statusCode": "200"
+    "auditValue": "/v1/happy_flow/ep04_div3.audit"
+    "signatureValue": "/v1/happy_flow/ep04_div3.signature"
+    "pseudonymValue": "/v1/pseudonyms/p04_div3.txt"
+    "responseBody":
+      "decodedInput":
+        "notationIdentifier": "2.16.528.1.1003.10.1.2.4"
+        "signedEP":
+          "encryptedPseudonym":
+            "notationIdentifier": "2.16.528.1.1003.10.1.2.2"
+            "schemeVersion": "1"
+            "schemeKeySetVersion": "1"
+            "creator": "99000001231234567890"
+            "recipient": "99990020000000000001"
+            "recipientKeySetVersion": "20180420"
+            "type": "B"
+            "points":
+            - "BIrLnVBGj6gJd551d9K/qhRpEz7dNr3tkvSy6zCbTEHtYlj0InHfuv45oz1CRCJ4j+Pn7D4nNpty96WQVG2Cl4482VSdHreZF7w8qLCTv5s3"
+            - "BAqi9B4UG9MZlKoGvnBksr9G8KoR2RJsNdDchbdDUVTdun7J1StR4d09uDRLXniohrGEuRQd/PDd66d5puFGL0fD3gluV3cXjtrNV1bFDR4K"
+            - "BC+sP/Ycx4VWeQ1UNnhtT8BptkU/I80q1s1EiMyUWZZ9w9rjCSDjynArFMpHSnZGVzn0tsKQAiaFcNoHXitXYEdl5hHe4hOlo3+AV4vhO6mJ"
+            "diversifier":
+            - "key": "O"
+              "value": "Logius"
+            - "key": "R"
+              "value": "Tester"
+            - "key": "U"
+              "value": "Bsnk"
+          "auditElement": "38WQQ4IxB24Ydm5V3cqTng=="
+        "signatureValue":
+          "signatureType": "0.4.0.127.0.7.1.1.4.3.3"
+          "r": "ALWqu+zFgfb9W8pmzYuOnsb7Fqt0FP5QjnAzQ6qYznInb/p67nrIq6s="
+          "s": "ZnFq3lXniDfk42UtES19zcN3cmxwHcMlI8EkZfMsvYuXXY6A5dpuEA=="
+      "pseudonym": "MIHGBgpghBABh2sKAQMCAgEBAgEBFhQ5OTk5MDAyMDAwMDAwMDAwMDAwMQIEATPtxAIBQhZsQkVMNys3K3lnZ0x4VnlDY3JJREtPTE9mREp0KzkxY0dBclhYNDg4VEFlTHQ2UVZLQUQwZkNubE01eGFqcXpicjhBK3c3TmNJdTlWYmMrZDhZV1pJcDBKVlhUb2FYbnlNMFBLQ3UwVlhlZ294oCUwCxYBTxYGTG9naXVzMAsWAVIWBlRlc3RlcjAJFgFVFgRCc25r"
+      "decodedPseudonym":
+        "notationIdentifier": "2.16.528.1.1003.10.1.3.2"
+        "schemeVersion": "1"
+        "schemeKeySetVersion": "1"
+        "recipient": "99990020000000000001"
+        "recipientKeySetVersion": "20180420"
+        "type": "B"
+        "pseudonymValue": "BEL7+7+yggLxVyCcrIDKOLOfDJt+91cGArXX488TAeLt6QVKAD0fCnlM5xajqzbr8A+w7NcIu9Vbc+d8YWZIp0JVXToaXnyM0PKCu0VXegox"
+        "diversifier":
+        - "key": "O"
+          "value": "Logius"
+        - "key": "R"
+          "value": "Tester"
+        - "key": "U"
+          "value": "Bsnk"

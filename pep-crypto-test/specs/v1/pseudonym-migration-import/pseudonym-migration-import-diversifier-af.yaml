@@ -1,0 +1,27 @@
+"PTC_5244_1":
+  request:
+    migrationIntermediaryPseudonym: "/v1/pseudonyms/mip_99990020000000000002_20191103_to_99990020000000000003_20180420_from_18_to_19_div3.asn1"
+    serviceProviderKeys:
+      - "/v1/keys/migration_99990020000000000002_20191103_to_99990020000000000003_20180420_sksv_10.target.pem"
+  expectations:
+    statusCode: "500"
+
+
+
+"PTC_5244_2":
+  request:
+    migrationIntermediaryPseudonym: "/v1/pseudonyms/mip_99990020000000000002_20191103_to_99990020000000000003_20180420_from_18_to_19.asn1"
+    serviceProviderKeys:
+      - "/v1/keys/migration_99990020000000000002_20191103_to_99990020000000000003_20180420_sksv_10_div3.target.pem"
+  expectations:
+    statusCode: "500"
+
+
+
+"PTC_5244_3":
+  request:
+    migrationIntermediaryPseudonym: "/v1/pseudonyms/mip_99990020000000000002_20191103_to_99990020000000000003_20180420_from_18_to_19_div3.asn1"
+    serviceProviderKeys:
+      - "/v1/keys/e_mid_migration_99990020000000000002_20191103_to_99990020000000000003_20180420_sksv_10_div1_mid02.target.pem"
+  expectations:
+    statusCode: "500"

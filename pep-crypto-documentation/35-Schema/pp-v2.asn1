@@ -1,0 +1,476 @@
+PPNotation DEFINITIONS IMPLICIT TAGS ::=
+
+BEGIN
+
+PolymorphicIdentity ::= SEQUENCE {
+    notationIdentifier OBJECT IDENTIFIER (id-BSNk-polymorphic-identity),
+    schemeVersion INTEGER,
+    schemeKeySetVersion INTEGER,
+    creator IA5String,
+    recipient IA5String,
+    recipientKeySetVersion INTEGER,
+    points SEQUENCE (SIZE (3)) OF ECPoint
+}
+ 
+PolymorphicPseudonym ::= SEQUENCE {
+    notationIdentifier OBJECT IDENTIFIER (id-BSNk-polymorphic-pseudonym),
+    schemeVersion INTEGER,
+    schemeKeySetVersion INTEGER,
+    creator IA5String,
+    recipient IA5String,
+    recipientKeySetVersion INTEGER,
+    type INTEGER,
+    points SEQUENCE (SIZE (3)) OF ECPoint
+}
+
+SignedPolymorphicIdentity ::= SEQUENCE {
+    notationIdentifier OBJECT IDENTIFIER (id-BSNk-polymorphic-identity-signed),
+    signedPI SEQUENCE {
+        polymorphicIdentity PolymorphicIdentity,
+        auditElement OCTET STRING,
+        signingKeyVersion INTEGER
+    },
+    signatureValue ECDSA-Signature
+}
+
+SignedPolymorphicPseudonym ::= SEQUENCE {
+    notationIdentifier OBJECT IDENTIFIER (id-BSNk-polymorphic-pseudonym-signed),
+    signedPP SEQUENCE {
+        polymorphicPseudonym PolymorphicPseudonym,
+        auditElement OCTET STRING,
+        signingKeyVersion INTEGER
+    },
+    signatureValue ECDSA-Signature
+}
+
+SignedPolymorphicIdentity-v2 ::= SEQUENCE {
+    notationIdentifier OBJECT IDENTIFIER (id-BSNk-polymorphic-identity-signed-v2),
+    signedPI SEQUENCE {
+        polymorphicIdentity PolymorphicIdentity,
+        auditElement OCTET STRING,
+        signingKeyVersion INTEGER,
+	issuanceDate IA5String  -- IA5STRING "20190401" (=month: -> squashed to first day of month)
+    },
+    signatureValue ECDSA-Signature
+}
+
+SignedPolymorphicPseudonym-v2 ::= SEQUENCE {
+    notationIdentifier OBJECT IDENTIFIER (id-BSNk-polymorphic-pseudonym-signed-v2),
+    signedPP SEQUENCE {
+        polymorphicPseudonym PolymorphicPseudonym,
+        auditElement OCTET STRING,
+        signingKeyVersion INTEGER,
+	issuanceDate IA5String  -- IA5STRING "20190401" (=month: -> squashed to first day of month)
+    },
+    signatureValue ECDSA-Signature
+}
+
+-- ECPoint is described in ANSI X9.62 (2005), annex E.6.
+-- In particular, encoding from point to octet string and
+-- from octet string to a point is defined in annex A.5.7
+-- and A.5.8 of ANSI X9.62.
+ECPoint ::= OCTET STRING
+ 
+ECDSA-Signature ::= SEQUENCE {
+    signatureType      OBJECT IDENTIFIER (ecdsa-with-SHA384),
+    signatureValue     EC-Sig-Value
+}
+ 
+-- EC-Sig-Value is identitical to BSI TR 03111 ECDSA-Sig-Value.
+-- which is identical to ECDSA-Sig-Value defined in RFC5480 as well.
+EC-Sig-Value ::= SEQUENCE {
+    r  INTEGER,
+    s  INTEGER
+}
+ 
+ecdsa-with-SHA384 OBJECT IDENTIFIER ::= {
+    iso(1) member-body(2) us(840) ansi-X9-62(10045) signatures(4)
+    ecdsa-with-SHA2(3) 3 }
+ 
+id-BSNk-scheme-nl OBJECT IDENTIFIER ::= {
+    joint-iso-itu-t(2) country(16) nl(528) nederlandse-organisatie(1)
+    nederlandse-overheid(1003) logius-beheer-usve(10) }
+ 
+id-BSNk-identifiers OBJECT IDENTIFIER ::= { id-BSNk-scheme-nl 1 }
+ 
+id-BSNk-polymorphics OBJECT IDENTIFIER ::= { id-BSNk-identifiers 1 }
+ 
+id-BSNk-polymorphic-identity OBJECT IDENTIFIER ::= { id-BSNk-polymorphics 1 }
+ 
+id-BSNk-polymorphic-pseudonym OBJECT IDENTIFIER ::= { id-BSNk-polymorphics 2 }
+ 
+id-BSNk-polymorphic-identity-signed OBJECT IDENTIFIER ::= { id-BSNk-polymorphics 3 }
+ 
+id-BSNk-polymorphic-identity-signed-v2 OBJECT IDENTIFIER ::= { id-BSNk-polymorphic-identity-signed 2 }
+ 
+id-BSNk-polymorphic-pseudonym-signed OBJECT IDENTIFIER ::= { id-BSNk-polymorphics 4 }
+
+id-BSNk-polymorphic-pseudonym-signed-v2 OBJECT IDENTIFIER ::= { id-BSNk-polymorphic-pseudonym-signed 2 }
+
+
+PIP ::= SEQUENCE {
+    notationIdentifier  OBJECT IDENTIFIER (id-BSNk-polymorphic-pip),
+    schemeVersion INTEGER,
+    schemeKeySetVersion INTEGER,
+    creator IA5String,
+    recipient IA5String,
+    recipientKeySetVersion INTEGER,
+    type INTEGER,
+    points SEQUENCE (SIZE (5)) OF ECPoint
+}
+
+SignedPIP ::= SEQUENCE {
+    notationIdentifier OBJECT IDENTIFIER (id-BSNk-polymorphic-pip-signed),
+    signedPIP SEQUENCE {
+        pip PIP,
+        auditElement OCTET STRING,
+        signingKeyVersion INTEGER
+    },
+    signatureValue ECDSA-Signature
+}
+
+SignedPIP-v2 ::= SEQUENCE {
+    notationIdentifier OBJECT IDENTIFIER (id-BSNk-polymorphic-pip-signed-v2),
+    signedPIP SEQUENCE {
+        pip PIP,
+        auditElement OCTET STRING,
+        signingKeyVersion INTEGER,
+	issuanceDate IA5String  -- IA5STRING "20190401" (=month: -> squashed to first day of month)
+    },
+    signatureValue ECDSA-Signature
+}
+
+id-BSNk-polymorphic-pip OBJECT IDENTIFIER ::= { id-BSNk-polymorphics 5 }
+ 
+id-BSNk-polymorphic-pip-signed OBJECT IDENTIFIER ::= { id-BSNk-polymorphics 6 }
+
+id-BSNk-polymorphic-pip-signed-v2 OBJECT IDENTIFIER ::= { id-BSNk-polymorphic-pip-signed 2 }
+
+-- the following OID is reserved for usage in the specifications of the protocol for PP on smartcard (polymorphic card application)
+id-PCA OBJECT IDENTIFIER ::= { id-BSNk-scheme-nl 9 }
+
+VerifiablePIP ::= SEQUENCE {
+    notationIdentifier OBJECT IDENTIFIER (id-BSNk-polymorphic-pip-verifiable),
+    signedPIP SignedPIP,
+    proofOfConformity SEQUENCE {
+        p1 ECPoint,
+        t ECPoint,
+        zp1 SEQUENCE {
+            r1 INTEGER,
+            s1 INTEGER
+        },
+        zp2 SEQUENCE {
+            r2 INTEGER,
+            s2 INTEGER
+        }
+    }
+}
+
+VerifiablePIP-v2 ::= SEQUENCE {
+    notationIdentifier OBJECT IDENTIFIER (id-BSNk-polymorphic-pip-verifiable-v2),
+    signedPIP SignedPIP-v2,
+    proofOfConformity SEQUENCE {
+        p1 ECPoint,
+        t ECPoint,
+        zp1 SEQUENCE {
+            r1 INTEGER,
+            s1 INTEGER
+        },
+        zp2 SEQUENCE {
+            r2 INTEGER,
+            s2 INTEGER
+        }
+    }
+}
+
+id-BSNk-polymorphic-pip-verifiable OBJECT IDENTIFIER ::= { id-BSNk-polymorphics 11 }
+
+id-BSNk-polymorphic-pip-verifiable-v2 OBJECT IDENTIFIER ::= { id-BSNk-polymorphic-pip-verifiable 2 }
+
+EncryptedIdentity ::= SEQUENCE {
+    notationIdentifier OBJECT IDENTIFIER (id-BSNk-encrypted-identity),
+    schemeVersion INTEGER,
+    schemeKeySetVersion INTEGER,
+    creator IA5String,
+    recipient IA5String,
+    recipientKeySetVersion INTEGER,
+    points SEQUENCE (SIZE (3)) OF ECPoint
+}
+
+EncryptedPseudonym ::= SEQUENCE {
+    notationIdentifier OBJECT IDENTIFIER (id-BSNk-encrypted-pseudonym),
+    schemeVersion INTEGER,
+    schemeKeySetVersion INTEGER,
+    creator IA5String,
+    recipient IA5String,
+    recipientKeySetVersion INTEGER,
+    type INTEGER,
+    points SEQUENCE (SIZE (3)) OF ECPoint,
+    diversifier [0] Diversifier OPTIONAL
+}
+
+SignedEncryptedIdentity ::= SEQUENCE {
+    notationIdentifier OBJECT IDENTIFIER (id-BSNk-encrypted-identity-ecsdsa-signed),
+    signedEI SEQUENCE {
+        encryptedIdentity EncryptedIdentity,
+        auditElement OCTET STRING
+    },
+    signatureValue EC-SDSA-Signature
+}
+
+SignedEncryptedPseudonym ::= SEQUENCE {
+    notationIdentifier OBJECT IDENTIFIER (id-BSNk-encrypted-pseudonym-ecsdsa-signed),
+    signedEP SEQUENCE {
+        encryptedPseudonym EncryptedPseudonym,
+        auditElement OCTET STRING
+    },
+    signatureValue EC-SDSA-Signature
+}
+
+SignedEncryptedIdentity-v2 ::= SEQUENCE {
+    notationIdentifier OBJECT IDENTIFIER (id-BSNk-encrypted-identity-ecsdsa-signed-v2),
+    signedEI SEQUENCE {
+        encryptedIdentity EncryptedIdentity,
+        auditElement OCTET STRING,
+	issuanceDate IA5String,  -- IA5STRING "20190401" (=month: -> squashed to first day of month)
+	extraElements [2] ExtraElements OPTIONAL
+    },
+    signatureValue EC-SDSA-Signature
+}
+
+SignedEncryptedPseudonym-v2 ::= SEQUENCE {
+    notationIdentifier OBJECT IDENTIFIER (id-BSNk-encrypted-pseudonym-ecsdsa-signed-v2),
+    signedEP SEQUENCE {
+        encryptedPseudonym EncryptedPseudonym,
+        auditElement OCTET STRING,
+	issuanceDate IA5String,  -- IA5STRING "20190401" (=month: -> squashed to first day of month)
+	extraElements [2] ExtraElements OPTIONAL
+    },
+    signatureValue EC-SDSA-Signature
+}
+
+DeprecatedSignedEncryptedIdentity ::= SEQUENCE {
+    notationIdentifier OBJECT IDENTIFIER (id-BSNk-encrypted-identity-signed),
+    signedEI SEQUENCE {
+        encryptedIdentity EncryptedIdentity,
+        auditElement OCTET STRING
+    },
+    signatureValue EC-Schnorr-Signature
+}
+
+DeprecatedSignedEncryptedPseudonym ::= SEQUENCE {
+    notationIdentifier OBJECT IDENTIFIER (id-BSNk-encrypted-pseudonym-signed),
+    signedEP SEQUENCE {
+        encryptedPseudonym EncryptedPseudonym,
+        auditElement OCTET STRING
+    },
+    signatureValue EC-Schnorr-Signature
+}
+
+DirectEncryptedIdentity-v2 ::= SEQUENCE {
+    notationIdentifier OBJECT IDENTIFIER (id-BSNk-encrypted-direct-identity-v2),
+    schemeVersion INTEGER,
+    schemeKeySetVersion INTEGER,
+    creator IA5String,
+    recipient IA5String,
+    recipientKeySetVersion INTEGER,
+    points SEQUENCE (SIZE (3)) OF ECPoint,
+    authorizedParty [1] IA5String
+}
+
+SignedDirectEncryptedIdentity-v2 ::= SEQUENCE {
+    notationIdentifier OBJECT IDENTIFIER (id-BSNk-encrypted-direct-identity-signed-v2),
+    signedDEI SEQUENCE {
+        directEncryptedIdentity DirectEncryptedIdentity-v2,
+        auditElement OCTET STRING,
+        signingKeyVersion INTEGER,
+	issuanceDate IA5String,  -- IA5STRING "20190401" (=month: -> squashed to first day of month)
+	extraElements [2] ExtraElements OPTIONAL
+    },
+    signatureValue ECDSA-Signature
+}
+
+DirectEncryptedPseudonym ::= SEQUENCE {
+    notationIdentifier OBJECT IDENTIFIER (id-BSNk-encrypted-direct-pseudonym),
+    schemeVersion INTEGER,
+    schemeKeySetVersion INTEGER,
+    creator IA5String,
+    recipient IA5String,
+    recipientKeySetVersion INTEGER,
+    type INTEGER,
+    points SEQUENCE (SIZE (3)) OF ECPoint,
+    diversifier [0] Diversifier OPTIONAL,
+    authorizedParty [1] IA5String OPTIONAL
+}
+
+SignedDirectEncryptedPseudonym ::= SEQUENCE {
+    notationIdentifier OBJECT IDENTIFIER (id-BSNk-encrypted-direct-pseudonym-signed),
+    signedDEP SEQUENCE {
+        directEncryptedPseudonym DirectEncryptedPseudonym,
+        auditElement OCTET STRING,
+        signingKeyVersion INTEGER
+    },
+    signatureValue ECDSA-Signature
+}
+
+SignedDirectEncryptedPseudonym-v2 ::= SEQUENCE {
+    notationIdentifier OBJECT IDENTIFIER (id-BSNk-encrypted-direct-pseudonym-signed-v2),
+    signedDEP SEQUENCE {
+        directEncryptedPseudonym DirectEncryptedPseudonym,
+        auditElement OCTET STRING,
+        signingKeyVersion INTEGER,
+		issuanceDate IA5String,  -- IA5STRING "20190401" (=month: -> squashed to first day of month)
+		extraElements [2] ExtraElements OPTIONAL
+    },
+    signatureValue ECDSA-Signature
+}
+
+Diversifier ::= SEQUENCE OF DiversifierKeyValuePair
+
+DiversifierKeyValuePair ::= SEQUENCE {
+    key IA5String, -- keys alphabetically, unique keys in a Diversifier set
+    value IA5String
+}
+
+ExtraElements ::= SEQUENCE OF ExtraElementsKeyValuePair
+
+ExtraElementsKeyValuePair ::= SEQUENCE {
+    key IA5String,
+    value VariableValueType
+}
+
+VariableValueType ::= CHOICE {
+    text  UTF8String,
+    number INTEGER,
+    binary OCTET STRING
+}
+
+
+-- Current specification version of data structure for a Schnorr (ECSDSA) signature
+EC-SDSA-Signature ::= SEQUENCE {
+        signatureType      OBJECT IDENTIFIER (ecsdsa-plain-SHA384),
+        signatureValue     EC-Sig-Value
+}
+
+-- A previous specification used a different specification for a Schnorr signature
+-- deprecated
+EC-Schnorr-Signature ::= SEQUENCE {
+        signatureType      OBJECT IDENTIFIER (ecschnorr-plain-SHA384),
+        signatureValue     EC-Sig-Value
+}
+
+bsi-de OBJECT IDENTIFIER ::= {
+    itu-t(0) identified-organization(4) etsi(0)
+    reserved(127) etsi-identified-organization(0) 7
+}
+
+id-ecc OBJECT IDENTIFIER ::= { bsi-de algorithms(1) 1 }
+
+-- Current specification of identifier for a Schnorr (ECSDSA) signature
+ecsdsa-plain-signatures OBJECT IDENTIFIER ::= { id-ecc signatures(4) 4 }
+
+ecsdsa-plain-SHA384 OBJECT IDENTIFIER ::= { ecsdsa-plain-signatures 3 }
+
+-- Previous specification of identifier for a Schnorr signature
+ecschnorr-plain-signatures OBJECT IDENTIFIER ::= { id-ecc signatures(4) 3 }
+
+ecschnorr-plain-SHA384 OBJECT IDENTIFIER ::= { ecschnorr-plain-signatures 3 }
+
+
+
+id-BSNk-encrypted OBJECT IDENTIFIER ::= { id-BSNk-identifiers 2 }
+
+id-BSNk-encrypted-identity OBJECT IDENTIFIER ::= { id-BSNk-encrypted 1 }
+
+id-BSNk-encrypted-pseudonym OBJECT IDENTIFIER ::= { id-BSNk-encrypted 2 }
+
+-- deprecated
+id-BSNk-encrypted-identity-signed OBJECT IDENTIFIER ::= { id-BSNk-encrypted 3 }
+
+-- deprecated
+id-BSNk-encrypted-pseudonym-signed OBJECT IDENTIFIER ::= { id-BSNk-encrypted 4 }
+
+id-BSNk-encrypted-direct-pseudonym OBJECT IDENTIFIER ::= { id-BSNk-encrypted 5 }
+
+id-BSNk-encrypted-direct-identity OBJECT IDENTIFIER ::= { id-BSNk-encrypted 9 }
+
+id-BSNk-encrypted-direct-identity-v2 OBJECT IDENTIFIER ::= { id-BSNk-encrypted-direct-identity 2 }
+
+id-BSNk-encrypted-direct-pseudonym-v2 OBJECT IDENTIFIER ::= { id-BSNk-encrypted-direct-pseudonym 2 }
+
+id-BSNk-encrypted-direct-pseudonym-signed OBJECT IDENTIFIER ::= { id-BSNk-encrypted 6 }
+
+id-BSNk-encrypted-direct-identity-signed OBJECT IDENTIFIER ::= { id-BSNk-encrypted 10 }
+
+id-BSNk-encrypted-direct-identity-signed-v2 OBJECT IDENTIFIER ::= { id-BSNk-encrypted-direct-identity-signed 2 }
+
+id-BSNk-encrypted-direct-pseudonym-signed-v2 OBJECT IDENTIFIER ::= { id-BSNk-encrypted-direct-pseudonym-signed 2 }
+
+id-BSNk-encrypted-identity-ecsdsa-signed OBJECT IDENTIFIER ::= { id-BSNk-encrypted 7 }
+
+id-BSNk-encrypted-identity-ecsdsa-signed-v2 OBJECT IDENTIFIER ::= { id-BSNk-encrypted-identity-ecsdsa-signed 2 }
+
+id-BSNk-encrypted-pseudonym-ecsdsa-signed OBJECT IDENTIFIER ::= { id-BSNk-encrypted 8 }
+
+id-BSNk-encrypted-pseudonym-ecsdsa-signed-v2 OBJECT IDENTIFIER ::= { id-BSNk-encrypted-pseudonym-ecsdsa-signed 2 }
+
+-- - - TODO fix OID for ecies
+-- id-ecies OBJECT IDENTIFIER ::= { id 1 }
+
+Identity ::= SEQUENCE {
+    notationIdentifier     OBJECT IDENTIFIER (id-BSNk-decrypted-identifier),
+    schemeVersion          INTEGER,
+    schemeKeySetVersion    INTEGER,
+    recipient              IA5String,
+    type                   INTEGER,
+    identityValue          IA5String
+}
+
+Pseudonym ::= SEQUENCE {
+    notationIdentifier     OBJECT IDENTIFIER (id-BSNk-decrypted-pseudonym),
+    schemeVersion          INTEGER,
+    schemeKeySetVersion    INTEGER,
+    recipient              IA5String,
+    recipientKeySetVersion INTEGER,
+    type                   INTEGER,
+    pseudonymValue         IA5String,
+    diversifier       [0]  Diversifier OPTIONAL
+}
+
+MigrationIntermediaryPseudonym ::= SEQUENCE {
+    notationIdentifier     OBJECT IDENTIFIER (id-BSNk-decrypted-migrationpseudonym),
+    schemeVersion          INTEGER,
+    schemeKeySetVersion    INTEGER,
+    source                 IA5String,
+    sourceKeySetVersion    INTEGER,
+    target                 IA5String,
+    targetKeySetVersion    INTEGER,
+    migrationID            IA5String,
+    type                   INTEGER,
+    pseudonymValue         IA5String,
+    diversifier       [0]  Diversifier OPTIONAL
+}
+
+
+id-BSNk-decrypted OBJECT IDENTIFIER ::= { id-BSNk-identifiers 3 }
+
+id-BSNk-decrypted-identifier OBJECT IDENTIFIER ::= { id-BSNk-decrypted 1 }
+
+id-BSNk-decrypted-pseudonym OBJECT IDENTIFIER ::= { id-BSNk-decrypted 2 }
+
+-- NOTE: Previously in comments this was asigned .12
+id-BSNk-decrypted-migrationpseudonym OBJECT IDENTIFIER ::= { id-BSNk-decrypted 3 }
+
+-- Brainpool curves and the TeleTrust namespace are defined in BSI TR-03111
+ecStdCurvesAndGeneration OBJECT IDENTIFIER ::= {
+    iso(1) identified-organization(3) teletrust(36) algorithm(3)
+    signature-algorithm(3) ecSign(2) ecStdCurvesAndGeneration(8)
+}
+
+ellipticCurve OBJECT IDENTIFIER ::= { ecStdCurvesAndGeneration 1 }
+
+versionOne OBJECT IDENTIFIER ::= { ellipticCurve 1 }
+
+brainpoolP320r1 OBJECT IDENTIFIER ::= { versionOne 9 }
+
+END

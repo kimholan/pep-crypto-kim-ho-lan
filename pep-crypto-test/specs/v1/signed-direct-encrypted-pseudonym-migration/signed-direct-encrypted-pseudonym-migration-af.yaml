@@ -1,0 +1,535 @@
+"PTC_5413_1":
+  request:
+    signedDirectEncryptedPseudonym: "/v1/happy_flow/dep04.asn1"
+    serviceProviderKeys:
+      - "/v1/keys/migration_99990020000000000001_20180420_to_99990020000000000002_20191103_sksv_1_mid01.source.pem"
+      - "/v1/keys/migration_99990020000000000001_20180420_to_99990020000000000002_20191103_sksv_1_mid01.target.pem"
+      - "/v1/keys/pdd_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+      - "/v1/keys/pcd_extra_label_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+      - "/v1/keys/drki_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+    schemeKeys:
+      "urn:nl-gdi-eid:1.0:pp-key:ENVIRONMENT:1:U:1": "/v1/keys/u_sksv_1_kv_1.pem"
+    authorizedParty: "99990040000000000001"
+    migrationID: "1FDD3455-3D721438-2F5DEBD1"
+    targetMigrant: "99990020000000000002"
+    targetMigrantKeySetVersion: "20191103"
+  expectations:
+    statusCode: "500"
+  param:
+    a:
+      targetMigrant: null
+    b:
+      targetMigrantKeySetVersion: null
+    c:
+      targetMigrant: "00000000000000000000"
+    d:
+      targetMigrantKeySetVersion: "00000000"
+
+
+"PTC_5413_3":
+  request:
+    signedDirectEncryptedPseudonym: "/v1/happy_flow/dep04.asn1"
+    schemeKeys:
+      "urn:nl-gdi-eid:1.0:pp-key:ENVIRONMENT:1:U:1": "/v1/keys/u_sksv_1_kv_1.pem"
+    authorizedParty: "99990040000000000001"
+    migrationID: "1FDD3455-3D721438-2F5DEBD1"
+  expectations:
+    statusCode: "500"
+  param:
+    a:
+      serviceProviderKeys:
+        - "/v1/keys/migration_99990020000000000001_20180420_to_99990020000000000002_20191103_sksv_1_mid01.source.pem"
+        - "/v1/keys/e_diff_trgt_migrant_oin_migration_99990020000000000001_20180420_to_99990020000000000002_20191103_sksv_1_mid01.source.pem"
+        - "/v1/keys/migration_99990020000000000001_20180420_to_99990020000000000002_20191103_sksv_1_mid01.target.pem"
+        - "/v1/keys/e_diff_trgt_migrant_oin_migration_99990020000000000001_20180420_to_99990020000000000002_20191103_sksv_1_mid01.target.pem"
+        - "/v1/keys/pdd_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+        - "/v1/keys/pcd_extra_label_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+        - "/v1/keys/drki_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+    b:
+      serviceProviderKeys:
+        - "/v1/keys/migration_99990020000000000001_20180420_to_99990020000000000002_20191103_sksv_1_mid01.source.pem"
+        - "/v1/keys/e_diff_trgt_migrant_ksv_migration_99990020000000000001_20180420_to_99990020000000000002_20191103_sksv_1_mid01.source.pem"
+        - "/v1/keys/migration_99990020000000000001_20180420_to_99990020000000000002_20191103_sksv_1_mid01.target.pem"
+        - "/v1/keys/e_diff_trgt_migrant_ksv_migration_99990020000000000001_20180420_to_99990020000000000002_20191103_sksv_1_mid01.target.pem"
+        - "/v1/keys/pdd_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+        - "/v1/keys/pcd_extra_label_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+        - "/v1/keys/drki_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+
+
+"PTC_5413_4":
+  request:
+    signedDirectEncryptedPseudonym: "/v1/happy_flow/dep04.asn1"
+    serviceProviderKeys:
+      - "/v1/keys/migration_99990020000000000001_20180420_to_99990020000000000002_20191103_sksv_1_mid01.source.pem"
+      - "/v1/keys/migration_99990020000000000001_20180420_to_99990020000000000002_20191103_sksv_1_mid01.target.pem"
+      - "/v1/keys/pdd_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+      - "/v1/keys/pcd_extra_label_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+      - "/v1/keys/drki_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+    schemeKeys:
+      "urn:nl-gdi-eid:1.0:pp-key:ENVIRONMENT:1:U:1": "/v1/keys/u_sksv_1_kv_1.pem"
+    authorizedParty: "99990040000000000001"
+    migrationID: "1FDD3455-3D721438-2F5DEBD1"
+  expectations:
+    statusCode: "500"
+  param:
+    a:
+      serviceProviderKeys:
+        - "/v1/keys/e_diff_src_sksv_migration_99990020000000000001_20180420_to_99990020000000000002_20191103_sksv_1_mid01.source.pem"
+        - "/v1/keys/migration_99990020000000000001_20180420_to_99990020000000000002_20191103_sksv_1_mid01.target.pem"
+        - "/v1/keys/pdd_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+        - "/v1/keys/pcd_extra_label_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+        - "/v1/keys/drki_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+    b:
+      serviceProviderKeys:
+        - "/v1/keys/e_diff_src_migrant_oin_migration_99990020000000000001_20180420_to_99990020000000000002_20191103_sksv_1_mid01.source.pem"
+        - "/v1/keys/migration_99990020000000000001_20180420_to_99990020000000000002_20191103_sksv_1_mid01.target.pem"
+        - "/v1/keys/pdd_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+        - "/v1/keys/pcd_extra_label_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+        - "/v1/keys/drki_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+    c:
+      serviceProviderKeys:
+        - "/v1/keys/e_diff_src_migrant_ksv_migration_99990020000000000001_20180420_to_99990020000000000002_20191103_sksv_1_mid01.source.pem"
+        - "/v1/keys/migration_99990020000000000001_20180420_to_99990020000000000002_20191103_sksv_1_mid01.target.pem"
+        - "/v1/keys/pdd_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+        - "/v1/keys/pcd_extra_label_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+        - "/v1/keys/drki_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+    d:
+      serviceProviderKeys:
+        - "/v1/keys/e_diff_trgt_migrant_oin_migration_99990020000000000001_20180420_to_99990020000000000002_20191103_sksv_1_mid01.source.pem"
+        - "/v1/keys/migration_99990020000000000001_20180420_to_99990020000000000002_20191103_sksv_1_mid01.target.pem"
+        - "/v1/keys/pdd_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+        - "/v1/keys/pcd_extra_label_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+        - "/v1/keys/drki_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+    e:
+      serviceProviderKeys:
+        - "/v1/keys/e_diff_trgt_migrant_ksv_migration_99990020000000000001_20180420_to_99990020000000000002_20191103_sksv_1_mid01.source.pem"
+        - "/v1/keys/migration_99990020000000000001_20180420_to_99990020000000000002_20191103_sksv_1_mid01.target.pem"
+        - "/v1/keys/pdd_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+        - "/v1/keys/pcd_extra_label_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+        - "/v1/keys/drki_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+    f:
+      serviceProviderKeys:
+        - "/v1/keys/migration_99990020000000000001_20180420_to_99990020000000000002_20191103_sksv_1_mid02.source.pem"
+        - "/v1/keys/migration_99990020000000000001_20180420_to_99990020000000000002_20191103_sksv_1_mid01.target.pem"
+        - "/v1/keys/pdd_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+        - "/v1/keys/pcd_extra_label_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+        - "/v1/keys/drki_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+    g:
+      serviceProviderKeys:
+        - "/v1/keys/migration_99990020000000000001_20180420_to_99990020000000000001_20211207_sksv_1_div1.source.pem"
+        - "/v1/keys/migration_99990020000000000001_20180420_to_99990020000000000002_20191103_sksv_1_mid01.target.pem"
+        - "/v1/keys/pdd_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+        - "/v1/keys/pcd_extra_label_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+        - "/v1/keys/drki_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+    h:
+      serviceProviderKeys:
+        - "/v1/keys/migration_99990020000000000001_20180420_to_99990020000000000002_20191103_sksv_1_mid01.target.pem"
+        - "/v1/keys/pdd_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+        - "/v1/keys/pcd_extra_label_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+        - "/v1/keys/drki_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+
+
+
+
+"PTC_5413_5":
+  request:
+    signedDirectEncryptedPseudonym: "/v1/happy_flow/dep04.asn1"
+    serviceProviderKeys:
+      - "/v1/keys/migration_99990020000000000001_20180420_to_99990020000000000002_20191103_sksv_1_mid01.source.pem"
+      - "/v1/keys/migration_99990020000000000001_20180420_to_99990020000000000002_20191103_sksv_1_mid01.target.pem"
+      - "/v1/keys/pdd_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+      - "/v1/keys/pcd_extra_label_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+      - "/v1/keys/drki_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+    schemeKeys:
+      "urn:nl-gdi-eid:1.0:pp-key:ENVIRONMENT:1:U:1": "/v1/keys/u_sksv_1_kv_1.pem"
+    authorizedParty: "99990040000000000001"
+    migrationID: "1FDD3455-3D721438-2F5DEBD1"
+  expectations:
+    statusCode: "500"
+  param:
+    a:
+      serviceProviderKeys:
+        - "/v1/keys/migration_99990020000000000001_20180420_to_99990020000000000002_20191103_sksv_1_mid01.source.pem"
+        - "/v1/keys/e_diff_trgt_sksv_migration_99990020000000000001_20180420_to_99990020000000000002_20191103_sksv_1_mid01.target.pem"
+        - "/v1/keys/pdd_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+        - "/v1/keys/pcd_extra_label_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+        - "/v1/keys/drki_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+    b:
+      serviceProviderKeys:
+        - "/v1/keys/migration_99990020000000000001_20180420_to_99990020000000000002_20191103_sksv_1_mid01.source.pem"
+        - "/v1/keys/e_diff_src_migrant_oin_migration_99990020000000000001_20180420_to_99990020000000000002_20191103_sksv_1_mid01.target.pem"
+        - "/v1/keys/pdd_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+        - "/v1/keys/pcd_extra_label_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+        - "/v1/keys/drki_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+    c:
+      serviceProviderKeys:
+        - "/v1/keys/migration_99990020000000000001_20180420_to_99990020000000000002_20191103_sksv_1_mid01.source.pem"
+        - "/v1/keys/e_diff_src_migrant_ksv_migration_99990020000000000001_20180420_to_99990020000000000002_20191103_sksv_1_mid01.target.pem"
+        - "/v1/keys/pdd_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+        - "/v1/keys/pcd_extra_label_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+        - "/v1/keys/drki_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+    d:
+      serviceProviderKeys:
+        - "/v1/keys/migration_99990020000000000001_20180420_to_99990020000000000002_20191103_sksv_1_mid01.source.pem"
+        - "/v1/keys/e_diff_trgt_migrant_oin_migration_99990020000000000001_20180420_to_99990020000000000002_20191103_sksv_1_mid01.target.pem"
+        - "/v1/keys/pdd_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+        - "/v1/keys/pcd_extra_label_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+        - "/v1/keys/drki_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+    e:
+      serviceProviderKeys:
+        - "/v1/keys/migration_99990020000000000001_20180420_to_99990020000000000002_20191103_sksv_1_mid01.source.pem"
+        - "/v1/keys/e_diff_trgt_migrant_ksv_migration_99990020000000000001_20180420_to_99990020000000000002_20191103_sksv_1_mid01.target.pem"
+        - "/v1/keys/pdd_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+        - "/v1/keys/pcd_extra_label_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+        - "/v1/keys/drki_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+    f:
+      serviceProviderKeys:
+        - "/v1/keys/migration_99990020000000000001_20180420_to_99990020000000000002_20191103_sksv_1_mid01.source.pem"
+        - "/v1/keys/migration_99990020000000000001_20180420_to_99990020000000000002_20191103_sksv_1_mid02.target.pem"
+        - "/v1/keys/pdd_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+        - "/v1/keys/pcd_extra_label_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+        - "/v1/keys/drki_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+    g:
+      serviceProviderKeys:
+        - "/v1/keys/migration_99990020000000000001_20180420_to_99990020000000000002_20191103_sksv_1_mid01.source.pem"
+        - "/v1/keys/e_mid_migration_99990020000000000001_20180420_to_99990020000000000002_20191103_sksv_1_div1_mid01.target.pem"
+        - "/v1/keys/pdd_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+        - "/v1/keys/pcd_extra_label_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+        - "/v1/keys/drki_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+    h:
+      serviceProviderKeys:
+        - "/v1/keys/migration_99990020000000000001_20180420_to_99990020000000000002_20191103_sksv_1_mid01.source.pem"
+        - "/v1/keys/pdd_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+        - "/v1/keys/pcd_extra_label_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+        - "/v1/keys/drki_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+
+
+"PTC_5413_6":
+  request:
+    signedDirectEncryptedPseudonym: "/v1/happy_flow/dep04.asn1"
+    serviceProviderKeys:
+      - "/v1/keys/migration_99990020000000000001_20180420_to_99990020000000000002_20191103_sksv_1_mid01.source.pem"
+      - "/v1/keys/migration_99990020000000000001_20180420_to_99990020000000000002_20191103_sksv_1_mid01.target.pem"
+      - "/v1/keys/pdd_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+      - "/v1/keys/pcd_extra_label_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+      - "/v1/keys/drki_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+    schemeKeys:
+      "urn:nl-gdi-eid:1.0:pp-key:ENVIRONMENT:1:U:1": "/v1/keys/u_sksv_1_kv_1.pem"
+    authorizedParty: "99990040000000000001"
+    migrationID: "1FDD3455-3D721438-2F5DEBD1"
+  expectations:
+    statusCode: "500"
+  param:
+    a:
+      serviceProviderKeys:
+        - "/v1/keys/migration_99990020000000000001_20180420_to_99990020000000000002_20191103_sksv_1_mid01.source.pem"
+        - "/v1/keys/migration_99990020000000000001_20180420_to_99990020000000000002_20191103_sksv_1_mid01.target.pem"
+        - "/v1/keys/pdd_sksv_10_oin_99990020000000000001_kv_20180420.pem"
+        - "/v1/keys/pcd_extra_label_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+        - "/v1/keys/drki_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+    b:
+      serviceProviderKeys:
+        - "/v1/keys/migration_99990020000000000001_20180420_to_99990020000000000002_20191103_sksv_1_mid01.source.pem"
+        - "/v1/keys/migration_99990020000000000001_20180420_to_99990020000000000002_20191103_sksv_1_mid01.target.pem"
+        - "/v1/keys/pdd_sksv_1_oin_99990020000000000003_kv_20180420.pem"
+        - "/v1/keys/pcd_extra_label_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+        - "/v1/keys/drki_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+    c:
+      serviceProviderKeys:
+        - "/v1/keys/migration_99990020000000000001_20180420_to_99990020000000000002_20191103_sksv_1_mid01.source.pem"
+        - "/v1/keys/migration_99990020000000000001_20180420_to_99990020000000000002_20191103_sksv_1_mid01.target.pem"
+        - "/v1/keys/pdd_sksv_1_oin_99990020000000000001_kv_20211207.pem"
+        - "/v1/keys/pcd_extra_label_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+        - "/v1/keys/drki_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+    d:
+      serviceProviderKeys:
+        - "/v1/keys/migration_99990020000000000001_20180420_to_99990020000000000002_20191103_sksv_1_mid01.source.pem"
+        - "/v1/keys/migration_99990020000000000001_20180420_to_99990020000000000002_20191103_sksv_1_mid01.target.pem"
+        - "/v1/keys/pcd_extra_label_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+        - "/v1/keys/drki_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+
+
+
+"PTC_5413_7":
+  request:
+    signedDirectEncryptedPseudonym: "/v1/happy_flow/dep04.asn1"
+    serviceProviderKeys:
+      - "/v1/keys/migration_99990020000000000001_20180420_to_99990020000000000002_20191103_sksv_1_mid01.source.pem"
+      - "/v1/keys/migration_99990020000000000001_20180420_to_99990020000000000002_20191103_sksv_1_mid01.target.pem"
+      - "/v1/keys/pdd_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+      - "/v1/keys/pcd_extra_label_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+      - "/v1/keys/drki_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+    schemeKeys:
+      "urn:nl-gdi-eid:1.0:pp-key:ENVIRONMENT:1:U:1": "/v1/keys/u_sksv_1_kv_1.pem"
+    migrationID: "1FDD3455-3D721438-2F5DEBD1"
+  expectations:
+    statusCode: "500"
+  param:
+    a:
+      serviceProviderKeys:
+        - "/v1/keys/migration_99990020000000000001_20180420_to_99990020000000000002_20191103_sksv_1_mid01.source.pem"
+        - "/v1/keys/migration_99990020000000000001_20180420_to_99990020000000000002_20191103_sksv_1_mid01.target.pem"
+        - "/v1/keys/pdd_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+        - "/v1/keys/pcd_extra_label_sksv_10_oin_99990020000000000001_kv_20180420.pem"
+        - "/v1/keys/drki_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+    b:
+      serviceProviderKeys:
+        - "/v1/keys/migration_99990020000000000001_20180420_to_99990020000000000002_20191103_sksv_1_mid01.source.pem"
+        - "/v1/keys/migration_99990020000000000001_20180420_to_99990020000000000002_20191103_sksv_1_mid01.target.pem"
+        - "/v1/keys/pdd_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+        - "/v1/keys/pcd_extra_label_sksv_1_oin_99990020000000000003_kv_20180420.pem"
+        - "/v1/keys/drki_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+    c:
+      serviceProviderKeys:
+        - "/v1/keys/migration_99990020000000000001_20180420_to_99990020000000000002_20191103_sksv_1_mid01.source.pem"
+        - "/v1/keys/migration_99990020000000000001_20180420_to_99990020000000000002_20191103_sksv_1_mid01.target.pem"
+        - "/v1/keys/pdd_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+        - "/v1/keys/pcd_extra_label_sksv_1_oin_99990020000000000001_kv_20211207.pem"
+        - "/v1/keys/drki_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+    d:
+      serviceProviderKeys:
+        - "/v1/keys/migration_99990020000000000001_20180420_to_99990020000000000002_20191103_sksv_1_mid01.source.pem"
+        - "/v1/keys/migration_99990020000000000001_20180420_to_99990020000000000002_20191103_sksv_1_mid01.target.pem"
+        - "/v1/keys/pdd_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+        - "/v1/keys/drki_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+
+
+
+
+"PTC_5413_8":
+  request:
+    signedDirectEncryptedPseudonym: "/v1/happy_flow/dep04.asn1"
+    serviceProviderKeys:
+      - "/v1/keys/migration_99990020000000000001_20180420_to_99990020000000000002_20191103_sksv_1_mid01.source.pem"
+      - "/v1/keys/migration_99990020000000000001_20180420_to_99990020000000000002_20191103_sksv_1_mid01.target.pem"
+      - "/v1/keys/pdd_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+      - "/v1/keys/pcd_extra_label_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+      - "/v1/keys/drki_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+    schemeKeys:
+      "urn:nl-gdi-eid:1.0:pp-key:ENVIRONMENT:1:U:1": "/v1/keys/u_sksv_1_kv_1.pem"
+    migrationID: "1FDD3455-3D721438-2F5DEBD1"
+  expectations:
+    statusCode: "500"
+  param:
+    a:
+      serviceProviderKeys:
+        - "/v1/keys/migration_99990020000000000001_20180420_to_99990020000000000002_20191103_sksv_1_mid01.source.pem"
+        - "/v1/keys/migration_99990020000000000001_20180420_to_99990020000000000002_20191103_sksv_1_mid01.target.pem"
+        - "/v1/keys/pdd_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+        - "/v1/keys/pcd_extra_label_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+        - "/v1/keys/drki_sksv_10_oin_99990020000000000001_kv_20180420.pem"
+    b:
+      serviceProviderKeys:
+        - "/v1/keys/migration_99990020000000000001_20180420_to_99990020000000000002_20191103_sksv_1_mid01.source.pem"
+        - "/v1/keys/migration_99990020000000000001_20180420_to_99990020000000000002_20191103_sksv_1_mid01.target.pem"
+        - "/v1/keys/pdd_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+        - "/v1/keys/pcd_extra_label_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+        - "/v1/keys/drki_sksv_1_oin_99990020000000000003_kv_20180420.pem"
+    c:
+      serviceProviderKeys:
+        - "/v1/keys/migration_99990020000000000001_20180420_to_99990020000000000002_20191103_sksv_1_mid01.source.pem"
+        - "/v1/keys/migration_99990020000000000001_20180420_to_99990020000000000002_20191103_sksv_1_mid01.target.pem"
+        - "/v1/keys/pdd_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+        - "/v1/keys/pcd_extra_label_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+        - "/v1/keys/drki_sksv_1_oin_99990020000000000001_kv_20211207.pem"
+    d:
+      serviceProviderKeys:
+        - "/v1/keys/migration_99990020000000000001_20180420_to_99990020000000000002_20191103_sksv_1_mid01.source.pem"
+        - "/v1/keys/migration_99990020000000000001_20180420_to_99990020000000000002_20191103_sksv_1_mid01.target.pem"
+        - "/v1/keys/pdd_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+        - "/v1/keys/pcd_extra_label_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+        - "/v1/keys/drki_div1_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+    e:
+      serviceProviderKeys:
+        - "/v1/keys/migration_99990020000000000001_20180420_to_99990020000000000002_20191103_sksv_1_mid01.source.pem"
+        - "/v1/keys/migration_99990020000000000001_20180420_to_99990020000000000002_20191103_sksv_1_mid01.target.pem"
+        - "/v1/keys/pdd_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+        - "/v1/keys/pcd_extra_label_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+
+
+
+"PTC_5413_9":
+  request:
+    signedDirectEncryptedPseudonym: "/v1/happy_flow/dep04.asn1"
+    serviceProviderKeys:
+      - "/v1/keys/migration_99990020000000000001_20180420_to_99990020000000000002_20191103_sksv_1_mid01.source.pem"
+      - "/v1/keys/migration_99990020000000000001_20180420_to_99990020000000000002_20191103_sksv_1_mid01.target.pem"
+      - "/v1/keys/pdd_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+      - "/v1/keys/pcd_extra_label_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+      - "/v1/keys/drki_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+    schemeKeys:
+      "urn:nl-gdi-eid:1.0:pp-key:ENVIRONMENT:1:U:1": "/v1/keys/u_sksv_1_kv_1.pem"
+    migrationID: "1FDD3455-3D721438-2F5DEBD1"
+  expectations:
+    statusCode: "500"
+  param:
+    a:
+      schemeKeys:
+        "urn:nl-gdi-eid:1.0:pp-key:ENVIRONMENT:10:U:10": "/v1/keys/u_sksv_10_kv_10.pem"
+    b:
+      schemeKeys:
+    c:
+      schemeKeys:
+        "urn:nl-gdi-eid:1.0:pp-key:ENVIRONMENT:1:U:2": "/v1/keys/u_sksv_1_kv_2.pem"
+    d:
+      schemeKeys:
+        "urn:nl-gdi-eid:1.0:pp-key:ENVIRONMENT:1:U:1": "/v1/keys/u_sksv_1_kv_2.pem"
+
+
+
+"PTC_5413_10":
+  request:
+    signedDirectEncryptedPseudonym: "/v1/happy_flow/dep04.asn1"
+    serviceProviderKeys:
+      - "/v1/keys/migration_99990020000000000001_20180420_to_99990020000000000002_20191103_sksv_1_mid01.source.pem"
+      - "/v1/keys/migration_99990020000000000001_20180420_to_99990020000000000002_20191103_sksv_1_mid01.target.pem"
+      - "/v1/keys/pdd_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+      - "/v1/keys/pcd_extra_label_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+      - "/v1/keys/drki_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+    schemeKeys:
+      "urn:nl-gdi-eid:1.0:pp-key:ENVIRONMENT:1:U:1": "/v1/keys/u_sksv_1_kv_1.pem"
+    authorizedParty: "99990040000000000001"
+    migrationID: "1FDD3455-3D721438-2F5DEBD1"
+    targetMigrant: "99990020000000000002"
+    targetMigrantKeySetVersion: "20191103"
+  expectations:
+    statusCode: "500"
+  param:
+    a:
+      authorizedParty: "00000000000000000000"
+    b:
+      authorizedParty: null
+
+
+
+
+"PTC_5413_11":
+  request:
+    signedDirectEncryptedPseudonym: "/v1/happy_flow/dep04.asn1"
+    serviceProviderKeys:
+      - "/v1/keys/migration_99990020000000000001_20180420_to_99990020000000000002_20191103_sksv_1_mid01.source.pem"
+      - "/v1/keys/migration_99990020000000000001_20180420_to_99990020000000000002_20191103_sksv_1_mid01.target.pem"
+      - "/v1/keys/pdd_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+      - "/v1/keys/pcd_extra_label_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+      - "/v1/keys/drki_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+    schemeKeys:
+      "urn:nl-gdi-eid:1.0:pp-key:ENVIRONMENT:1:U:1": "/v1/keys/u_sksv_1_kv_1.pem"
+    authorizedParty: "99990040000000000001"
+    migrationID: "1FDD3455-3D721438-2F5DEBD1"
+  expectations:
+    statusCode: "500"
+  param:
+    a:
+      serviceProviderKeys:
+        - "/v1/keys/e_missing_migration_99990020000000000001_20180420_to_99990020000000000002_20191103_sksv_1_mid01.source.pem"
+        - "/v1/keys/migration_99990020000000000001_20180420_to_99990020000000000002_20191103_sksv_1_mid01.target.pem"
+        - "/v1/keys/pdd_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+        - "/v1/keys/pcd_extra_label_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+        - "/v1/keys/drki_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+    b:
+      serviceProviderKeys:
+        - "/v1/keys/e_dh_migration_99990020000000000001_20180420_to_99990020000000000002_20191103_sksv_1_mid01.source.pem"
+        - "/v1/keys/migration_99990020000000000001_20180420_to_99990020000000000002_20191103_sksv_1_mid01.target.pem"
+        - "/v1/keys/pdd_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+        - "/v1/keys/pcd_extra_label_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+        - "/v1/keys/drki_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+    c:
+      serviceProviderKeys:
+        - "/v1/keys/e_lc_migration_99990020000000000001_20180420_to_99990020000000000002_20191103_sksv_1_mid01_var1.source.pem"
+        - "/v1/keys/migration_99990020000000000001_20180420_to_99990020000000000002_20191103_sksv_1_mid01.target.pem"
+        - "/v1/keys/pdd_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+        - "/v1/keys/pcd_extra_label_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+        - "/v1/keys/drki_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+    d:
+      serviceProviderKeys:
+        - "/v1/keys/e_lc_migration_99990020000000000001_20180420_to_99990020000000000002_20191103_sksv_1_mid01_var2.source.pem"
+        - "/v1/keys/migration_99990020000000000001_20180420_to_99990020000000000002_20191103_sksv_1_mid01.target.pem"
+        - "/v1/keys/pdd_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+        - "/v1/keys/pcd_extra_label_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+        - "/v1/keys/drki_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+
+
+
+"PTC_5413_12":
+  request:
+    signedDirectEncryptedPseudonym: "/v1/happy_flow/dep04.asn1"
+    serviceProviderKeys:
+      - "/v1/keys/migration_99990020000000000001_20180420_to_99990020000000000002_20191103_sksv_1_mid01.source.pem"
+      - "/v1/keys/migration_99990020000000000001_20180420_to_99990020000000000002_20191103_sksv_1_mid01.target.pem"
+      - "/v1/keys/pdd_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+      - "/v1/keys/pcd_extra_label_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+      - "/v1/keys/drki_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+    schemeKeys:
+      "urn:nl-gdi-eid:1.0:pp-key:ENVIRONMENT:1:U:1": "/v1/keys/u_sksv_1_kv_1.pem"
+    authorizedParty: "99990040000000000001"
+    migrationID: "1FDD3455-3D721438-2F5DEBD1"
+  expectations:
+    statusCode: "500"
+  param:
+    a:
+      serviceProviderKeys:
+        - "/v1/keys/migration_99990020000000000001_20180420_to_99990020000000000002_20191103_sksv_1_mid01.source.pem"
+        - "/v1/keys/e_missing_migration_99990020000000000001_20180420_to_99990020000000000002_20191103_sksv_1_mid01.target.pem"
+        - "/v1/keys/pdd_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+        - "/v1/keys/pcd_extra_label_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+        - "/v1/keys/drki_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+    b:
+      serviceProviderKeys:
+        - "/v1/keys/migration_99990020000000000001_20180420_to_99990020000000000002_20191103_sksv_1_mid01.source.pem"
+        - "/v1/keys/e_dh_migration_99990020000000000001_20180420_to_99990020000000000002_20191103_sksv_1_mid01.target.pem"
+        - "/v1/keys/pdd_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+        - "/v1/keys/pcd_extra_label_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+        - "/v1/keys/drki_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+    c:
+      serviceProviderKeys:
+        - "/v1/keys/migration_99990020000000000001_20180420_to_99990020000000000002_20191103_sksv_1_mid01.source.pem"
+        - "/v1/keys/e_lc_migration_99990020000000000001_20180420_to_99990020000000000002_20191103_sksv_1_mid01_var1.target.pem"
+        - "/v1/keys/pdd_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+        - "/v1/keys/pcd_extra_label_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+        - "/v1/keys/drki_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+    d:
+      serviceProviderKeys:
+        - "/v1/keys/migration_99990020000000000001_20180420_to_99990020000000000002_20191103_sksv_1_mid01.source.pem"
+        - "/v1/keys/e_lc_migration_99990020000000000001_20180420_to_99990020000000000002_20191103_sksv_1_mid01_var2.target.pem"
+        - "/v1/keys/pdd_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+        - "/v1/keys/pcd_extra_label_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+        - "/v1/keys/drki_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+
+
+
+"PTC_5413_13":
+  request:
+    signedDirectEncryptedPseudonym: "/v1/alternate_flows/e_dep02.asn1"
+    serviceProviderKeys:
+      - "/v1/keys/migration_99990020000000000002_20191103_to_99990020000000000001_20211207_sksv_1.source.pem"
+      - "/v1/keys/migration_99990020000000000002_20191103_to_99990020000000000001_20211207_sksv_1.target.pem"
+      - "/v1/keys/pdd_sksv_1_oin_99990020000000000002_kv_20191103.pem"
+      - "/v1/keys/pcd_sksv_1_oin_99990020000000000002_ckv_20191103.pem"
+      - "/v1/keys/drki_sksv_1_oin_99990020000000000002_kv_20191103.pem"
+    schemeKeys:
+      "urn:nl-gdi-eid:1.0:pp-key:ENVIRONMENT:1:U:1": "/v1/keys/u_sksv_1_kv_1.pem"
+    authorizedParty: "99990040000000000001"
+    migrationID: "5AAAB344-A7B21B78-8F3B6132"
+  expectations:
+    statusCode: "500"
+
+"PTC_5413_14":
+  request:
+    signedDirectEncryptedPseudonym: "/v1/happy_flow/dep04.asn1"
+    authorizedParty: "99990040000000000001"
+    migrationID: "1FDD3455-3D721438-2F5DEBD1"
+    serviceProviderKeys:
+      - "/v1/keys/migration_99990020000000000001_20180420_to_99990020000000000002_20191103_sksv_1_mid01.source.pem"
+      - "/v1/keys/migration_99990020000000000001_20180420_to_99990020000000000002_20191103_sksv_1_mid01.target.pem"
+      - "/v1/keys/pdd_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+      - "/v1/keys/pcd_extra_label_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+      - "/v1/keys/drki_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+    schemeKeys:
+      "urn:nl-gdi-eid:1.0:pp-key:ENVIRONMENT:1:U:1": "/v1/keys/u_sksv_1_kv_1.pem"
+  expectations:
+    statusCode: "500"
+  param:
+    a:
+      signedDirectEncryptedPseudonym: "/v1/alternate_flows/e_dep04.asn1"
+    b:
+      signedDirectEncryptedPseudonym: "/v1/happy_flow/ep04.asn1"

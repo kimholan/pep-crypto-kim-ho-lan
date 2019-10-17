@@ -1,0 +1,92 @@
+scenario_1:
+  request:
+    signedDirectEncryptedPseudonym: "/v1/happy_flow/dep12_div1.asn1"
+    serviceProviderKeys:
+      - "/v1/keys/pdd_sksv_1_oin_99990030000000000001_kv_20170916.pem"
+      - "/v1/keys/pcd_sksv_1_oin_99990030000000000001_ckv_20170916.pem"
+      - "/v1/keys/drki_div1_sksv_1_oin_99990030000000000001_kv_20170916.pem"
+    schemeKeys:
+      "urn:nl-gdi-eid:1.0:pp-key:ENVIRONMENT:1:U:1": "/v1/keys/u_sksv_10_kv_10.pem"
+    targetClosingKey:
+    authorizedParty: "99990040000000000001"
+  expectations:
+    statusCode: "500"
+
+
+
+scenario_2:
+  request:
+    signedDirectEncryptedPseudonym: "/v1/happy_flow/dep12_div2.asn1"
+    serviceProviderKeys:
+      - "/v1/keys/pdd_sksv_1_oin_99990030000000000001_kv_20170916.pem"
+      - "/v1/keys/pcd_sksv_1_oin_99990030000000000001_ckv_20170916.pem"
+      - "/v1/keys/drki_div2_sksv_1_oin_99990030000000000001_kv_20170916.pem"
+    schemeKeys:
+      "urn:nl-gdi-eid:1.0:pp-key:ENVIRONMENT:1:U:1": "/v1/keys/u_sksv_10_kv_10.pem"
+    targetClosingKey:
+    authorizedParty: "99990040000000000001"
+  expectations:
+    statusCode: "500"
+
+
+
+scenario_3:
+  request:
+    signedDirectEncryptedPseudonym: "/v1/happy_flow/dep12_div3.asn1"
+    serviceProviderKeys:
+      - "/v1/keys/pdd_sksv_1_oin_99990030000000000001_kv_20170916.pem"
+      - "/v1/keys/pcd_sksv_1_oin_99990030000000000001_ckv_20170916.pem"
+      - "/v1/keys/drki_div3_sksv_1_oin_99990030000000000001_kv_20170916.pem"
+    schemeKeys:
+      "urn:nl-gdi-eid:1.0:pp-key:ENVIRONMENT:1:U:1": "/v1/keys/u_sksv_10_kv_10.pem"
+    targetClosingKey: "20170916"
+    authorizedParty: "99990040000000000001"
+  expectations:
+    statusCode: "500"
+
+
+scenario_4:
+  request:
+    signedDirectEncryptedPseudonym: "/v1/happy_flow/dep12_div1.asn1"
+    serviceProviderKeys:
+      - "/v1/keys/pdd_sksv_1_oin_99990030000000000001_kv_20170916.pem"
+      - "/v1/keys/pcd_sksv_1_oin_99990030000000000001_ckv_20170916.pem"
+      - "/v1/keys/drki_sksv_1_oin_99990030000000000001_kv_20170916.pem"
+    schemeKeys:
+      "urn:nl-gdi-eid:1.0:pp-key:ENVIRONMENT:1:U:1": "/v1/keys/u_sksv_1_kv_1.pem"
+    targetClosingKey:
+    authorizedParty: "99990040000000000001"
+  expectations:
+    statusCode: "500"
+
+
+
+scenario_5:
+  request:
+    signedDirectEncryptedPseudonym: "/v1/happy_flow/dep12.asn1"
+    serviceProviderKeys:
+      - "/v1/keys/pdd_sksv_1_oin_99990030000000000001_kv_20170916.pem"
+      - "/v1/keys/pcd_sksv_1_oin_99990030000000000001_ckv_20170916.pem"
+      - "/v1/keys/drki_div1_sksv_1_oin_99990030000000000001_kv_20170916.pem"
+    schemeKeys:
+      "urn:nl-gdi-eid:1.0:pp-key:ENVIRONMENT:1:U:1": "/v1/keys/u_sksv_1_kv_1.pem"
+    targetClosingKey:
+    authorizedParty: "99990040000000000001"
+  expectations:
+    statusCode: "500"
+
+
+
+scenario_6:
+  request:
+    signedDirectEncryptedPseudonym: "/v1/happy_flow/dep12_div1.asn1"
+    serviceProviderKeys:
+      - "/v1/keys/pdd_sksv_1_oin_99990030000000000001_kv_20170916.pem"
+      - "/v1/keys/pcd_sksv_1_oin_99990030000000000001_ckv_20170916.pem"
+      - "/v1/keys/drki_div2_sksv_1_oin_99990030000000000001_kv_20170916.pem"
+    schemeKeys:
+      "urn:nl-gdi-eid:1.0:pp-key:ENVIRONMENT:1:U:1": "/v1/keys/u_sksv_1_kv_1.pem"
+    targetClosingKey:
+    authorizedParty: "99990040000000000001"
+  expectations:
+    statusCode: "500"

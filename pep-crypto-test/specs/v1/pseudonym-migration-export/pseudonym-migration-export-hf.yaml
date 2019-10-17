@@ -1,0 +1,121 @@
+"PTC_5123_1":
+  "request":
+    "pseudonym": "/v1/pseudonyms/p_04.asn1"
+    "serviceProviderKeys":
+    - "/v1/keys/migration_99990020000000000001_20180420_to_99990020000000000002_20191103_sksv_1_mid01.source.pem"
+    "migrationID": "1FDD3455-3D721438-2F5DEBD1"
+  "expectations":
+    "statusCode": "200"
+    "migrationIntermediaryPseudonym": "/v1/pseudonyms/mip_99990020000000000001_20180420_to_99990020000000000002_20191103_from_4_to_2_mid01.asn1"
+    "responseBody":
+      "decodedInput":
+        "notationIdentifier": "2.16.528.1.1003.10.1.3.2"
+        "schemeVersion": "1"
+        "schemeKeySetVersion": "1"
+        "recipient": "99990020000000000001"
+        "recipientKeySetVersion": "20180420"
+        "type": "B"
+        "pseudonymValue": "BLL+BgpKMpcMz5A/YsfVyRpNIzqVI/O5G1IFkATUAhdQYYea1i9kPllbwR+kxq8EFzBHCOTkP6f6Op0KX/Jm74c0MltSXTUBoUuE5c10UXdx"
+      "migrationIntermediaryPseudonym": "MIHXBgpghBABh2sKAQMDAgEBAgEBFhQ5OTk5MDAyMDAwMDAwMDAwMDAwMQIEATPtxBYUOTk5OTAwMjAwMDAwMDAwMDAwMDICBAE0F38WGjFGREQzNDU1LTNENzIxNDM4LTJGNURFQkQxAgFCFmxCSzVnL3R5WnQwTVZSSi9qOGhnTUtPTjdrSm0vZlZGRnBEUGkrSk9KM1YrZ0MvaDNOR3BtY1BBVXNqOEVrME1VN3pMeDJFUWJVS2lJdWoyZllwQ0xLNEJkNEsxd3ZXcW56WDBNdEpEN3RkcmY="
+      "decodedMigrationIntermediaryPseudonym":
+        "notationIdentifier": "2.16.528.1.1003.10.1.3.3"
+        "schemeVersion": "1"
+        "schemeKeySetVersion": "1"
+        "source": "99990020000000000001"
+        "sourceKeySetVersion": "20180420"
+        "target": "99990020000000000002"
+        "targetKeySetVersion": "20191103"
+        "type": "B"
+        "migrationID": "1FDD3455-3D721438-2F5DEBD1"
+        "pseudonymValue": "BK5g/tyZt0MVRJ/j8hgMKON7kJm/fVFFpDPi+JOJ3V+gC/h3NGpmcPAUsj8Ek0MU7zLx2EQbUKiIuj2fYpCLK4Bd4K1wvWqnzX0MtJD7tdrf"
+"PTC_5123_2":
+  "request":
+    "pseudonym": "/v1/pseudonyms/p_18.asn1"
+    "serviceProviderKeys":
+    - "/v1/keys/e_mid_migration_99990020000000000002_20191103_to_99990020000000000003_20180420_sksv_10_div1_mid02.source.pem"
+    - "/v1/keys/migration_99990020000000000002_20191103_to_99990020000000000003_20180420_sksv_10.source.pem"
+    "migrationID": "A64FD5EE-1CC86FB6-886E0AFB"
+  "expectations":
+    "statusCode": "200"
+    "migrationIntermediaryPseudonym": "/v1/pseudonyms/mip_99990020000000000002_20191103_to_99990020000000000003_20180420_from_18_to_19.asn1"
+    "responseBody":
+      "decodedInput":
+        "notationIdentifier": "2.16.528.1.1003.10.1.3.2"
+        "schemeVersion": "1"
+        "schemeKeySetVersion": "10"
+        "recipient": "99990020000000000002"
+        "recipientKeySetVersion": "20191103"
+        "type": "E"
+        "pseudonymValue": "BKVwCFmA/4vzweus02djcGYdNfLrII+h72c3exrBEjXRnf9vwOTkjRQH3/Ds/jJYmg02sz+FofsyYzEXdsZA2r2z07KYyk5IE70UO4CDARej"
+      "migrationIntermediaryPseudonym": "MIHXBgpghBABh2sKAQMDAgEBAgEKFhQ5OTk5MDAyMDAwMDAwMDAwMDAwMgIEATQXfxYUOTk5OTAwMjAwMDAwMDAwMDAwMDMCBAEz7cQWGkE2NEZENUVFLTFDQzg2RkI2LTg4NkUwQUZCAgFFFmxCSlZvcmN1cTNOWlBEaDlQK0xCL3FvN1VsMzYrNXlMbEhEWUovdWZJVWY1L2JFSXMrWEIyQlNrOTFab2M4Tkg0MTRLM2dwRERZeUl6MHVBdlJUUHk0amt6dEhielZNWkZvWEhzdVpyUTh2eWQ="
+      "decodedMigrationIntermediaryPseudonym":
+        "notationIdentifier": "2.16.528.1.1003.10.1.3.3"
+        "schemeVersion": "1"
+        "schemeKeySetVersion": "10"
+        "source": "99990020000000000002"
+        "sourceKeySetVersion": "20191103"
+        "target": "99990020000000000003"
+        "targetKeySetVersion": "20180420"
+        "type": "E"
+        "migrationID": "A64FD5EE-1CC86FB6-886E0AFB"
+        "pseudonymValue": "BJVorcuq3NZPDh9P+LB/qo7Ul36+5yLlHDYJ/ufIUf5/bEIs+XB2BSk91Zoc8NH414K3gpDDYyIz0uAvRTPy4jkztHbzVMZFoXHsuZrQ8vyd"
+"PTC_5123_3":
+  "request":
+    "pseudonym": "/v1/pseudonyms/p_04.asn1"
+    "serviceProviderKeys":
+    - "/v1/keys/extra_label_migration_99990020000000000001_20180420_to_99990020000000000002_20191103_sksv_1_mid01.source.pem"
+    "migrationID": "1FDD3455-3D721438-2F5DEBD1"
+  "expectations":
+    "statusCode": "200"
+    "migrationIntermediaryPseudonym": "/v1/pseudonyms/mip_99990020000000000001_20180420_to_99990020000000000002_20191103_from_4_to_2_mid01.asn1"
+    "responseBody":
+      "decodedInput":
+        "notationIdentifier": "2.16.528.1.1003.10.1.3.2"
+        "schemeVersion": "1"
+        "schemeKeySetVersion": "1"
+        "recipient": "99990020000000000001"
+        "recipientKeySetVersion": "20180420"
+        "type": "B"
+        "pseudonymValue": "BLL+BgpKMpcMz5A/YsfVyRpNIzqVI/O5G1IFkATUAhdQYYea1i9kPllbwR+kxq8EFzBHCOTkP6f6Op0KX/Jm74c0MltSXTUBoUuE5c10UXdx"
+      "migrationIntermediaryPseudonym": "MIHXBgpghBABh2sKAQMDAgEBAgEBFhQ5OTk5MDAyMDAwMDAwMDAwMDAwMQIEATPtxBYUOTk5OTAwMjAwMDAwMDAwMDAwMDICBAE0F38WGjFGREQzNDU1LTNENzIxNDM4LTJGNURFQkQxAgFCFmxCSzVnL3R5WnQwTVZSSi9qOGhnTUtPTjdrSm0vZlZGRnBEUGkrSk9KM1YrZ0MvaDNOR3BtY1BBVXNqOEVrME1VN3pMeDJFUWJVS2lJdWoyZllwQ0xLNEJkNEsxd3ZXcW56WDBNdEpEN3RkcmY="
+      "decodedMigrationIntermediaryPseudonym":
+        "notationIdentifier": "2.16.528.1.1003.10.1.3.3"
+        "schemeVersion": "1"
+        "schemeKeySetVersion": "1"
+        "source": "99990020000000000001"
+        "sourceKeySetVersion": "20180420"
+        "target": "99990020000000000002"
+        "targetKeySetVersion": "20191103"
+        "type": "B"
+        "migrationID": "1FDD3455-3D721438-2F5DEBD1"
+        "pseudonymValue": "BK5g/tyZt0MVRJ/j8hgMKON7kJm/fVFFpDPi+JOJ3V+gC/h3NGpmcPAUsj8Ek0MU7zLx2EQbUKiIuj2fYpCLK4Bd4K1wvWqnzX0MtJD7tdrf"
+"PTC_5123_4":
+  "request":
+    "pseudonym": "/v1/pseudonyms/p_21.asn1"
+    "serviceProviderKeys":
+    - "/v1/keys/migration_99990020000000000001_20180420_to_99990020000000000003_20180420_sksv_1.source.pem"
+    "migrationID": "E7F502CF-C4A944CB-1F030687"
+  "expectations":
+    "statusCode": "200"
+    "migrationIntermediaryPseudonym": "/v1/pseudonyms/mip_99990020000000000001_20180420_to_99990020000000000003_20180420_from_21_to_23.asn1"
+    "responseBody":
+      "decodedInput":
+        "notationIdentifier": "2.16.528.1.1003.10.1.3.2"
+        "schemeVersion": "1"
+        "schemeKeySetVersion": "1"
+        "recipient": "99990020000000000001"
+        "recipientKeySetVersion": "20180420"
+        "type": "B"
+        "pseudonymValue": "BNLKtfAra3hV3AehCNWYozIp/nksMDFwRlXFvDc/4l1a/AyTwFqyV2h6KUwouRUqq2cIRzS7Caj/JCsUf/rHb7VaRr1sK6qJWLxdOzUr2VhC"
+      "migrationIntermediaryPseudonym": "MIHXBgpghBABh2sKAQMDAgEBAgEBFhQ5OTk5MDAyMDAwMDAwMDAwMDAwMQIEATPtxBYUOTk5OTAwMjAwMDAwMDAwMDAwMDMCBAEz7cQWGkU3RjUwMkNGLUM0QTk0NENCLTFGMDMwNjg3AgFCFmxCQncwSXIydEc5eXJnVnNhaWhLUzVCV1lkb3ROMDE0WjU1TCtsWHVLZ2EvZ3NPY3REWjA1a1lFaFV4MkltMVEvcTMvdkhVT1ZmTHFSMEZKU3NrSi9zdEZJVkQxTEhCOVdkR0RhcUw2SGtRM24="
+      "decodedMigrationIntermediaryPseudonym":
+        "notationIdentifier": "2.16.528.1.1003.10.1.3.3"
+        "schemeVersion": "1"
+        "schemeKeySetVersion": "1"
+        "source": "99990020000000000001"
+        "sourceKeySetVersion": "20180420"
+        "target": "99990020000000000003"
+        "targetKeySetVersion": "20180420"
+        "type": "B"
+        "migrationID": "E7F502CF-C4A944CB-1F030687"
+        "pseudonymValue": "BBw0Ir2tG9yrgVsaihKS5BWYdotN014Z55L+lXuKga/gsOctDZ05kYEhUx2Im1Q/q3/vHUOVfLqR0FJSskJ/stFIVD1LHB9WdGDaqL6HkQ3n"

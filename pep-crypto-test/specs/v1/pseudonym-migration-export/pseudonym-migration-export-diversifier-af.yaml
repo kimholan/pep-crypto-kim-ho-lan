@@ -1,0 +1,30 @@
+"PTC_5243_1":
+  request:
+    pseudonym: "/v1/pseudonyms/p18_div1.asn1"
+    serviceProviderKeys:
+      - "/v1/keys/migration_99990020000000000002_20191103_to_99990020000000000003_20180420_sksv_10.source.pem"
+    migrationID: "12794075-35D64486-73ADAAA9"
+  expectations:
+    statusCode: "500"
+
+
+
+"PTC_5243_2":
+  request:
+    pseudonym: "/v1/pseudonyms/p_18.asn1"
+    serviceProviderKeys:
+      - "/v1/keys/migration_99990020000000000002_20191103_to_99990020000000000003_20180420_sksv_10_div3.source.pem"
+    migrationID: "A6A34647-1E65B23D-C1CEF5E0"
+  expectations:
+    statusCode: "500"
+
+
+
+"PTC_5243_3":
+  request:
+    pseudonym: "/v1/pseudonyms/p18_div1.asn1"
+    serviceProviderKeys:
+      - "/v1/keys/migration_99990020000000000002_20191103_to_99990020000000000003_20180420_sksv_10_div3.source.pem"
+    migrationID: "A6A34647-1E65B23D-C1CEF5E0"
+  expectations:
+    statusCode: "500"

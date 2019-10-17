@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <artifactId>pep-crypto-pom</artifactId>
+    <groupId>nl.logius</groupId>
+    <version>@@NEXT-VERSION@@</version>
+  </parent>
+
+  <artifactId>pep-crypto-pom-lib</artifactId>
+  <packaging>pom</packaging>
+  <name>PEP decryption - Dependencies - lib</name>
+
+  <properties>
+    <version.org.bouncycastle>1.62</version.org.bouncycastle>
+    <version.commons-codec>1.13</version.commons-codec>
+    <version.commons-io>2.6</version.commons-io>
+    <version.commons-lang3>3.9</version.commons-lang3>
+    <version.junit>4.12</version.junit>
+    <version.mockito-core>2.23.4</version.mockito-core>
+    <version.org.yaml.snakeyaml>1.25</version.org.yaml.snakeyaml>
+    <version.org.codehaus.groovy>2.5.8</version.org.codehaus.groovy>
+    <version.org.skyscreamer.jsonassert>1.5.0</version.org.skyscreamer.jsonassert>
+    <version.jersey>2.29.1</version.jersey>
+
+    <exec-maven-plugin.version>1.6.0</exec-maven-plugin.version>
+    <!-- groovy -->
+    <groovy-eclipse-compiler.version>3.4.0-01</groovy-eclipse-compiler.version>
+    <groovy-eclipse-batch.version>2.5.7-01</groovy-eclipse-batch.version>
+  </properties>
+
+
+  <dependencyManagement>
+    <!-- BouncyCastle -->
+    <dependencies>
+      <dependency>
+        <groupId>org.bouncycastle</groupId>
+        <artifactId>bcprov-jdk15on</artifactId>
+        <version>${version.org.bouncycastle}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.bouncycastle</groupId>
+        <artifactId>bcpkix-jdk15on</artifactId>
+        <version>${version.org.bouncycastle}</version>
+      </dependency>
+      <!-- Apache Commons -->
+      <dependency>
+        <groupId>commons-codec</groupId>
+        <artifactId>commons-codec</artifactId>
+        <version>${version.commons-codec}</version>
+      </dependency>
+      <dependency>
+        <groupId>commons-io</groupId>
+        <artifactId>commons-io</artifactId>
+        <version>${version.commons-io}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.commons</groupId>
+        <artifactId>commons-lang3</artifactId>
+        <version>${version.commons-lang3}</version>
+      </dependency>
+      <!-- Testing -->
+      <dependency>
+        <groupId>junit</groupId>
+        <artifactId>junit</artifactId>
+        <version>${version.junit}</version>
+        <scope>test</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.mockito</groupId>
+        <artifactId>mockito-core</artifactId>
+        <version>${version.mockito-core}</version>
+        <scope>test</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.yaml</groupId>
+        <artifactId>snakeyaml</artifactId>
+        <version>${version.org.yaml.snakeyaml}</version>
+        <scope>test</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.codehaus.groovy</groupId>
+        <artifactId>groovy-json</artifactId>
+        <version>${version.org.codehaus.groovy}</version>
+        <scope>test</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.skyscreamer</groupId>
+        <artifactId>jsonassert</artifactId>
+        <version>${version.org.skyscreamer.jsonassert}</version>
+        <scope>test</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.glassfish.jersey.core</groupId>
+        <artifactId>jersey-common</artifactId>
+        <version>${version.jersey}</version>
+        <scope>test</scope>
+      </dependency>
+      <!-- Other dependencies -->
+      <dependency>
+        <groupId>nl.logius</groupId>
+        <artifactId>pep-crypto-documentation</artifactId>
+        <version>${project.version}</version>
+        <scope>test</scope>
+      </dependency>
+      <!-- Forward declaration of modules -->
+      <dependency>
+        <groupId>nl.logius</groupId>
+        <artifactId>pep-crypto-lib-crypto</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>nl.logius</groupId>
+        <artifactId>pep-crypto-lib-lang</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>nl.logius</groupId>
+        <artifactId>pep-crypto-lib-pem</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>nl.logius</groupId>
+        <artifactId>pep-crypto-lib-asn1</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>nl.logius</groupId>
+        <artifactId>pep-crypto-lib-urn</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>nl.logius</groupId>
+        <artifactId>pep-crypto-lib-crypto</artifactId>
+        <version>${project.version}</version>
+        <classifier>tests</classifier>
+        <type>test-jar</type>
+        <scope>test</scope>
+      </dependency>
+      <!-- Other -->
+    </dependencies>
+  </dependencyManagement>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.bouncycastle</groupId>
+      <artifactId>bcprov-jdk15on</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.bouncycastle</groupId>
+      <artifactId>bcpkix-jdk15on</artifactId>
+    </dependency>
+    <!-- Apache Commons -->
+    <dependency>
+      <groupId>commons-codec</groupId>
+      <artifactId>commons-codec</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>commons-io</groupId>
+      <artifactId>commons-io</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-lang3</artifactId>
+    </dependency>
+    <!-- groovy -->
+    <dependency>
+      <groupId>org.codehaus.groovy</groupId>
+      <artifactId>groovy</artifactId>
+      <classifier>indy</classifier>
+      <version>${version.org.codehaus.groovy}</version>
+    </dependency>
+    <!-- Testing -->
+    <dependency>
+      <groupId>nl.logius</groupId>
+      <artifactId>pep-crypto-documentation</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.mockito</groupId>
+      <artifactId>mockito-core</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.yaml</groupId>
+      <artifactId>snakeyaml</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.codehaus.groovy</groupId>
+      <artifactId>groovy-json</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.skyscreamer</groupId>
+      <artifactId>jsonassert</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <!-- Other dependencies -->
+  </dependencies>
+
+  <build>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <version>${maven-compiler-plugin.version}</version>
+          <configuration>
+            <source>${maven.compiler.source}</source>
+            <target>${maven.compiler.target}</target>
+            <showWarnings>true</showWarnings>
+            <encoding>UTF-8</encoding>
+            <compilerArgs>-parameters</compilerArgs>
+          </configuration>
+          <dependencies>
+            <dependency>
+              <groupId>org.codehaus.groovy</groupId>
+              <artifactId>groovy-eclipse-compiler</artifactId>
+              <version>${groovy-eclipse-compiler.version}</version>
+            </dependency>
+            <dependency>
+              <groupId>org.codehaus.groovy</groupId>
+              <artifactId>groovy-eclipse-batch</artifactId>
+              <version>${groovy-eclipse-batch.version}</version>
+            </dependency>
+          </dependencies>
+          <executions>
+            <execution>
+              <id>compile</id>
+              <phase>compile</phase>
+              <goals>
+                <goal>compile</goal>
+              </goals>
+            </execution>
+          </executions>
+        </plugin>
+        <plugin>
+          <artifactId>maven-antrun-plugin</artifactId>
+          <version>${maven-antrun-plugin.version}</version>
+        </plugin>
+        <plugin>
+          <groupId>org.codehaus.mojo</groupId>
+          <artifactId>exec-maven-plugin</artifactId>
+          <version>${exec-maven-plugin.version}</version>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+  </build>
+
+
+</project>

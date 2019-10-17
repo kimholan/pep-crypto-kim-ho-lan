@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>nl.logius</groupId>
+    <artifactId>pep-crypto-pom-lib</artifactId>
+    <version>@@NEXT-VERSION@@</version>
+    <relativePath>../pep-crypto-pom/pep-crypto-pom-lib</relativePath>
+  </parent>
+
+
+  <name>PEP decryption - Non-CDI Library functions</name>
+
+  <artifactId>pep-crypto-lib</artifactId>
+
+  <packaging>pom</packaging>
+
+  <modules>
+    <module>pep-crypto-lib-asn1</module>
+    <module>pep-crypto-lib-crypto</module>
+    <module>pep-crypto-lib-lang</module>
+    <module>pep-crypto-lib-pem</module>
+    <module>pep-crypto-lib-urn</module>
+  </modules>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.jacoco</groupId>
+        <artifactId>jacoco-maven-plugin</artifactId>
+      </plugin>
+    </plugins>
+  </build>
+
+</project>

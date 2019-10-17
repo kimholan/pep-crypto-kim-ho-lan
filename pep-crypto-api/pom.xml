@@ -1,0 +1,50 @@
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>nl.logius</groupId>
+    <artifactId>pep-crypto-pom-api</artifactId>
+    <version>@@NEXT-VERSION@@</version>
+    <relativePath>../pep-crypto-pom/pep-crypto-pom-api</relativePath>
+  </parent>
+
+  <artifactId>pep-crypto-api</artifactId>
+  <packaging>jar</packaging>
+
+  <name>PEP decryption - API (CDI)</name>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.jacoco</groupId>
+        <artifactId>jacoco-maven-plugin</artifactId>
+      </plugin>
+    </plugins>
+  </build>
+
+  <dependencies>
+    <dependency>
+      <groupId>nl.logius</groupId>
+      <artifactId>pep-crypto-lib-crypto</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>nl.logius</groupId>
+      <artifactId>pep-crypto-lib-lang</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>nl.logius</groupId>
+      <artifactId>pep-crypto-lib-pem</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>nl.logius</groupId>
+      <artifactId>pep-crypto-lib-asn1</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>nl.logius</groupId>
+      <artifactId>pep-crypto-lib-urn</artifactId>
+    </dependency>
+  </dependencies>
+
+</project>

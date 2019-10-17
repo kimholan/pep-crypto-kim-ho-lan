@@ -1,0 +1,244 @@
+"scenario_1":
+  "request":
+    "signedEncryptedPseudonym": "/v1/happy_flow/ep02.asn1"
+    "serviceProviderKeys":
+    - "/v1/keys/pdd_sksv_1_oin_99990020000000000002_kv_20191103.pem"
+    - "/v1/keys/pcd_sksv_1_oin_99990020000000000002_ckv_20191103.pem"
+    "schemeKeys":
+      "urn:nl-gdi-eid:1.0:pp-key:ENVIRONMENT:1:PP_P:1": "/v1/keys/ppp_sksv_1_kv_1.pem"
+  "expectations":
+    "statusCode": "500"
+"scenario_2":
+  "request":
+    "signedEncryptedPseudonym": "/v1/happy_flow/ep02.asn1"
+    "serviceProviderKeys":
+    - "/v1/keys/pdd_sksv_1_oin_99990020000000000002_kv_20191103.pem"
+    - "/v1/keys/pcd_sksv_1_oin_99990020000000000002_ckv_20191103.pem"
+    "schemeKeys":
+      "urn:nl-gdi-eid:1.0:pppp-key:ENVIRONMENT:1:PP_P:1": "/v1/keys/ppp_sksv_1_kv_1.pem"
+  "expectations":
+    "statusCode": "500"
+"scenario_3":
+  "request":
+    "signedEncryptedPseudonym": "/v1/happy_flow/ep02.asn1"
+    "serviceProviderKeys":
+    - "/v1/keys/pdd_sksv_1_oin_99990020000000000002_kv_20191103.pem"
+    - "/v1/keys/pcd_sksv_1_oin_99990020000000000002_ckv_20191103.pem"
+    "schemeKeys":
+      "urn:nl-gdi-eid:1.0:pp-key:ENVIRONMENT:1:PP_P:1": "/v1/keys/e_04_ppp_sksv_1.b64"
+  "expectations":
+    "statusCode": "500"
+"scenario_4a":
+  "request":
+    "signedEncryptedPseudonym": "/v1/happy_flow/ep02.asn1"
+    "serviceProviderKeys":
+    - "/v1/keys/pdd_sksv_1_oin_99990020000000000002_kv_20191103.pem"
+    - "/v1/keys/pcd_sksv_1_oin_99990020000000000002_ckv_20191103.pem"
+    "schemeKeys":
+      "urn:nl-gdi-eid:1.0:pp-key:ENVIRONMENT:1:PP_P:1": "/v1/keys/e_short_right_ppp_sksv_1.b64"
+  "expectations":
+    "statusCode": "500"
+"scenario_4b":
+  "request":
+    "signedEncryptedPseudonym": "/v1/happy_flow/ep02.asn1"
+    "serviceProviderKeys":
+    - "/v1/keys/pdd_sksv_1_oin_99990020000000000002_kv_20191103.pem"
+    - "/v1/keys/pcd_sksv_1_oin_99990020000000000002_ckv_20191103.pem"
+    "schemeKeys":
+      "urn:nl-gdi-eid:1.0:pp-key:ENVIRONMENT:1:PP_P:1": "/v1/keys/e_long_ppp_sksv_1.b64"
+  "expectations":
+    "statusCode": "500"
+"scenario_5":
+  "request":
+    "signedEncryptedPseudonym": "/v1/happy_flow/ep02.asn1"
+    "serviceProviderKeys":
+    - "/v1/keys/pdd_sksv_1_oin_99990020000000000002_kv_20191103.pem"
+    - "/v1/keys/pcd_sksv_1_oin_99990020000000000002_ckv_20191103.pem"
+    "schemeKeys":
+      "urn:nl-gdi-eid:1.0:pp-key:ENVIRONMENT:1:PP_P:1": "/v1/keys/e_poc_ppp_sksv_1.b64"
+  "expectations":
+    "statusCode": "500"
+"scenario_6":
+  "request":
+    "signedEncryptedPseudonym": "/v1/happy_flow/ep02.asn1"
+    "serviceProviderKeys":
+    - "/v1/keys/pdd_sksv_1_oin_99990020000000000002_kv_20191103.pem"
+    - "/v1/keys/pcd_sksv_1_oin_99990020000000000002_ckv_20191103.pem"
+    "schemeKeys":
+      "urn:nl-gdi-eid:3.0:pp-key:ENVIRONMENT:1:PP_P:1": "/v1/keys/ppp_sksv_1_kv_1.pem"
+  "expectations":
+    "statusCode": "500"
+"scenario_7":
+  "request":
+    "signedEncryptedPseudonym": "/v1/happy_flow/ep02.asn1"
+    "serviceProviderKeys":
+    - "/v1/keys/pdd_sksv_1_oin_99990020000000000002_kv_20191103.pem"
+    - "/v1/keys/pcd_sksv_1_oin_99990020000000000002_ckv_20191103.pem"
+    "schemeKeys":
+      "urn:nl-gdi-eid:1.0:pp-key:ENVIRONMENT:1:PP_P:1": "/v1/keys/ppp_sksv_1_kv_1.pem"
+      "urn:nl-gdi-eid:1.0:pp-key:ENVIRONMENT:1:PP_P:2": "/v1/keys/ppp_sksv_1_kv_1.pem"
+  "expectations":
+    "statusCode": "500"
+"scenario_8":
+  "request":
+    "signedEncryptedPseudonym": "/v1/happy_flow/ep02.asn1"
+    "serviceProviderKeys":
+    - "/v1/keys/pdd_sksv_1_oin_99990020000000000002_kv_20191103.pem"
+    - "/v1/keys/pcd_sksv_1_oin_99990020000000000002_ckv_20191103.pem"
+    "schemeKeys":
+      "urn:nl-gdi-eid:1.0:pp-key:ENVIRONMENT:1:PP_P:1": "/v1/keys/ppp_sksv_1_kv_1.pem"
+      "urn:nl-gdi-eid:1.0:pp-key:TEST:1:PP_P:1": "/v1/keys/ppp_sksv_1_kv_1.pem"
+  "expectations":
+    "statusCode": "500"
+"scenario_9":
+  "request":
+    "signedEncryptedPseudonym": "/v1/happy_flow/ep02.asn1"
+    "serviceProviderKeys":
+    - "/v1/keys/e_dh_pdd_sksv_1_oin_99990020000000000002_kv_20191103.pem"
+    - "/v1/keys/pcd_sksv_1_oin_99990020000000000002_ckv_20191103.pem"
+    "schemeKeys":
+      "urn:nl-gdi-eid:1.0:pp-key:ENVIRONMENT:1:PP_P:1": "/v1/keys/ppp_sksv_1_kv_1.pem"
+  "expectations":
+    "statusCode": "500"
+"scenario_10":
+  "request":
+    "signedEncryptedPseudonym": "/v1/happy_flow/ep02.asn1"
+    "serviceProviderKeys":
+    - "/v1/keys/pdd_sksv_1_oin_99990020000000000002_kv_20191103.pem"
+    - "/v1/keys/e_dh_pcd_sksv_1_oin_99990020000000000002_ckv_20191103.pem"
+    "schemeKeys":
+      "urn:nl-gdi-eid:1.0:pp-key:ENVIRONMENT:1:PP_P:1": "/v1/keys/ppp_sksv_1_kv_1.pem"
+  "expectations":
+    "statusCode": "500"
+"scenario_13":
+  "request":
+    "signedEncryptedPseudonym": "/v1/happy_flow/ep02.asn1"
+    "serviceProviderKeys":
+    - "/v1/keys/pdd_extra_label_sksv_1_oin_99990020000000000002_kv_20191103.pem"
+    - "/v1/keys/pcd_sksv_1_oin_99990020000000000002_ckv_20191103.pem"
+    "schemeKeys":
+      "urn:nl-gdi-eid:1.0:pp-key:ENVIRONMENT:1:PP_P:1": "/v1/keys/ppp_sksv_1_kv_1.pem"
+  "expectations":
+    "statusCode": "200"
+    "auditValue": "/v1/happy_flow/ep02.audit"
+    "signatureValue": "/v1/happy_flow/ep02.signature"
+    "pseudonymValue": "/v1/pseudonyms/p_02.txt"
+    "responseBody":
+      "decodedInput":
+        "notationIdentifier": "2.16.528.1.1003.10.1.2.4"
+        "signedEP":
+          "encryptedPseudonym":
+            "notationIdentifier": "2.16.528.1.1003.10.1.2.2"
+            "schemeVersion": "1"
+            "schemeKeySetVersion": "1"
+            "creator": "99000001231234567890"
+            "recipient": "99990020000000000002"
+            "recipientKeySetVersion": "20191103"
+            "type": "B"
+            "points":
+            - "BE3JukQ2bDXuUHrG57MmXue1lfNW2saNgfYvmvAutXwANnY3TP1uQ1OcVtAhBKtlGDi96Z/XXkdiCJQCMPnHuicJ9jOEvyfpr+EVaripvd8s"
+            - "BF0vBdV3IQVuEc3VCGyUFPRizHE2BA4EFggReKbJvR8HRktfrKUPVpU8B8M37rQaaOuXBoNYXN9RFSgL2S9CVW8Xzo4ZOLA8YTwKdJN4zEDm"
+            - "BAbnblfvOd8paIBaYdSBMmO643qjiBlziIxxVwWiVgMgGEv/X+6tZqBBbodHVWjUvzC4qqjhkJimrxagdwllgFCkttJUfMjq56/o9u+OscsO"
+          "auditElement": "pK5uayQPvovS1FB+jLWqAg=="
+        "signatureValue":
+          "signatureType": "0.4.0.127.0.7.1.1.4.3.3"
+          "r": "AIfj0kcSfhBVZ9PToGUmoNGVCsWjH4jatH+nE6sp0XUGDkyJ3m3OoNY="
+          "s": "QyB0o4ULrUrKRerQnse33DVkrGFKMiOyfA0XP4M7RpFLAFziKaGjtQ=="
+      "pseudonym": "MIGfBgpghBABh2sKAQMCAgEBAgEBFhQ5OTk5MDAyMDAwMDAwMDAwMDAwMgIEATQXfwIBQhZsQktyakd3c2ZER2ZEcmRjcXd5WkNQMVNHL0lOS2hxa1RuM0tZUkYxOVU5WHZPcTVVTitRTG83Tml0ZDZwT2hzczA3NlZlZ0NKRUhKZG9iTUthWjNzamdmSVEwZk9JenlJbDNKNE9lWTZXeFhC"
+      "decodedPseudonym":
+        "notationIdentifier": "2.16.528.1.1003.10.1.3.2"
+        "schemeVersion": "1"
+        "schemeKeySetVersion": "1"
+        "recipient": "99990020000000000002"
+        "recipientKeySetVersion": "20191103"
+        "type": "B"
+        "pseudonymValue": "BKrjGwsfDGfDrdcqwyZCP1SG/INKhqkTn3KYRF19U9XvOq5UN+QLo7Nitd6pOhss076VegCJEHJdobMKaZ3sjgfIQ0fOIzyIl3J4OeY6WxXB"
+"scenario_14":
+  "request":
+    "signedEncryptedPseudonym": "/v1/happy_flow/ep02.asn1"
+    "serviceProviderKeys":
+    - "/v1/keys/pdd_sksv_1_oin_99990020000000000002_kv_20191103.pem"
+    - "/v1/keys/pcd_extra_label_sksv_1_oin_99990020000000000002_kv_20191103.pem"
+    "schemeKeys":
+      "urn:nl-gdi-eid:1.0:pp-key:ENVIRONMENT:1:PP_P:1": "/v1/keys/ppp_sksv_1_kv_1.pem"
+  "expectations":
+    "statusCode": "200"
+    "auditValue": "/v1/happy_flow/ep02.audit"
+    "signatureValue": "/v1/happy_flow/ep02.signature"
+    "pseudonymValue": "/v1/pseudonyms/p_02.txt"
+    "responseBody":
+      "decodedInput":
+        "notationIdentifier": "2.16.528.1.1003.10.1.2.4"
+        "signedEP":
+          "encryptedPseudonym":
+            "notationIdentifier": "2.16.528.1.1003.10.1.2.2"
+            "schemeVersion": "1"
+            "schemeKeySetVersion": "1"
+            "creator": "99000001231234567890"
+            "recipient": "99990020000000000002"
+            "recipientKeySetVersion": "20191103"
+            "type": "B"
+            "points":
+            - "BE3JukQ2bDXuUHrG57MmXue1lfNW2saNgfYvmvAutXwANnY3TP1uQ1OcVtAhBKtlGDi96Z/XXkdiCJQCMPnHuicJ9jOEvyfpr+EVaripvd8s"
+            - "BF0vBdV3IQVuEc3VCGyUFPRizHE2BA4EFggReKbJvR8HRktfrKUPVpU8B8M37rQaaOuXBoNYXN9RFSgL2S9CVW8Xzo4ZOLA8YTwKdJN4zEDm"
+            - "BAbnblfvOd8paIBaYdSBMmO643qjiBlziIxxVwWiVgMgGEv/X+6tZqBBbodHVWjUvzC4qqjhkJimrxagdwllgFCkttJUfMjq56/o9u+OscsO"
+          "auditElement": "pK5uayQPvovS1FB+jLWqAg=="
+        "signatureValue":
+          "signatureType": "0.4.0.127.0.7.1.1.4.3.3"
+          "r": "AIfj0kcSfhBVZ9PToGUmoNGVCsWjH4jatH+nE6sp0XUGDkyJ3m3OoNY="
+          "s": "QyB0o4ULrUrKRerQnse33DVkrGFKMiOyfA0XP4M7RpFLAFziKaGjtQ=="
+      "pseudonym": "MIGfBgpghBABh2sKAQMCAgEBAgEBFhQ5OTk5MDAyMDAwMDAwMDAwMDAwMgIEATQXfwIBQhZsQktyakd3c2ZER2ZEcmRjcXd5WkNQMVNHL0lOS2hxa1RuM0tZUkYxOVU5WHZPcTVVTitRTG83Tml0ZDZwT2hzczA3NlZlZ0NKRUhKZG9iTUthWjNzamdmSVEwZk9JenlJbDNKNE9lWTZXeFhC"
+      "decodedPseudonym":
+        "notationIdentifier": "2.16.528.1.1003.10.1.3.2"
+        "schemeVersion": "1"
+        "schemeKeySetVersion": "1"
+        "recipient": "99990020000000000002"
+        "recipientKeySetVersion": "20191103"
+        "type": "B"
+        "pseudonymValue": "BKrjGwsfDGfDrdcqwyZCP1SG/INKhqkTn3KYRF19U9XvOq5UN+QLo7Nitd6pOhss076VegCJEHJdobMKaZ3sjgfIQ0fOIzyIl3J4OeY6WxXB"
+"scenario_15":
+  "request":
+    "signedEncryptedPseudonym": "/v1/happy_flow/ep02.asn1"
+    "serviceProviderKeys":
+    - "/v1/keys/e_lc_pdd_sksv_1_oin_99990020000000000002_kv_20191103.pem"
+    - "/v1/keys/pcd_sksv_1_oin_99990020000000000002_ckv_20191103.pem"
+    "schemeKeys":
+      "urn:nl-gdi-eid:1.0:pp-key:ENVIRONMENT:1:PP_P:1": "/v1/keys/ppp_sksv_1_kv_1.pem"
+  "expectations":
+    "statusCode": "500"
+"scenario_16":
+  "request":
+    "signedEncryptedPseudonym": "/v1/happy_flow/ep02.asn1"
+    "serviceProviderKeys":
+    - "/v1/keys/pdd_sksv_1_oin_99990020000000000002_kv_20191103.pem"
+    - "/v1/keys/e_lc_pcd_sksv_1_oin_99990020000000000002_kv_20191103.pem"
+    "schemeKeys":
+      "urn:nl-gdi-eid:1.0:pp-key:ENVIRONMENT:1:PP_P:1": "/v1/keys/ppp_sksv_1_kv_1.pem"
+  "expectations":
+    "statusCode": "500"
+"scenario_17":
+  "request":
+    "payload": "{ \"serviceProviderKeys\": [],\n  \"schemeKeys\": {\n    \"SEP_DUP_KEY\"\
+      : \"\",\n    \"SEP_DUP_KEY\": \"\"\n  }\n}\n"
+  "expectations":
+    "statusCode": "400"
+"scenario_18":
+  "request":
+    "signedEncryptedPseudonym": "/v1/happy_flow/ep02.asn1"
+    "serviceProviderKeys":
+    - "/v1/keys/e_missing_pdd_sksv_1_oin_99990020000000000002_kv_20191103.pem"
+    - "/v1/keys/pcd_sksv_1_oin_99990020000000000002_ckv_20191103.pem"
+    "schemeKeys":
+      "urn:nl-gdi-eid:1.0:pp-key:ENVIRONMENT:1:PP_P:1": "/v1/keys/ppp_sksv_1_kv_1.pem"
+  "expectations":
+    "statusCode": "500"
+"scenario_19":
+  "request":
+    "signedEncryptedPseudonym": "/v1/happy_flow/ep02.asn1"
+    "serviceProviderKeys":
+    - "/v1/keys/pdd_sksv_1_oin_99990020000000000002_kv_20191103.pem"
+    - "/v1/keys/e_missing_pcd_sksv_1_oin_99990020000000000002_kv_20191103.pem"
+    "schemeKeys":
+      "urn:nl-gdi-eid:1.0:pp-key:ENVIRONMENT:1:PP_P:1": "/v1/keys/ppp_sksv_1_kv_1.pem"
+  "expectations":
+    "statusCode": "500"

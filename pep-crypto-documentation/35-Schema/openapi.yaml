@@ -1,0 +1,1406 @@
+---
+openapi: 3.0.1
+
+########################################################################################################################
+# Info
+########################################################################################################################
+info:
+  title: PEP decryptie component
+  description: |
+    This is service providing decryption and conversion functionality to Service Providers in the BSNk domain.
+    All input and output ASN.1 values mentioned in the API are further specified in the file *pp.asn1*.
+  version: "@@NEXT-VERSION@@"
+
+########################################################################################################################
+# Servers
+########################################################################################################################
+servers:
+  - url: /pep-crypto/api/v1
+    description: localhost
+
+########################################################################################################################
+# Paths
+########################################################################################################################
+paths:
+  /signed-encrypted-identity:
+    post:
+      summary: SignedEncryptedIdentity operations
+      description: |
+        Get identity from an Encrypted Identity
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/OASSignedEncryptedIdentityRequest"
+            example:
+              signedEncryptedIdentity: |-
+                MIIBywYKYIQQAYdrCgECBzCCAVYwggFABgpghBABh2sKAQIBAgEBAgEBFhQ5OTAw
+                MDAwMTIzMTIzNDU2Nzg5MBYUOTk5OTAwMjAwMDAwMDAwMDAwMDICBAE0F5IwgfkE
+                UQSjSWgkkTvuEHXyoT/bPqA4ExOgUGbsqCN1evhPtdUTxBM0j/Nw9r6CKn1W3wdi
+                vhgB5zans2SQJpEUQaO1fE7/WOYd+BRIrLyiEVu8fDcyXQRRBFwKrswNo4mGZsBF
+                CnnUz5TqdPN+p/MiBB9baCxt9EcLVBsJWiUuKitUQzT/1zxmdNT9OUZiB7W90YhQ
+                vle8uZvtWge9AKGEPMlS2xqcrC6wBFEEMVcDCTw2xXlcg5veyo1/de1Y/kWNAdYH
+                5zipTwljW/XSGjRDPAzLxBbLz1cXV3gyH2/WgzetX+qqaiFSByAgYX5mpTXmzQwR
+                uAaVNDt6BtwEECfs9w34My6xjKREev8sbncwYwYKBAB/AAcBAQQEAzBVAikApisU
+                ggH7LeoH7f1Iz58mZvKFLIhCsFSUOLsYXOMgowWKNgoyFDYU0gIoOOrh4xGQM0SZ
+                GqRpPTZiJZcKMlOTV0oVi7onE8BLvIdNuGrG4Sua0A==
+              serviceProviderKeys:
+                - |
+                  -----BEGIN EC PRIVATE KEY-----
+                  SchemeVersion: 1
+                  SchemeKeyVersion: 1
+                  Type: EI Decryption
+                  Recipient: 99990020000000000002
+                  RecipientKeySetVersion: 20191122
+
+                  MIGQAgEBBCie0Og1gLm7r9FnkDJWiYOIu8e0S/2QZSUVyTPBOlHk1JW+zdI64Pih
+                  oAsGCSskAwMCCAEBCaFUA1IABDFXAwk8NsV5XIOb3sqNf3XtWP5FjQHWB+c4qU8J
+                  Y1v10ho0QzwMy8QWy89XF1d4Mh9v1oM3rV/qqmohUgcgIGF+ZqU15s0MEbgGlTQ7
+                  egbc
+                  -----END EC PRIVATE KEY-----
+              schemeKeys:
+                "urn:nl-gdi-eid:1.0:pp-key:<ENVIRONMENT>:1:IP_P:1": "BJQmzr8gbekLVsCD8DK4+CsCUBxPfN3XKVZSXFOfw0pnZmQpmKzSqy3NSQ3GIAojRt6SmZakV8szbOF5aG/HHE//BP8pYY1jm/+Np7BS3oa1"
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OASDecryptedIdentityResponse"
+        "500":
+          description: |
+            Decryption of a signed encrypted identity has failed. May contain failure information.
+  /signed-direct-encrypted-identity:
+    post:
+      summary: SignedDirectEncryptedIdentity operations
+      description: |
+        Get identity from an SignedDirectEncryptedIdentity
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/OASSignedDirectEncryptedIdentityRequest"
+            example:
+              signedDirectEncryptedIdentity: |-
+                MIIB7wYLYIQQAYdrCgECCgIwggF6MIIBVwYLYIQQAYdrCgECCQICAQECAQEWFDk5
+                MDAwMDAxMjMxMjM0NTY3ODkwFhQ5OTk5MDAyMDAwMDAwMDAwMDAwMQIEATPtxDCB
+                +QRRBE34La6JLhlbzW0JSWbTRjIWrcejTY06YsPP+fN4jAOAsenAe8zKqQdzR8gY
+                0SjuACCJWQU0tVomHjwbVupwysRKjzh7o5om6WXW6jMdXYQCBFEEfdAfetX7ztxt
+                h5fGbcpWsLvIhmjG94byUXVlzWDU6f6BUMn3BXQdZBNUngbDUxCjIrupMcmou84w
+                5aIJDvKm8fLUzRe7M3psjT+TCTimLE0EUQQwNecVsEcX8Eix4i203cq+UcO/NSxC
+                77k9HwogaaX4haj2rkWKUTevHD3LVymZVoXJ65DAeUgyLmLmJ4QLClikDnrMSO7Y
+                aqQo3d+wztXqb4EUOTk5OTAwNDAwMDAwMDAwMDAwMDEEEGDbTSzlhGzQMgGRt00T
+                CYwCAQEWCDIwMTkwNzAxMGIGCCqGSM49BAMDMFYCKQCq0EH/ZaQTtijhX2yLZuTg
+                blfcxwwi+BuMzj7qcfSDrtMFvMyl3/jdAikAle5AfZFY07p0q0Ic811fcChMVX9s
+                Ak95YNjqzwqs/7C14jda64Bf5A==
+              serviceProviderKeys:
+                - |
+                  -----BEGIN EC PRIVATE KEY-----
+                  SchemeVersion: 1
+                  SchemeKeySetVersion: 1
+                  Type: EI Decryption
+                  Recipient: 99990020000000000001
+                  RecipientKeySetVersion: 20180420
+                  SchemeKeyVersion: 1
+
+                  MIGQAgEBBChPftIL711Ro4Jy/bKt8vGAQqb0qwfQqyrffJTe7QcmateCzmrtpOb9
+                  oAsGCSskAwMCCAEBCaFUA1IABDA15xWwRxfwSLHiLbTdyr5Rw781LELvuT0fCiBp
+                  pfiFqPauRYpRN68cPctXKZlWhcnrkMB5SDIuYuYnhAsKWKQOesxI7thqpCjd37DO
+                  1epv
+                  -----END EC PRIVATE KEY-----
+              "schemeKeys":
+                "urn:nl-gdi-eid:1.0:pp-key:ENVIRONMENT:1:U:1": "BDpVPLNIAjJL5P4eNZtj1aufxdijeAJxP1TUVaW23R9qH6ipC9u5J+9/Kn3xSH6CVNdnAcj0Esrwf5k9a+mnB8fGFw5mYbfrHVJWI7wMHE2+"
+              "authorizedParty": "99990040000000000001"
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OASDecryptedIdentityResponse"
+        "500":
+          description: |
+            Decryption of a signed direct encrypted identity has failed. May contain failure information.
+  /signed-encrypted-pseudonym:
+    post:
+      description: |
+        Get the pseudonym from a SignedEncryptedPseudonym.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/OASSignedEncryptedPseudonymRequest"
+            example:
+              signedEncryptedPseudonym: |-
+                MIIBzwYKYIQQAYdrCgECCDCCAVkwggFDBgpghBABh2sKAQICAgEBAgEBFhQ5OTAw
+                MDAwMTIzMTIzNDU2Nzg5MBYUOTk5OTAwMjAwMDAwMDAwMDAwMDECBAEz7cQCAUIw
+                gfkEUQQxOFDx/tbYfmoMRxqZe46FAkKAEOAwjIP6XHBPsxwuKry7qBekWwJfxKzH
+                UkhrA55DL5HoMg4kUHccLh15APmnfTa+qYXt+jtAp+fqA334agRRBCkuJkKLwIcv
+                QbJcXFZRxRcrCqX2h0zlGuOQGlAvZe6rAUSNPtc+OrRyU/aFGy6WGtc53P3c+SsM
+                8pYZwFbYVCGUrvRyX2CS7QmFlTVvYWpoBFEEL6w/9hzHhVZ5DVQ2eG1PwGm2RT8j
+                zSrWzUSIzJRZln3D2uMJIOPKcCsUykdKdkZXOfS2wpACJoVw2gdeK1dgR2XmEd7i
+                E6Wjf4BXi+E7qYkEEG9Kkw+9ZWaTS9+hGoxp6yUwZAYKBAB/AAcBAQQEAzBWAikA
+                /KTQeVnSguj+P95/sKGNA3uBUKNA0kLzBDCErAfhtrrmkskbCjVUCAIpAKJiKJ8s
+                5nEUE8sp8KSzw6PGi8p2YikI9RaZgzPC8JJkZwRLL/729bc=
+              serviceProviderKeys:
+                - |
+                  -----BEGIN EC PRIVATE KEY-----
+                  SchemeVersion: 1
+                  SchemeKeyVersion: 1
+                  Type: EP Decryption
+                  Recipient: 99990020000000000001
+                  RecipientKeySetVersion: 20180420
+
+                  MIGQAgEBBCiKGULDbw7niGVO4ouxn65PirPiGZKt3ZAJBQgcRK3ocg4y7h65KF9l
+                  oAsGCSskAwMCCAEBCaFUA1IABC+sP/Ycx4VWeQ1UNnhtT8BptkU/I80q1s1EiMyU
+                  WZZ9w9rjCSDjynArFMpHSnZGVzn0tsKQAiaFcNoHXitXYEdl5hHe4hOlo3+AV4vh
+                  O6mJ
+                  -----END EC PRIVATE KEY-----
+                - |
+                  -----BEGIN EC PRIVATE KEY-----
+                  SchemeVersion: 1
+                  SchemeKeyVersion: 1
+                  Type: EP Closing
+                  Recipient: 99990020000000000001
+                  RecipientKeySetVersion: 20180420
+
+                  MIGQAgEBBCiWl514MNVmjMkp8+RD+NSdHzwTgicCp77cnxMmsT7H7rz6MYIuOTbk
+                  oAsGCSskAwMCCAEBCaFUA1IABJQ4rgjPMVdU68TV+1EZVqWDBwIloc4ZVxoGpNRG
+                  dzoiQbaY4APqj5Zu+KEzxrsQEErZwtT4tGxEw2FsDE8ROlSbOxb+YCGuuQiAlz3J
+                  fMB/
+                  -----END EC PRIVATE KEY-----
+              schemeKeys:
+                "urn:nl-gdi-eid:1.0:pp-key:<ENVIRONMENT>:1:PP_P:1": "BEyJ7S64/ldTtoMq7ukyJPrB5s3YVLbZjC+xdpFdBYGsHZ8cD8nOnKSdfkN7+vwQzWvV9q/S5fWLtMhFbK9l77YjNqPXXOPwLSLaF4Ay+rUL"
+              targetClosingKey: "20180420"
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OASDecryptedPseudonymResponse"
+        "500":
+          description: |
+            Decryption of a signed encrypted pseudonym has failed. May contain failure information.
+  /signed-direct-encrypted-pseudonym:
+    post:
+      description: |
+        Get the pseudonym from a SignedDirectEncryptedPseudonym.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/OASSignedDirectEncryptedPseudonymRequest"
+            example:
+              signedDirectEncryptedPseudonym: |-
+                MIIB5QYKYIQQAYdrCgECBjCCAXIwggFZBgpghBABh2sKAQIFAgEBAgEBFhQ5OTAwMDAwMTIzMTIz
+                NDU2Nzg5MBYUOTk5OTAwMzAwMDAwMDAwMDAwMDECBAEzyKQCAUIwgfkEUQSMA2N+2BSv9rvmsf4B
+                4UgTjxbZ8KTi+nj5lcY1zx0Gk1o69sR+xgJIAJwkWx8PmZKaNftZ4F2qbb+UzMCd1JlG/FaJAyWu
+                e5couBvLgA34ZwRRBKUXlaCFpy3u1MCQ0CdfZ5v7wC0Y9c9qvAXXK6khYw9Ko1chrVwawjEf76xW
+                n0cCbB+n2IJ0vemivict5/p3obgXWaOL0XrIrsiLbjEHCZgfBFEEBi3fj5z5URUFX0sSfxODhA8U
+                QMqnASNs9UX8YR85KCR36VIpqtcVQnyYKY3iMepG7r2+ipPHhr18BLcwRXc9WE9rFad2NQbfIQyK
+                Nx+vIvGBFDk5OTkwMDQwMDAwMDAwMDAwMDAxBBAZGgTeBW1CK9EgTEPxgpcuAgEBMGEGCCqGSM49
+                BAMDMFUCKHFiivWWLuhaZpDtwxBcChNK+u12DNUHhsO0Hxc0k/TY0Y8N6OgKW8YCKQCkR1sbNLST
+                4fySQ3ssamzVxL2m+/+C6jvqRoQ5ew7DhyTU0fdQb48y
+              serviceProviderKeys:
+                - |
+                  -----BEGIN EC PRIVATE KEY-----
+                  SchemeVersion: 1
+                  SchemeKeySetVersion: 1
+                  Type: EP Decryption
+                  Recipient: 99990030000000000001
+                  RecipientKeySetVersion: 20170916
+                  SchemeKeyVersion: 1
+
+                  MIGQAgEBBCiNQqG4JBaFHyWQ9NOwbJqJNny9B9qAPzGdG6GacfU05SGvFlt1+QSx
+                  oAsGCSskAwMCCAEBCaFUA1IABAYt34+c+VEVBV9LEn8Tg4QPFEDKpwEjbPVF/GEf
+                  OSgkd+lSKarXFUJ8mCmN4jHqRu69voqTx4a9fAS3MEV3PVhPaxWndjUG3yEMijcf
+                  ryLx
+                  -----END EC PRIVATE KEY-----
+                - |
+                  -----BEGIN EC PRIVATE KEY-----
+                  SchemeVersion: 1
+                  SchemeKeySetVersion: 1
+                  Type: EP Closing
+                  Recipient: 99990030000000000001
+                  RecipientKeySetVersion: 20170916
+                  SchemeKeyVersion: 1
+
+                  MIGQAgEBBCibrIa/VzRTUUU5yr/DYmNpgO4gDPod0s9QJkI2XbHfNop5xSSBXqxH
+                  oAsGCSskAwMCCAEBCaFUA1IABMktRjMCH9X+1jYcPa1xNOiEu/7RVO8TkVASrPNJ
+                  zxFit+//+75Yu0ma4T1t7TgpJyEocx2kav5aN7S1j7rZWKQKFh21I1+exFkpHF+C
+                  fN0R
+                  -----END EC PRIVATE KEY-----
+                - |
+                  -----BEGIN EC PRIVATE KEY-----
+                  SchemeVersion: 1
+                  SchemeKeySetVersion: 1
+                  Type: DRKi
+                  Recipient: 99990030000000000001
+                  RecipientKeySetVersion: 20170916
+                  SchemeKeyVersion: 1
+
+                  MIGQAgEBBCgqlvNDtJN1JbOYeS02BdOLvyGz+xAHVijzbgwVfMz3RK3ecnnYAceZ
+                  oAsGCSskAwMCCAEBCaFUA1IABMep4P4D0fb97kdw4Zd3nBDXkk9l+bK6XiPXly1p
+                  vNMEVLj62pCJv0ySB7Me0H8p8XD1GqEiMUYAY96zI4WooV4pkYu0AvtnRpMjuuv9
+                  YMKg
+                  -----END EC PRIVATE KEY-----
+              schemeKeys:
+                "urn:nl-gdi-eid:1.0:pp-key:<ENVIRONMENT>:1:U:1": "BDpVPLNIAjJL5P4eNZtj1aufxdijeAJxP1TUVaW23R9qH6ipC9u5J+9/Kn3xSH6CVNdnAcj0Esrwf5k9a+mnB8fGFw5mYbfrHVJWI7wMHE2+"
+              targetClosingKey: "20170916"
+              authorizedParty: "99990040000000000001"
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OASDecryptedPseudonymResponse"
+
+        "500":
+          description: |
+            Decryption of a signed direct encrypted pseudonym has failed. May contain failure information.
+  /pseudonym-conversion:
+    post:
+      description: |
+        Pseudonym conversion due to closing key change.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/OASPseudonymRequest"
+            example:
+              pseudonym: |-
+                MIGfBgpghBABh2sKAQMCAgEBAgEBFhQ5OTk5MDAyMDAwMDAwMDAwMDAwMQIEATPt
+                xAIBQhZsQk5MS3RmQXJhM2hWM0FlaENOV1lveklwL25rc01ERndSbFhGdkRjLzRs
+                MWEvQXlUd0ZxeVYyaDZLVXdvdVJVcXEyY0lSelM3Q2FqL0pDc1VmL3JIYjdWYVJy
+                MXNLNnFKV0x4ZE96VXIyVmhD
+              serviceProviderKeys:
+                - |
+                  -----BEGIN EC PRIVATE KEY-----
+                  SchemeVersion: 1
+                  SchemeKeySetVersion: 1
+                  Type: EP Closing
+                  Recipient: 99990020000000000001
+                  RecipientKeySetVersion: 20180420
+                  SchemeKeyVersion: 1
+
+                  MIGQAgEBBCiWl514MNVmjMkp8+RD+NSdHzwTgicCp77cnxMmsT7H7rz6MYIuOTbk
+                  oAsGCSskAwMCCAEBCaFUA1IABJQ4rgjPMVdU68TV+1EZVqWDBwIloc4ZVxoGpNRG
+                  dzoiQbaY4APqj5Zu+KEzxrsQEErZwtT4tGxEw2FsDE8ROlSbOxb+YCGuuQiAlz3J
+                  fMB/
+                  -----END EC PRIVATE KEY-----
+                - |
+                  -----BEGIN EC PRIVATE KEY-----
+                  SchemeVersion: 1
+                  SchemeKeySetVersion: 1
+                  Type: EP Closing
+                  Recipient: 99990020000000000001
+                  RecipientKeySetVersion: 20190502
+                  SchemeKeyVersion: 1
+
+                  MIGQAgEBBCi96bH4oNcyVCtIfrtRi/P6l4qplED7lwYUM85triKpljoI6APOTIwz
+                  oAsGCSskAwMCCAEBCaFUA1IABLVc3rKDIJwcwG9/nIQrITAV2L8QD4ocRtI65foD
+                  NqeeA4wSZ4IHhI87xoSs626WXnZE60P2D0v/wW4zgIqEmzyRc/s270fLmnPpbFPq
+                  42Ah
+                  -----END EC PRIVATE KEY-----
+                - |
+                  -----BEGIN EC PRIVATE KEY-----
+                  SchemeVersion: 1
+                  SchemeKeySetVersion: 1
+                  Type: EP Closing
+                  Recipient: 99990020000000000001
+                  RecipientKeySetVersion: 20211207
+                  SchemeKeyVersion: 1
+
+                  MIGQAgEBBCijl9j/cVFySeLb4CcsmBnz7tcyYpwNN7SEy2b0bEen+Ru3gHEJ1TMy
+                  oAsGCSskAwMCCAEBCaFUA1IABKGz+1VKdieSvboIa8ADtV7KTghjO7nmEvubaINd
+                  8CUsJS4BkmIYJ8/Fm73PfbyjDvFvXbOjw+1R8DRuIn/absL0R058tOYxY0k+7B2E
+                  PbeZ
+                  -----END EC PRIVATE KEY-----
+              targetClosingKey: "20180420"
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OASDecryptedPseudonymResponse"
+        "500":
+          description: |
+            Closing key conversion failed. May contain failure information.
+
+  /pseudonym-migration-export:
+    post:
+      description: |
+        Pseudonym migration from one organization to another.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/OASPseudonymMigrationExportRequest"
+            example:
+              pseudonym: MIGfBgpghBABh2sKAQMCAgEBAgEBFhQ5OTk5MDAyMDAwMDAwMDAwMDAwMQIEATPtxAIBQhZsQkxMK0JncEtNcGNNejVBL1lzZlZ5UnBOSXpxVkkvTzVHMUlGa0FUVUFoZFFZWWVhMWk5a1BsbGJ3UitreHE4RUZ6QkhDT1RrUDZmNk9wMEtYL0ptNzRjME1sdFNYVFVCb1V1RTVjMTBVWGR4
+              serviceProviderKeys:
+                - |
+                  -----BEGIN EC PRIVATE KEY-----
+                  SchemeVersion: 1
+                  SchemeKeySetVersion: 1
+                  Type: EP migration source
+                  SourceMigrant: 99990020000000000001
+                  SourceMigrantKeySetVersion: 20180420
+                  TargetMigrant: 99990020000000000002
+                  TargetMigrantKeySetVersion: 20191103
+                  MigrationID: C94BED9E-14CCBE8F-8FB2423E
+                  SchemeKeyVersion: 1
+
+                  MIGQAgEBBCgvum9k+32INRg1R7hAWM4ExkImeK5+tz8Hcad6YYnq9oGHAQFrFQeI
+                  oAsGCSskAwMCCAEBCaFUA1IABIYoANnrO0+gIZMcRgARUuWVvunv5a+UTf8qf0PX
+                  NB5Q2VeClAs9M8NuBzZQ24rnL8UYWz+WITD+Jmy/7u/rfHWqzclRC8mFaxIDmiS2
+                  Lqfe
+                  -----END EC PRIVATE KEY-----
+              migrationID: "C94BED9E-14CCBE8F-8FB2423E"
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OASMigrationIntermediaryPseudonymResponse"
+        "500":
+          description: |
+            Pseudonym migration failed. May contain failure information.
+
+  /pseudonym-migration-import:
+    post:
+      description: |
+        Pseudonym migration from one organization to another.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/OASPseudonymMigrationImportRequest"
+            example:
+              migrationIntermediaryPseudonym: MIHXBgpghBABh2sKAQMDAgEBAgEBFhQ5OTk5MDAyMDAwMDAwMDAwMDAwMQIEATPtxBYUOTk5OTAwMjAwMDAwMDAwMDAwMDICBAE0F38WGjY2NEE5NEY3LUEwREFENUYwLUI5ODQ0RjQ5AgFCFmxCTG1qbWFod3ZRcTJ2VlUzT20xWHhZWUtJVlNZVVd4M0x5YWRDVFk0TjBJUUFlNWRMOXJLb2RnY3VUdGpyQTgzeUF0VkU1T3piQm51NllVNjNYK3JySEV4WHpvRlppK1VGNWVwa0o3UUY5YXc=
+              serviceProviderKeys:
+                - |
+                  -----BEGIN EC PRIVATE KEY-----
+                  SchemeVersion: 1
+                  SchemeKeySetVersion: 1
+                  Type: EP migration target
+                  SourceMigrant: 99990020000000000001
+                  SourceMigrantKeySetVersion: 20180420
+                  TargetMigrant: 99990020000000000002
+                  TargetMigrantKeySetVersion: 20191103
+                  MigrationID: 664A94F7-A0DAD5F0-B9844F49
+                  SchemeKeyVersion: 1
+
+                  MIGQAgEBBCh2auHSG8NhEHvnhDD582PHt2yy3bHvvRNyNgpJNVdLdo/SpHDDOX9t
+                  oAsGCSskAwMCCAEBCaFUA1IABH12qzidmt6Gw4StlnS9Ej2uwmqGI1bt1hnl8WPg
+                  e+T/OVy3BMznF8W9RFwa33Hgoby0hWCVyZx11HsDb4uhaSo86q8XPzwiAuU4Pjt2
+                  M8FN
+                  -----END EC PRIVATE KEY-----
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OASDecryptedPseudonymResponse"
+        "500":
+          description: |
+            Pseudonym migration failed. May contain failure information.
+
+  /signed-encrypted-pseudonym-migration:
+    post:
+      description: |
+        Get the pseudonym from a SignedEncryptedPseudonym and migrate it.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/OASSignedEncryptedPseudonymMigrationRequest"
+            example:
+              signedEncryptedPseudonym: |-
+                MIIBzQYKYIQQAYdrCgECBDCCAVkwggFDBgpghBABh2sKAQICAgEBAgEBFhQ5OTAw
+                MDAwMTIzMTIzNDU2Nzg5MBYUOTk5OTAwMjAwMDAwMDAwMDAwMDECBAE0ZgcCAUIw
+                gfkEUQQgW3hk+hQApWf42FvX/60a7hD92T01U3HymjUbaYP7PWDgK6uWKor0DDnN
+                ftCYy3Derl6k/8DH6uowNj6hhIArDsp9yIfPTPAOHRimlLRJtARRBLoBJ87DiDjn
+                Z+o5monRsdlwv544nReii7LpVLMzjdoajEUt26RLIgikqKvuhhDXQM/a9HxUe5oD
+                +d+gtHnTr0H9zc8/wZPLItC8Y5rB55juBFEEcEST2wCYf2HG/tWcvnQFzEsIzamr
+                Ep4Ee51oZzfTqQZ9sEUtOLfJ7afTPDr/nlzlE0CFTS4/EcjfCFwI1CnuJufPExXW
+                jB359dzYFsskR5cEEIcqxOZtIscrOacVgb9PvmIwYgYKBAB/AAcBAQQDAzBUAigB
+                RsX/660hq2XbPaPSfpXyRFjU7UcE3sfq6uM47u75lB6VRawU9LWCAihxM/tWnnYY
+                /KKLPFYhZ/U7ZnUoLLf0IP1wEB/jxvKHRsJbI1DuCpd9
+              serviceProviderKeys:
+                - |
+                  -----BEGIN EC PRIVATE KEY-----
+                  SchemeVersion: 1
+                  SchemeKeySetVersion: 1
+                  Type: EP migration source
+                  SourceMigrant: 99990020000000000001
+                  SourceMigrantKeySetVersion: 20211207
+                  TargetMigrant: 99990020000000000002
+                  TargetMigrantKeySetVersion: 20191103
+                  MigrationID: 6295CF60-F8398734-D4F9D354
+                  SchemeKeyVersion: 1
+
+                  MIGQAgEBBChaQmEIPHVCDZ7Uum81CM6GcyCHQ9oz945aO1as3l86gu0tVAup5Xhz
+                  oAsGCSskAwMCCAEBCaFUA1IABG5LqfaZbulas0w+HrJqSmjkL2X7FK8sr7Sp+3gK
+                  7aGJoNKS29mkGOtcvWcAkC5M0bMerMvt48mt5eyUTXTCQ5RHM9/TyZEgDF6W9e0d
+                  XjDU
+                  -----END EC PRIVATE KEY-----
+                - |
+                  -----BEGIN EC PRIVATE KEY-----
+                  SchemeVersion: 1
+                  SchemeKeySetVersion: 1
+                  Type: EP migration target
+                  SourceMigrant: 99990020000000000001
+                  SourceMigrantKeySetVersion: 20211207
+                  TargetMigrant: 99990020000000000002
+                  TargetMigrantKeySetVersion: 20191103
+                  MigrationID: 6295CF60-F8398734-D4F9D354
+                  SchemeKeyVersion: 1
+
+                  MIGQAgEBBCgL6gUXvF5Wb2RWP3waK+xMJ7ztcPThE0rs+gDYz9kjmHPkCsV0Cqb3
+                  oAsGCSskAwMCCAEBCaFUA1IABByncnWgGxUuVO++ZvgPTgimYJJNM/k8GWmrT6rw
+                  OvpFGxjpJEBpw1GE9qeqye5CBgcOOIyEcWhyoq/BqHz/M/IDGsxDYpOXvY83L3wW
+                  3H6S
+                  -----END EC PRIVATE KEY-----
+                - |
+                  -----BEGIN EC PRIVATE KEY-----
+                  SchemeVersion: 1
+                  SchemeKeySetVersion: 1
+                  Type: EP Decryption
+                  Recipient: 99990020000000000001
+                  RecipientKeySetVersion: 20211207
+                  SchemeKeyVersion: 1
+
+                  MIGQAgEBBCjR02lXyal9xZ6p89JJD5linIVanxLHTHewr/UkmV75z2JA/bZMH6RW
+                  oAsGCSskAwMCCAEBCaFUA1IABHBEk9sAmH9hxv7VnL50BcxLCM2pqxKeBHudaGc3
+                  06kGfbBFLTi3ye2n0zw6/55c5RNAhU0uPxHI3whcCNQp7ibnzxMV1owd+fXc2BbL
+                  JEeX
+                  -----END EC PRIVATE KEY-----
+                - |
+                  -----BEGIN EC PRIVATE KEY-----
+                  SchemeVersion: 1
+                  SchemeKeySetVersion: 1
+                  Type: EP Closing
+                  Usage: Service Provide key for I and P decryption
+                  Recipient: 99990020000000000001
+                  RecipientKeySetVersion: 20211207
+                  SchemeKeyVersion: 1
+
+                  MIGQAgEBBCijl9j/cVFySeLb4CcsmBnz7tcyYpwNN7SEy2b0bEen+Ru3gHEJ1TMy
+                  oAsGCSskAwMCCAEBCaFUA1IABKGz+1VKdieSvboIa8ADtV7KTghjO7nmEvubaINd
+                  8CUsJS4BkmIYJ8/Fm73PfbyjDvFvXbOjw+1R8DRuIn/absL0R058tOYxY0k+7B2E
+                  PbeZ
+                  -----END EC PRIVATE KEY-----
+              schemeKeys:
+                "urn:nl-gdi-eid:1.0:pp-key:ENVIRONMENT:1:PP_P:1": "BEyJ7S64/ldTtoMq7ukyJPrB5s3YVLbZjC+xdpFdBYGsHZ8cD8nOnKSdfkN7+vwQzWvV9q/S5fWLtMhFbK9l77YjNqPXXOPwLSLaF4Ay+rUL"
+              migrationID: "6295CF60-F8398734-D4F9D354"
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OASDecryptedPseudonymResponse"
+        "500":
+          description: |
+            Decryption of a signed encrypted pseudonym has failed. May contain failure information.
+  /signed-direct-encrypted-pseudonym-migration:
+    post:
+      description: |
+        Get the pseudonym from a SignedDirectEncryptedPseudonym and migrate it.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/OASSignedDirectEncryptedPseudonymMigrationRequest"
+            example:
+              signedDirectEncryptedPseudonym: |-
+                MIIB5gYKYIQQAYdrCgECBjCCAXIwggFZBgpghBABh2sKAQIFAgEBAgEBFhQ5OTAw
+                MDAwMTIzMTIzNDU2Nzg5MBYUOTk5OTAwMjAwMDAwMDAwMDAwMDECBAEz7cQCAUIw
+                gfkEUQSNzFhovF1EDGoDDp3fLcwJ70TcJAuCvNcF3n0Bh7rmzbk0rabrD7WJsNpP
+                GH2i47nSjJlfn8IE2C1YiEJKkM72Z/d8r2as5Btvk/TLAQC23wRRBIkb4Afdtvdd
+                P12pfwZCjszweenyYBzNrdFfZFYTJPso1CxX+gMphH8zrNHahro3c+ezzVox7kZj
+                Eb5c3ju9aKea1zRW3MgM3hh4a7knGfC8BFEEL6w/9hzHhVZ5DVQ2eG1PwGm2RT8j
+                zSrWzUSIzJRZln3D2uMJIOPKcCsUykdKdkZXOfS2wpACJoVw2gdeK1dgR2XmEd7i
+                E6Wjf4BXi+E7qYmBFDk5OTkwMDQwMDAwMDAwMDAwMDAxBBDm3cJkSZdGL6z6SI1Q
+                UUNuAgEBMGIGCCqGSM49BAMDMFYCKQDQsvFgdZVpfe95L7un4Of6SlYClouQbTkA
+                XrcSZU2NIH7nfwIEDCJmAikAp1pxE6AV7lEslsUvkhxG+JNZYUi4qunHQ/J2EvFM
+                J04sJBW4ZKRMvA==
+              serviceProviderKeys:
+                - |
+                  -----BEGIN EC PRIVATE KEY-----
+                  SchemeVersion: 1
+                  SchemeKeySetVersion: 1
+                  Type: EP migration source
+                  SourceMigrant: 99990020000000000001
+                  SourceMigrantKeySetVersion: 20180420
+                  TargetMigrant: 99990020000000000002
+                  TargetMigrantKeySetVersion: 20191103
+                  MigrationID: 080F4A50-34E47FBB-7A122943
+                  SchemeKeyVersion: 1
+
+                  MIGQAgEBBCiTM2zW11EvTKs6BlSfsfNjjs8WSWb1rOIIjcePNuRmZM+b4FjgoOTn
+                  oAsGCSskAwMCCAEBCaFUA1IABGxKsZbV7gaeqAP/ya+sZK3kDy+DRfO6xBHrLgru
+                  f5oLYcb71hLtwrGC2qx0DsajJpPSzB0O/ymLwYlp+lDuG5r5bDW7o9LjEpNPwBrz
+                  x4jD
+                  -----END EC PRIVATE KEY-----
+                - |
+                  -----BEGIN EC PRIVATE KEY-----
+                  SchemeVersion: 1
+                  SchemeKeySetVersion: 1
+                  Type: EP migration target
+                  SourceMigrant: 99990020000000000001
+                  SourceMigrantKeySetVersion: 20180420
+                  TargetMigrant: 99990020000000000002
+                  TargetMigrantKeySetVersion: 20191103
+                  MigrationID: 080F4A50-34E47FBB-7A122943
+                  SchemeKeyVersion: 1
+
+                  MIGQAgEBBCh4Q/TXrOi2yiCQzOhGCH2D0WYtdX/mozKF1cW2uMyYBUMgOZ2LQB+V
+                  oAsGCSskAwMCCAEBCaFUA1IABHkGMh6mKD380UtLu85xPeF5XgrMGotJ0AmdYvsr
+                  W0HnL7hm81i3+bu5VuMl2RtJmeeh4RJZhndRyQaW4xk3d3z+XoAT53dX0YDIaVYY
+                  Zn/L
+                  -----END EC PRIVATE KEY-----
+                - |
+                  -----BEGIN EC PRIVATE KEY-----
+                  SchemeVersion: 1
+                  SchemeKeySetVersion: 1
+                  Type: EP Decryption
+                  Recipient: 99990020000000000001
+                  RecipientKeySetVersion: 20180420
+                  SchemeKeyVersion: 1
+
+                  MIGQAgEBBCiKGULDbw7niGVO4ouxn65PirPiGZKt3ZAJBQgcRK3ocg4y7h65KF9l
+                  oAsGCSskAwMCCAEBCaFUA1IABC+sP/Ycx4VWeQ1UNnhtT8BptkU/I80q1s1EiMyU
+                  WZZ9w9rjCSDjynArFMpHSnZGVzn0tsKQAiaFcNoHXitXYEdl5hHe4hOlo3+AV4vh
+                  O6mJ
+                  -----END EC PRIVATE KEY-----
+                - |
+                  -----BEGIN EC PRIVATE KEY-----
+                  SchemeVersion: 1
+                  SchemeKeySetVersion: 1
+                  Type: EP Closing
+                  Usage: Service Provide key for I and P decryption
+                  Recipient: 99990020000000000001
+                  RecipientKeySetVersion: 20180420
+                  SchemeKeyVersion: 1
+
+                  MIGQAgEBBCiWl514MNVmjMkp8+RD+NSdHzwTgicCp77cnxMmsT7H7rz6MYIuOTbk
+                  oAsGCSskAwMCCAEBCaFUA1IABJQ4rgjPMVdU68TV+1EZVqWDBwIloc4ZVxoGpNRG
+                  dzoiQbaY4APqj5Zu+KEzxrsQEErZwtT4tGxEw2FsDE8ROlSbOxb+YCGuuQiAlz3J
+                  fMB/
+                  -----END EC PRIVATE KEY-----
+                - |
+                  -----BEGIN EC PRIVATE KEY-----
+                  SchemeVersion: 1
+                  SchemeKeySetVersion: 1
+                  Type: DRKi
+                  Recipient: 99990020000000000001
+                  RecipientKeySetVersion: 20180420
+                  SchemeKeyVersion: 1
+
+                  MIGQAgEBBChwrcUGs760t4aNjGhQqMbQlZ4LIkzeAkPeGRSu8phOO24zSSTPDU4J
+                  oAsGCSskAwMCCAEBCaFUA1IABEDPlTtkSk2t5eCmrFWCb/D13YrMDpKUWjtIVYcv
+                  HFnD+6FQWx3OANwfIL/wgKM3xPHalUuFZxqL/b6yE4OvR4mM/u7HrlyIX8SsYbmG
+                  Zyqo
+                  -----END EC PRIVATE KEY-----
+              schemeKeys:
+                "urn:nl-gdi-eid:1.0:pp-key:ENVIRONMENT:1:U:1": "BDpVPLNIAjJL5P4eNZtj1aufxdijeAJxP1TUVaW23R9qH6ipC9u5J+9/Kn3xSH6CVNdnAcj0Esrwf5k9a+mnB8fGFw5mYbfrHVJWI7wMHE2+"
+              "authorizedParty": "99990040000000000001"
+              "migrationID": "080F4A50-34E47FBB-7A122943"
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OASDecryptedPseudonymResponse"
+        "500":
+          description: |
+            Migration of a signed direct encrypted pseudonym failed. May contain failure information.
+
+########################################################################################################################
+components:
+  #---------------------------------------------------------------------------------------------------------------------
+  # Schemas
+  #---------------------------------------------------------------------------------------------------------------------
+  schemas:
+    #---------------------------------------------------------------------------------------------------------------------
+    # Request bodies
+    #---------------------------------------------------------------------------------------------------------------------
+    OASUnsignedRequestType:
+      type: object
+      properties:
+        serviceProviderKeys:
+          type: array
+          items:
+            type: string
+          example:
+            - |
+              -----BEGIN EC PRIVATE KEY-----
+              SchemeVersion: 1
+              SchemeKeyVersion: 1
+              Type: EP Decryption
+              Recipient: 99990020000000000001
+              RecipientKeySetVersion: 20180420
+
+              MIGQAgEBBCiKGULDbw7niGVO4ouxn65PirPiGZKt3ZAJBQgcRK3ocg4y7h65KF9l
+              oAsGCSskAwMCCAEBCaFUA1IABC+sP/Ycx4VWeQ1UNnhtT8BptkU/I80q1s1EiMyU
+              WZZ9w9rjCSDjynArFMpHSnZGVzn0tsKQAiaFcNoHXitXYEdl5hHe4hOlo3+AV4vh
+              O6mJ
+              -----END EC PRIVATE KEY-----
+            - |
+              -----BEGIN EC PRIVATE KEY-----
+              SchemeVersion: 1
+              SchemeKeyVersion: 1
+              Type: EP Closing
+              Recipient: 99990020000000000001
+              RecipientKeySetVersion: 20180420
+
+              MIGQAgEBBCiWl514MNVmjMkp8+RD+NSdHzwTgicCp77cnxMmsT7H7rz6MYIuOTbk
+              oAsGCSskAwMCCAEBCaFUA1IABJQ4rgjPMVdU68TV+1EZVqWDBwIloc4ZVxoGpNRG
+              dzoiQbaY4APqj5Zu+KEzxrsQEErZwtT4tGxEw2FsDE8ROlSbOxb+YCGuuQiAlz3J
+              fMB/
+              -----END EC PRIVATE KEY-----
+          description: |
+            List of PEM-encoded service provider keys.
+    OASPseudonymRequest:
+      allOf:
+        - $ref: "#/components/schemas/OASUnsignedRequestType"
+        - type: object
+          required:
+            - pseudonym
+            - targetClosingKey
+          properties:
+            pseudonym:
+              format: byte
+              type: string
+            targetClosingKey:
+              $ref: "#/components/schemas/OASRecipientKeySetVersion"
+    OASPseudonymMigrationExportRequest:
+      allOf:
+        - $ref: "#/components/schemas/OASUnsignedRequestType"
+        - type: object
+          required:
+            - pseudonym
+            - migrationID
+          properties:
+            pseudonym:
+              format: byte
+              type: string
+            migrationID:
+              $ref: "#/components/schemas/OASMigrationId"
+            targetMigrant:
+              $ref: "#/components/schemas/OASOin"
+            targetMigrantKeySetVersion:
+              $ref: "#/components/schemas/OASRecipientKeySetVersion"
+    OASSignedEncryptedPseudonymMigrationRequest:
+      allOf:
+        - $ref: "#/components/schemas/OASSignedRequestType"
+        - type: object
+          required:
+            - signedEncryptedPseudonym
+            - migrationID
+          properties:
+            signedEncryptedPseudonym:
+              format: byte
+              type: string
+              example: MIIBzwYKYIQQAYdrCgECCDCCAVkwggFDBgpghBABh2sKAQICAgEBAgEBFhQ5OTAwMDAwMTIzMTIzNDU2Nzg5MBYUOTk5OTAwMjAwMDAwMDAwMDAwMDECBAEz7cQCAUIwgfkEUQQxOFDx/tbYfmoMRxqZe46FAkKAEOAwjIP6XHBPsxwuKry7qBekWwJfxKzHUkhrA55DL5HoMg4kUHccLh15APmnfTa+qYXt+jtAp+fqA334agRRBCkuJkKLwIcvQbJcXFZRxRcrCqX2h0zlGuOQGlAvZe6rAUSNPtc+OrRyU/aFGy6WGtc53P3c+SsM8pYZwFbYVCGUrvRyX2CS7QmFlTVvYWpoBFEEL6w/9hzHhVZ5DVQ2eG1PwGm2RT8jzSrWzUSIzJRZln3D2uMJIOPKcCsUykdKdkZXOfS2wpACJoVw2gdeK1dgR2XmEd7iE6Wjf4BXi+E7qYkEEG9Kkw+9ZWaTS9+hGoxp6yUwZAYKBAB/AAcBAQQEAzBWAikA/KTQeVnSguj+P95/sKGNA3uBUKNA0kLzBDCErAfhtrrmkskbCjVUCAIpAKJiKJ8s5nEUE8sp8KSzw6PGi8p2YikI9RaZgzPC8JJkZwRLL/729bc=
+              description: |
+                DER-encoding of a *SignedEncryptedPseudonym* or *DeprecatedSignedEncryptedPseudonym* as
+                defined in the ASN.1-schema.
+            migrationID:
+              $ref: "#/components/schemas/OASMigrationId"
+            targetMigrant:
+              $ref: "#/components/schemas/OASOin"
+            targetMigrantKeySetVersion:
+              $ref: "#/components/schemas/OASRecipientKeySetVersion"
+    OASSignedDirectEncryptedPseudonymMigrationRequest:
+      allOf:
+        - $ref: "#/components/schemas/OASSignedRequestType"
+        - type: object
+          required:
+            - signedDirectEncryptedPseudonym
+            - migrationID
+          properties:
+            signedDirectEncryptedPseudonym:
+              format: byte
+              type: string
+              example: MIIBzwYKYIQQAYdrCgECCDCCAVkwggFDBgpghBABh2sKAQICAgEBAgEBFhQ5OTAwMDAwMTIzMTIzNDU2Nzg5MBYUOTk5OTAwMjAwMDAwMDAwMDAwMDECBAEz7cQCAUIwgfkEUQQxOFDx/tbYfmoMRxqZe46FAkKAEOAwjIP6XHBPsxwuKry7qBekWwJfxKzHUkhrA55DL5HoMg4kUHccLh15APmnfTa+qYXt+jtAp+fqA334agRRBCkuJkKLwIcvQbJcXFZRxRcrCqX2h0zlGuOQGlAvZe6rAUSNPtc+OrRyU/aFGy6WGtc53P3c+SsM8pYZwFbYVCGUrvRyX2CS7QmFlTVvYWpoBFEEL6w/9hzHhVZ5DVQ2eG1PwGm2RT8jzSrWzUSIzJRZln3D2uMJIOPKcCsUykdKdkZXOfS2wpACJoVw2gdeK1dgR2XmEd7iE6Wjf4BXi+E7qYkEEG9Kkw+9ZWaTS9+hGoxp6yUwZAYKBAB/AAcBAQQEAzBWAikA/KTQeVnSguj+P95/sKGNA3uBUKNA0kLzBDCErAfhtrrmkskbCjVUCAIpAKJiKJ8s5nEUE8sp8KSzw6PGi8p2YikI9RaZgzPC8JJkZwRLL/729bc=
+              description: |
+                DER-encoding of a *SignedDirectEncryptedPseudonym* or *DeprecatedSignedDirectEncryptedPseudonym* as
+                defined in the ASN.1-schema.
+            authorizedParty:
+              type: string
+              pattern: "^\\d{20}$"
+              description: |
+                OIN of the party authorized to use the send signed direct encrypted pseudonym. If an authorizedParty field
+                is present in the provided signed direct encrypted pseudonym, it must match this value.
+              example: "78901234567890848241"
+            migrationID:
+              $ref: "#/components/schemas/OASMigrationId"
+            targetMigrant:
+              $ref: "#/components/schemas/OASOin"
+            targetMigrantKeySetVersion:
+              $ref: "#/components/schemas/OASRecipientKeySetVersion"
+    OASPseudonymMigrationImportRequest:
+      allOf:
+        - $ref: "#/components/schemas/OASUnsignedRequestType"
+        - type: object
+          required:
+            - migrationIntermediaryPseudonym
+          properties:
+            migrationIntermediaryPseudonym:
+              format: byte
+              type: string
+    OASSignedRequestType:
+      allOf:
+        - $ref: "#/components/schemas/OASUnsignedRequestType"
+        - type: object
+          properties:
+            schemeKeys:
+              type: object
+              additionalProperties:
+                format: byte
+                type: string
+              example:
+                "urn:nl-gdi-eid:1.0:pp-key:ENVIRONMENT:1:PP_P:1": "BEyJ7S64/ldTtoMq7ukyJPrB5s3YVLbZjC+xdpFdBYGsHZ8cD8nOnKSdfkN7+vwQzWvV9q/S5fWLtMhFbK9l77YjNqPXXOPwLSLaF4Ay+rUL"
+              description: |
+                Expects an object of mappings of the form <Key-URN, Key-Value> where
+                - *URN* -must be of the form `urn:nl-gdi-eid:1.0:pp-key:<ENVIRONMENT>:<schemeKeySetVersion>:<keyType>:<schemeKeySetVersion>`
+                - *key* - Base64 encoded key value.
+    OASSignedPseudonymRequestType:
+      allOf:
+        - $ref: "#/components/schemas/OASSignedRequestType"
+        - type: object
+          properties:
+            targetClosingKey:
+              $ref: "#/components/schemas/OASRecipientKeySetVersion"
+    OASSignedEncryptedPseudonymRequest:
+      allOf:
+        - $ref: "#/components/schemas/OASSignedPseudonymRequestType"
+        - type: object
+          properties:
+            signedEncryptedPseudonym:
+              format: byte
+              type: string
+              example: MIIBzwYKYIQQAYdrCgECCDCCAVkwggFDBgpghBABh2sKAQICAgEBAgEBFhQ5OTAwMDAwMTIzMTIzNDU2Nzg5MBYUOTk5OTAwMjAwMDAwMDAwMDAwMDECBAEz7cQCAUIwgfkEUQQxOFDx/tbYfmoMRxqZe46FAkKAEOAwjIP6XHBPsxwuKry7qBekWwJfxKzHUkhrA55DL5HoMg4kUHccLh15APmnfTa+qYXt+jtAp+fqA334agRRBCkuJkKLwIcvQbJcXFZRxRcrCqX2h0zlGuOQGlAvZe6rAUSNPtc+OrRyU/aFGy6WGtc53P3c+SsM8pYZwFbYVCGUrvRyX2CS7QmFlTVvYWpoBFEEL6w/9hzHhVZ5DVQ2eG1PwGm2RT8jzSrWzUSIzJRZln3D2uMJIOPKcCsUykdKdkZXOfS2wpACJoVw2gdeK1dgR2XmEd7iE6Wjf4BXi+E7qYkEEG9Kkw+9ZWaTS9+hGoxp6yUwZAYKBAB/AAcBAQQEAzBWAikA/KTQeVnSguj+P95/sKGNA3uBUKNA0kLzBDCErAfhtrrmkskbCjVUCAIpAKJiKJ8s5nEUE8sp8KSzw6PGi8p2YikI9RaZgzPC8JJkZwRLL/729bc=
+              description: |
+                DER-encoding of a *SignedEncryptedPseudonym* or *DeprecatedSignedEncryptedPseudonym* as
+                defined in the ASN.1-schema.
+    OASSignedDirectEncryptedPseudonymRequest:
+      allOf:
+        - $ref: "#/components/schemas/OASSignedPseudonymRequestType"
+        - type: object
+          properties:
+            signedDirectEncryptedPseudonym:
+              format: byte
+              type: string
+              example: MIIB5QYKYIQQAYdrCgECBjCCAXIwggFZBgpghBABh2sKAQIFAgEBAgEBFhQ5OTAwMDAwMTIzMTIzNDU2Nzg5MBYUNTU1NTQ0NDQzMzMzMjIyMjExMTECBAEzxqsCAUIwgfkEUQSKn5E6YOxP62lWgn0gPTJ9Zqisgw/cUUgP8QP8ZZhupu1UjlYk67lFXQ/8WGSN0/KDZrYQGqMTATXrBHRFNLFlbXRQLmvryk9C8NrbFKBu0QRRBBa5cXeJ8akXyiQmNAq44eSosULjpQR3k36Qs3IpBsru0VDVhBjA4SXCt0z1ZYqf2CEq3IOqYVSePhsE7765pN3Fy6luLbHflyFp7uahgFYbBFEEiUsrulfQQ8HrcK+Hp8tsqGFKzpgkntDSD6vW5RdwBczdZSkrL5VvgmXuy8yX05zlUxfulkrjr/JsgQMbbHmjfIKyQrApPEWPsSsQ438el0WBFDc4OTAxMjM0NTY3ODkwODQ4MjQxBBAgsQ87YO3clWHGyqskR88bAgEBMGEGCCqGSM49BAMDMFUCKQCqPmAtOndG86WXoS9F36Dgr/+fg8KZ6Fv/V0Le076AeBltI24X117GAihPufuh3ZBrAsFBvAi6F81Hvfvf63XLzZAT7MpZ/80gGREjb5fjhfY7
+              description: |
+                DER-encoding of a *SignedDirectEncryptedPseudonym* as
+                defined in the ASN.1-schema.
+            authorizedParty:
+              type: string
+              pattern: "^\\d{20}$"
+              description: |
+                OIN of the party authorized to use the send signed direct encrypted pseudonym. If an authorizedParty field
+                is present in the provided signed direct encrypted pseudonym, it must match this value.
+              example: "78901234567890848241"
+    OASSignedEncryptedIdentityRequest:
+      allOf:
+        - $ref: "#/components/schemas/OASSignedRequestType"
+        - type: object
+          properties:
+            signedEncryptedIdentity:
+              format: byte
+              type: string
+              example: MIIBywYKYIQQAYdrCgECBzCCAVYwggFABgpghBABh2sKAQIBAgEBAgEBFhQ5OTAwMDAwMTIzMTIzNDU2Nzg5MBYUOTk5OTAwMjAwMDAwMDAwMDAwMDICBAE0F5IwgfkEUQSjSWgkkTvuEHXyoT/bPqA4ExOgUGbsqCN1evhPtdUTxBM0j/Nw9r6CKn1W3wdivhgB5zans2SQJpEUQaO1fE7/WOYd+BRIrLyiEVu8fDcyXQRRBFwKrswNo4mGZsBFCnnUz5TqdPN+p/MiBB9baCxt9EcLVBsJWiUuKitUQzT/1zxmdNT9OUZiB7W90YhQvle8uZvtWge9AKGEPMlS2xqcrC6wBFEEMVcDCTw2xXlcg5veyo1/de1Y/kWNAdYH5zipTwljW/XSGjRDPAzLxBbLz1cXV3gyH2/WgzetX+qqaiFSByAgYX5mpTXmzQwRuAaVNDt6BtwEECfs9w34My6xjKREev8sbncwYwYKBAB/AAcBAQQEAzBVAikApisUggH7LeoH7f1Iz58mZvKFLIhCsFSUOLsYXOMgowWKNgoyFDYU0gIoOOrh4xGQM0SZGqRpPTZiJZcKMlOTV0oVi7onE8BLvIdNuGrG4Sua0A==
+              description: |
+                DER-encoding of a *SignedEncryptedIdentity* or *DeprecatedSignedEncryptedIdentity* as
+                defined in the ASN.1-schema.
+    OASSignedDirectEncryptedIdentityRequest:
+      allOf:
+        - $ref: "#/components/schemas/OASSignedRequestType"
+        - type: object
+          properties:
+            signedDirectEncryptedIdentity:
+              format: byte
+              type: string
+              example: MIIB7wYLYIQQAYdrCgECCgIwggF6MIIBVwYLYIQQAYdrCgECCQICAQECAQEWFDk5MDAwMDAxMjMxMjM0NTY3ODkwFhQ5OTk5MDAyMDAwMDAwMDAwMDAwMQIEATPtxDCB+QRRBE34La6JLhlbzW0JSWbTRjIWrcejTY06YsPP+fN4jAOAsenAe8zKqQdzR8gY0SjuACCJWQU0tVomHjwbVupwysRKjzh7o5om6WXW6jMdXYQCBFEEfdAfetX7ztxth5fGbcpWsLvIhmjG94byUXVlzWDU6f6BUMn3BXQdZBNUngbDUxCjIrupMcmou84w5aIJDvKm8fLUzRe7M3psjT+TCTimLE0EUQQwNecVsEcX8Eix4i203cq+UcO/NSxC77k9HwogaaX4haj2rkWKUTevHD3LVymZVoXJ65DAeUgyLmLmJ4QLClikDnrMSO7YaqQo3d+wztXqb4EUOTk5OTAwNDAwMDAwMDAwMDAwMDEEEGDbTSzlhGzQMgGRt00TCYwCAQEWCDIwMTkwNzAxMGIGCCqGSM49BAMDMFYCKQCq0EH/ZaQTtijhX2yLZuTgblfcxwwi+BuMzj7qcfSDrtMFvMyl3/jdAikAle5AfZFY07p0q0Ic811fcChMVX9sAk95YNjqzwqs/7C14jda64Bf5A==
+              description: |
+                DER-encoding of a *SignedDirectEncryptedIdentity* as defined in the ASN.1-schema.
+            authorizedParty:
+              $ref: "#/components/schemas/OASOin"
+    #-------------------------------------------------------------------------------------------------------------------
+    # 0.4.0.127.0.7.1.1.4.3.3: EC-Schnorr-Signature (Deprecated)
+    #-------------------------------------------------------------------------------------------------------------------
+    OASEcSchnorrSignature:
+      allOf:
+        - $ref: "#/components/schemas/OASSignatureValue"
+    #-------------------------------------------------------------------------------------------------------------------
+    # 0.4.0.127.0.7.1.1.4.4.3: EC-SDSA-Signature
+    #-------------------------------------------------------------------------------------------------------------------
+    OASEcsdsaSignature:
+      allOf:
+        - $ref: "#/components/schemas/OASSignatureValue"
+    #-------------------------------------------------------------------------------------------------------------------
+    # 1.2.840.10045.4.3.3: ECDSA-Signature
+    #-------------------------------------------------------------------------------------------------------------------
+    OASEcdsaSignature:
+      allOf:
+        - $ref: "#/components/schemas/OASSignatureValue"
+    #-------------------------------------------------------------------------------------------------------------------
+    # 2.16.528.1.1003.10.1.2.1: EncryptedIdentity
+    #-------------------------------------------------------------------------------------------------------------------
+    OASEncryptedIdentity:
+      allOf:
+        - $ref: "#/components/schemas/OASRecipientKeyId"
+        - type: object
+          required:
+            - notationIdentifier
+            - schemeVersion
+            - schemeKeySetVersion
+            - creator
+            - recipient
+            - recipientKeySetVersion
+            - points
+          properties:
+            notationIdentifier:
+              type: string
+              pattern: "^2\\.16\\.528\\.1\\.1003\\.10\\.1\\.2\\.1$"
+            creator:
+              $ref: "#/components/schemas/OASOin"
+            points:
+              $ref: "#/components/schemas/OASEcPointTriplet"
+    #-------------------------------------------------------------------------------------------------------------------
+    # 2.16.528.1.1003.10.1.2.2: EncryptedPseudonym
+    #-------------------------------------------------------------------------------------------------------------------
+    OASEncryptedPseudonym:
+      allOf:
+        - $ref: "#/components/schemas/OASRecipientKeyId"
+        - type: object
+          required:
+            - notationIdentifier
+            - schemeVersion
+            - schemeKeySetVersion
+            - creator
+            - recipient
+            - recipientKeySetVersion
+            - type
+            - points
+          properties:
+            notationIdentifier:
+              type: string
+              pattern: "^2\\.16\\.528\\.1\\.1003\\.10\\.1\\.2\\.2$"
+            type:
+              $ref: "#/components/schemas/OASPseudonymType"
+            diversifier:
+              $ref: "#/components/schemas/OASDiversifiers"
+            creator:
+              $ref: "#/components/schemas/OASOin"
+            points:
+              $ref: "#/components/schemas/OASEcPointTriplet"
+    #-------------------------------------------------------------------------------------------------------------------
+    # 2.16.528.1.1003.10.1.2.3: SignedEncryptedIdentity (Deprecated)
+    #-------------------------------------------------------------------------------------------------------------------
+    OASDeprecatedSignedEncryptedIdentity:
+      allOf:
+        - $ref: "#/components/schemas/OASSignedEncryptedIdentityType"
+    #------------------------------------------------------------------------------------------------------------------
+    # 2.16.528.1.1003.10.1.2.4: SignedEncryptedPseudonym (Deprecated)
+    #------------------------------------------------------------------------------------------------------------------
+    OASDeprecatedSignedEncryptedPseudonym:
+      allOf:
+        - $ref: "#/components/schemas/OASSignedEncryptedPseudonymType"
+    #-------------------------------------------------------------------------------------------------------------------
+    # 2.16.528.1.1003.10.1.2.5: DirectEncryptedPseudonym
+    #-------------------------------------------------------------------------------------------------------------------
+    OASDirectEncryptedPseudonym:
+      allOf:
+        - $ref: "#/components/schemas/OASRecipientKeyId"
+        - type: object
+          required:
+            - notationIdentifier
+            - schemeVersion
+            - schemeKeySetVersion
+            - creator
+            - recipient
+            - recipientKeySetVersion
+            - type
+            - points
+          properties:
+            notationIdentifier:
+              type: string
+              pattern: "^2\\.16\\.528\\.1\\.1003\\.10\\.1\\.2\\.5$"
+            creator:
+              $ref: "#/components/schemas/OASOin"
+            points:
+              $ref: "#/components/schemas/OASEcPointTriplet"
+            type:
+              $ref: "#/components/schemas/OASPseudonymType"
+            diversifier:
+              $ref: "#/components/schemas/OASDiversifiers"
+            authorizedParty:
+              $ref: "#/components/schemas/OASOin"
+    #-------------------------------------------------------------------------------------------------------------------
+    # 2.16.528.1.1003.10.1.2.9.2: DirectEncryptedIdentity-v2
+    #-------------------------------------------------------------------------------------------------------------------
+    OASDirectEncryptedIdentity:
+      allOf:
+        - $ref: "#/components/schemas/OASRecipientKeyId"
+        - type: object
+          required:
+            - notationIdentifier
+            - schemeVersion
+            - schemeKeySetVersion
+            - creator
+            - recipient
+            - recipientKeySetVersion
+            - points
+          properties:
+            notationIdentifier:
+              type: string
+              pattern: "^2\\.16\\.528\\.1\\.1003\\.10\\.1\\.2\\.9\\.2$"
+            creator:
+              $ref: "#/components/schemas/OASOin"
+            points:
+              $ref: "#/components/schemas/OASEcPointTriplet"
+            authorizedParty:
+              $ref: "#/components/schemas/OASOin"
+    #-------------------------------------------------------------------------------------------------------------------
+    # 2.16.528.1.1003.10.1.2.6: SignedDirectEncryptedPseudonym
+    #-------------------------------------------------------------------------------------------------------------------
+    OASSignedDirectEncryptedPseudonym:
+      type: object
+      required:
+        - notationIdentifier
+        - signedDEP
+        - signatureValue
+      properties:
+        notationIdentifier:
+          type: string
+          pattern: "^2\\.16\\.528\\.1\\.1003\\.10\\.1\\.2\\.6$"
+        signedDEP:
+          $ref: "#/components/schemas/OASSignedDEP"
+        signatureValue:
+          oneOf:
+            - $ref: "#/components/schemas/OASEcdsaSignature"
+    #-------------------------------------------------------------------------------------------------------------------
+    # 2.16.528.1.1003.10.1.2.10.2: SignedDirectEncryptedIdentity-v2
+    #-------------------------------------------------------------------------------------------------------------------
+    OASSignedDirectEncryptedIdentity:
+      type: object
+      required:
+        - notationIdentifier
+        - signedDEI
+        - signatureValue
+      properties:
+        notationIdentifier:
+          type: string
+          pattern: "^2\\.16\\.528\\.1\\.1003\\.10\\.1\\.2\\.10\\.2$"
+        signedDEI:
+          $ref: "#/components/schemas/OASSignedDEI"
+        signatureValue:
+          oneOf:
+            - $ref: "#/components/schemas/OASEcdsaSignature"
+    #-------------------------------------------------------------------------------------------------------------------
+    # 2.16.528.1.1003.10.1.2.7: SignedEncryptedIdentity
+    #-------------------------------------------------------------------------------------------------------------------
+    OASSignedEncryptedIdentity:
+      allOf:
+        - $ref: "#/components/schemas/OASSignedEncryptedIdentityType"
+      example:
+        notationIdentifier: "2.16.528.1.1003.10.1.2.7"
+        signedEI:
+          encryptedIdentity:
+            notationIdentifier: "2.16.528.1.1003.10.1.2.1"
+            schemeVersion: 1
+            schemeKeySetVersion: 1
+            creator: "99000001231234567890"
+            recipient: "99990020000000000002"
+            recipientKeySetVersion: "20191122"
+            points:
+              - "04a3496824913bee1075f2a13fdb3ea0381313a05066eca823757af84fb5d513c413348ff370f6be822a7d56df0762be1801e736a7b3649026911441a3b57c4eff58e61df81448acbca2115bbc7c37325d"
+              - "045c0aaecc0da3898666c0450a79d4cf94ea74f37ea7f322041f5b682c6df4470b541b095a252e2a2b544334ffd73c6674d4fd39466207b5bdd18850be57bcb99bed5a07bd00a1843cc952db1a9cac2eb0"
+              - "04315703093c36c5795c839bdeca8d7f75ed58fe458d01d607e738a94f09635bf5d21a34433c0ccbc416cbcf57175778321f6fd68337ad5feaaa6a2152072020617e66a535e6cd0c11b80695343b7a06dc"
+          auditElement: "27ecf70df8332eb18ca4447aff2c6e77"
+        signatureValue:
+          signatureType: "0.4.0.127.0.7.1.1.4.4.3"
+          s: "38eae1e311903344991aa4693d366225970a325393574a158bba2713c04bbc874db86ac6e12b9ad0"
+          r: "00a62b148201fb2dea07edfd48cf9f2666f2852c8842b0549438bb185ce320a3058a360a32143614d2"
+    #-------------------------------------------------------------------------------------------------------------------
+    # 2.16.528.1.1003.10.1.2.8: SignedEncryptedPseudonym
+    #-------------------------------------------------------------------------------------------------------------------
+    OASSignedEncryptedPseudonym:
+      allOf:
+        - $ref: "#/components/schemas/OASSignedEncryptedPseudonymType"
+      properties:
+        notationIdentifier:
+          type: string
+          pattern: "^2\\.16\\.528\\.1\\.1003\\.10\\.1\\.2\\.8$"
+        signedEP:
+          $ref: "#/components/schemas/OASSignedEP"
+        signatureValue:
+          oneOf:
+            - $ref: "#/components/schemas/OASEcsdsaSignature"
+    #-------------------------------------------------------------------------------------------------------------------
+    # 2.16.528.1.1003.10.1.3.2: DecryptedPseudonym
+    #-------------------------------------------------------------------------------------------------------------------
+    OASDecryptedPseudonym:
+      allOf:
+        - $ref: "#/components/schemas/OASRecipientKeyId"
+        - type: object
+          required:
+            - notationIdentifier
+            - schemeVersion
+            - schemeKeySetVersion
+            - creator
+            - recipient
+            - recipientKeySetVersion
+            - type
+            - pseudonymValue
+          properties:
+            notationIdentifier:
+              type: string
+              pattern: "^2\\.16\\.528\\.1\\.1003\\.10\\.1\\.3\\.2$"
+            type:
+              $ref: "#/components/schemas/OASPseudonymType"
+            diversifier:
+              $ref: "#/components/schemas/OASDiversifiers"
+            pseudonymValue:
+              $ref: "#/components/schemas/OASPseudonymValue"
+    #-------------------------------------------------------------------------------------------------------------------
+    # 2.16.528.1.1003.10.1.3.3: MigrationIntermediaryPseudonym
+    #-------------------------------------------------------------------------------------------------------------------
+    OASMigrationIntermediaryPseudonym:
+      allOf:
+        - $ref: "#/components/schemas/OASSchemeKeyId"
+        - type: object
+          required:
+            - notationIdentifier
+            - schemeVersion
+            - schemeKeySetVersion
+            - source
+            - sourceKeySetVersion
+            - target
+            - targetKeySetVersion
+            - migrationID
+            - type
+            - pseudonymValue
+          properties:
+            notationIdentifier:
+              type: string
+              pattern: "^2\\.16\\.528\\.1\\.1003\\.10\\.1\\.3\\.3$"
+            source:
+              $ref: "#/components/schemas/OASOin"
+            sourceKeySetVersion:
+              $ref: "#/components/schemas/OASRecipientKeySetVersion"
+            target:
+              $ref: "#/components/schemas/OASOin"
+            targetKeySetVersion:
+              $ref: "#/components/schemas/OASRecipientKeySetVersion"
+            migrationID:
+              $ref: "#/components/schemas/OASMigrationId"
+            type:
+              $ref: "#/components/schemas/OASPseudonymType"
+            diversifier:
+              $ref: "#/components/schemas/OASDiversifiers"
+            pseudonymValue:
+              $ref: "#/components/schemas/OASPseudonymValue"
+    #-------------------------------------------------------------------------------------------------------------------
+    # Schemas - Shared structures
+    #-------------------------------------------------------------------------------------------------------------------
+    OASAuditElement:
+      type: string
+      format: byte
+      minLength: 16
+      maxLength: 16
+    OASDiversifier:
+      type: object
+      required:
+        - key
+        - value
+      properties:
+        key:
+          type: string
+        value:
+          type: string
+    OASExtraElement:
+      type: object
+      required:
+        - key
+        - value
+      properties:
+        key:
+          type: string
+        value:
+          type: object
+    OASExtraElements:
+      type: array
+      nullable: true
+      items:
+        $ref: "#/components/schemas/OASExtraElement"
+    OASDiversifiers:
+      type: array
+      nullable: true
+      items:
+        $ref: "#/components/schemas/OASDiversifier"
+    OASEcPointTriplet:
+      type: array
+      minItems: 3
+      maxItems: 3
+      items:
+        format: byte
+        type: string
+    OASIdentityDecryptionResult:
+      description: |
+        The byte representation of the ECPoint encodes the identity as a byte array mapping to |V|T|L|identifier|.
+
+        | Field      | Byte count | Description                                           |
+        |------------|------------|-------------------------------------------------------|
+        | V          | 1 byte     | Version of this dataformat                            |
+        | T          | 1 byte     | Type of the encoded identifier                        |
+        | L          | 1 byte     | Length of the encoded identifier                      |
+        | identifier | L bytes    | Encoded identifier                                    |
+      properties:
+        bytes:
+          format: byte
+          type: string
+          description: base64 representation of the encoded identity
+          example: "AUIJNzk5ODkwMTMzAAAAAAAA"
+        version:
+          type: string
+          description: version of encoded identity
+          example: "01"
+        type:
+          type: string
+          description: identifier type decoded as ascii
+          example: "B"
+        length:
+          format: int32
+          type: integer
+          description: byte count for the identifier
+          example: 9
+        identifier:
+          type: string
+          description: the identifier bytes decoded as ascii
+          example: "799890133"
+    OASRequest:
+      type: object
+    OASOin:
+      type: string
+      pattern: "^\\d{20}$"
+      example: "00010002000300040005"
+    OASMigrationId:
+      type: string
+      pattern: "^[A-F0-9\\-]+$"
+      example: "ABCDEF-0123-AB31"
+    OASRecipientKeySetVersion:
+      type: string
+      pattern: "^\\d{8}$"
+      example: "20200214"
+    OASPseudonymType:
+      type: string
+      maxLength: 1
+      minLength: 1
+    OASPseudonymValue:
+      type: string
+      minLength: 1
+    OASSchemeKeyId:
+      type: object
+      required:
+        - schemeVersion
+        - schemeKeySetVersion
+      properties:
+        schemeVersion:
+          type: string
+          pattern: "^1$"
+          example: "1"
+        schemeKeySetVersion:
+          type: string
+          pattern: "^[1-9]\\d*$"
+          example: "1"
+    OASRecipientKeyId:
+      allOf:
+        - $ref: "#/components/schemas/OASSchemeKeyId"
+        - type: object
+          required:
+            - schemeVersion
+            - schemeKeySetVersion
+            - recipient
+            - recipientKeySetVersion
+          properties:
+            recipient:
+              $ref: "#/components/schemas/OASOin"
+            recipientKeySetVersion:
+              $ref: "#/components/schemas/OASRecipientKeySetVersion"
+    OASSignatureValue:
+      allOf:
+        - type: object
+          properties:
+            signatureType:
+              type: string
+              minLength: 1
+            r:
+              type: string
+              format: byte
+            s:
+              type: string
+              format: byte
+    OASSignedDEP:
+      type: object
+      required:
+        - directEncryptedPseudonym
+        - auditElement
+        - signingKeyVersion
+      properties:
+        directEncryptedPseudonym:
+          $ref: "#/components/schemas/OASDirectEncryptedPseudonym"
+        auditElement:
+          $ref: "#/components/schemas/OASAuditElement"
+        signingKeyVersion:
+          type: string
+          pattern: "^[1-9]\\d*$"
+    OASSignedDEI:
+      type: object
+      required:
+        - directEncryptedIdentity
+        - auditElement
+        - signingKeyVersion
+        - issuanceDate
+      properties:
+        directEncryptedIdentity:
+          $ref: "#/components/schemas/OASDirectEncryptedIdentity"
+        auditElement:
+          $ref: "#/components/schemas/OASAuditElement"
+        signingKeyVersion:
+          type: string
+          pattern: "^[1-9]\\d*$"
+        issuanceDate:
+          type: string
+        extraElements:
+          $ref: "#/components/schemas/OASExtraElements"
+    OASSignedEI:
+      type: object
+      required:
+        - encryptedIdentity
+        - auditElement
+      properties:
+        encryptedIdentity:
+          $ref: "#/components/schemas/OASEncryptedIdentity"
+        auditElement:
+          $ref: "#/components/schemas/OASAuditElement"
+        issuanceDate:
+          type: string
+        extraElements:
+          $ref: "#/components/schemas/OASExtraElements"
+    OASSignedEncryptedIdentityType:
+      type: object
+      required:
+        - notationIdentifier
+        - signedEI
+        - signatureValue
+      properties:
+        notationIdentifier:
+          type: string
+          pattern: "^2\\.16\\.528\\.1\\.1003\\.10\\.1\\.2\\.3|2\\.16\\.528\\.1\\.1003\\.10\\.1\\.2\\.7|2\\.16\\.528\\.1\\.1003\\.10\\.1\\.2\\.7\\.2$"
+        signedEI:
+          $ref: "#/components/schemas/OASSignedEI"
+        signatureValue:
+          oneOf:
+            - $ref: "#/components/schemas/OASEcsdsaSignature"
+            - $ref: "#/components/schemas/OASEcSchnorrSignature"
+    OASSignedEncryptedPseudonymType:
+      type: object
+      required:
+        - notationIdentifier
+        - signedEP
+        - signatureValue
+      properties:
+        notationIdentifier:
+          type: string
+          pattern: "^2\\.16\\.528\\.1\\.1003\\.10\\.1\\.2\\.4|2\\.16\\.528\\.1\\.1003\\.10\\.1\\.2\\.8|2\\.16\\.528\\.1\\.1003\\.10\\.1\\.2\\.8\\.2$"
+        signedEP:
+          $ref: "#/components/schemas/OASSignedEP"
+        signatureValue:
+          oneOf:
+            - $ref: "#/components/schemas/OASEcsdsaSignature"
+            - $ref: "#/components/schemas/OASEcSchnorrSignature"
+    OASSignedEP:
+      type: object
+      required:
+        - encryptedPseudonym
+        - auditElement
+      properties:
+        encryptedPseudonym:
+          $ref: "#/components/schemas/OASEncryptedPseudonym"
+        auditElement:
+          $ref: "#/components/schemas/OASAuditElement"
+        issuanceDate:
+          type: string
+        extraElements:
+          $ref: "#/components/schemas/OASExtraElements"
+    #-------------------------------------------------------------------------------------------------------------------
+    # Schemas - Responses
+    #-------------------------------------------------------------------------------------------------------------------
+    OASDecodedRequestResponse:
+      description: Decryption result
+      type: object
+      properties:
+        decodedInput:
+          description: Human readable mapping of the input structure.
+          anyOf:
+            - $ref: "#/components/schemas/OASDeprecatedSignedEncryptedIdentity"
+            - $ref: "#/components/schemas/OASDeprecatedSignedEncryptedPseudonym"
+            - $ref: "#/components/schemas/OASSignedDirectEncryptedPseudonym"
+            - $ref: "#/components/schemas/OASSignedEncryptedIdentity"
+            - $ref: "#/components/schemas/OASSignedDirectEncryptedIdentity"
+            - $ref: "#/components/schemas/OASSignedEncryptedPseudonym"
+    OASDecryptedIdentityResponse:
+      description: Decoded result for a EncryptedIdentity decryption.
+      allOf:
+        - $ref: "#/components/schemas/OASDecodedRequestResponse"
+        - type: object
+          properties:
+            bsn:
+              type: string
+              minLength: 9
+              maxLength: 9
+            decryption_result:
+              $ref: "#/components/schemas/OASIdentityDecryptionResult"
+    OASDecryptedPseudonymResponse:
+      description: Reshuffled decryption of an EncryptedPseudonym encoded as *Pseudonym*.
+      allOf:
+        - $ref: "#/components/schemas/OASDecodedRequestResponse"
+        - type: object
+          properties:
+            pseudonym:
+              description: |
+                DER-encoding of a *Pseudonym* as defined in the ASN.1-schema.
+              type: string
+              format: byte
+            decodedPseudonym:
+              $ref: "#/components/schemas/OASDecryptedPseudonym"
+    OASMigrationIntermediaryPseudonymResponse:
+      description: Intermediary result of a pseudonym migration to a different organization.
+      allOf:
+        - $ref: "#/components/schemas/OASDecodedRequestResponse"
+        - type: object
+          properties:
+            migrationIntermediaryPseudonym:
+              description: |
+                DER-encoding of a *MigrationIntermediaryPseudonym* as defined in the ASN.1-schema.
+              type: string
+              format: byte
+            decodedMigrationIntermediaryPseudonym:
+              $ref: "#/components/schemas/OASMigrationIntermediaryPseudonym"
+
+########################################################################################################################
+
+

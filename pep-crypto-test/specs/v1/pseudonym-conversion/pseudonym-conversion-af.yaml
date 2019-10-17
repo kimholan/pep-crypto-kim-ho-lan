@@ -1,0 +1,104 @@
+"PTC_4954_1":
+  request:
+    pseudonym: "/v1/pseudonyms/p_01.asn1"
+    serviceProviderKeys:
+      - "/v1/keys/pcd_sksv_1_oin_99990020000000000001_ckv_20211207.pem"
+      - "/v1/keys/pcd_sksv_1_oin_99990020000000000001_ckv_20180420.pem"
+    targetClosingKey: "20190811"
+  expectations:
+    statusCode: "500"
+
+
+
+"PTC_4954_2":
+  request:
+    pseudonym: "/v1/pseudonyms/p_01.asn1"
+    serviceProviderKeys:
+      - "/v1/keys/pcd_sksv_1_oin_99990020000000000001_ckv_20180420.pem"
+      - "/v1/keys/pcd_sksv_1_oin_99990020000000000001_ckv_20211207.pem"
+    targetClosingKey:
+  expectations:
+    statusCode: "500"
+
+
+
+"PTC_4954_3":
+  request:
+    pseudonym: "/v1/pseudonyms/p_01.asn1"
+    serviceProviderKeys:
+      - "/v1/keys/pcd_sksv_1_oin_99990020000000000001_ckv_20211207.pem"
+      - "/v1/keys/pcd_sksv_1_oin_99990020000000000001_ckv_20190502.pem"
+    targetClosingKey: "20190502"
+  expectations:
+    statusCode: "500"
+
+
+
+"PTC_4954_4":
+  request:
+    pseudonym: "/v1/pseudonyms/p_01.asn1"
+    serviceProviderKeys:
+      - "/v1/keys/pcd_sksv_1_oin_99990020000000000001_ckv_20211207.pem"
+    targetClosingKey: "20211207"
+  expectations:
+    statusCode: "500"
+
+
+
+"PTC_4954_5":
+  request:
+    pseudonym: "/v1/pseudonyms/p_01.asn1"
+    serviceProviderKeys:
+      - "/v1/keys/pcd_sksv_1_oin_99990020000000000001_ckv_20180420.pem"
+    targetClosingKey: "20180420"
+  expectations:
+    statusCode: "500"
+
+
+
+
+"PTC_4954_6":
+  request:
+    pseudonym: "/v1/pseudonyms/p_01.asn1"
+    serviceProviderKeys:
+      - "/v1/keys/pcd_sksv_1_oin_99990020000000000001_ckv_20180420.pem"
+      - "/v1/keys/pcd_sksv_10_oin_99990020000000000001_ckv_20211207.pem"
+    targetClosingKey: "20211207"
+  expectations:
+    statusCode: "500"
+
+
+
+"PTC_4954_7":
+  request:
+    pseudonym: "/v1/pseudonyms/p_01.asn1"
+    serviceProviderKeys:
+      - "/v1/keys/pcd_sksv_10_oin_99990020000000000001_ckv_20180420.pem"
+      - "/v1/keys/pcd_sksv_1_oin_99990020000000000001_ckv_20211207.pem"
+    targetClosingKey: "20211207"
+  expectations:
+    statusCode: "500"
+
+
+
+"PTC_4954_8":
+  request:
+    pseudonym: "/v1/pseudonyms/p_01.asn1"
+    serviceProviderKeys:
+    - "/v1/keys/pcd_sksv_1_oin_99990020000000000002_ckv_20191103.pem"
+    - "/v1/keys/pcd_sksv_1_oin_99990020000000000001_ckv_20180420.pem"
+    targetClosingKey: "20191103"
+  expectations:
+    statusCode: "500"
+
+
+
+"PTC_4954_9":
+  request:
+    pseudonym: "/v1/pseudonyms/p_01.asn1"
+    serviceProviderKeys:
+      - "/v1/keys/pcd_sksv_1_oin_99990020000000000001_ckv_20211207.pem"
+      - "/v1/keys/pcd_sksv_1_oin_99990020000000000003_ckv_20180420.pem"
+    targetClosingKey: "20211207"
+  expectations:
+    statusCode: "500"

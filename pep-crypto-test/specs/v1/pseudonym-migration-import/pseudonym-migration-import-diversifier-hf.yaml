@@ -1,0 +1,80 @@
+"PTC_5242_1":
+  "request":
+    "migrationIntermediaryPseudonym": "/v1/pseudonyms/mip_99990020000000000001_20180420_to_99990020000000000001_20211207_from_21_to_22_div1.asn1"
+    "serviceProviderKeys":
+    - "/v1/keys/migration_99990020000000000001_20180420_to_99990020000000000001_20211207_sksv_1_div1.target.pem"
+  "expectations":
+    "statusCode": "200"
+    "pseudonym": "/v1/pseudonyms/p22_div1.asn1"
+    "responseBody":
+      "decodedInput":
+        "notationIdentifier": "2.16.528.1.1003.10.1.3.3"
+        "schemeVersion": "1"
+        "schemeKeySetVersion": "1"
+        "source": "99990020000000000001"
+        "sourceKeySetVersion": "20180420"
+        "target": "99990020000000000001"
+        "targetKeySetVersion": "20211207"
+        "type": "B"
+        "migrationID": "A78DC453-D62C293E-5D5F5E47"
+        "pseudonymValue": "BIlggI4S832DOnfHX2GJHIV0DcbK7ieJaQXsTWKVWv+jAoap1/USEe1AN0/Y9D6tdcGACMrPzk6UEe5mdTZmV6AmJo389yd2TjnxUrNBa8s1"
+        "diversifier":
+        - "key": "Role"
+          "value": "Company"
+      "pseudonym": "MIGyBgpghBABh2sKAQMCAgEBAgEBFhQ5OTk5MDAyMDAwMDAwMDAwMDAwMQIEATRmBwIBQhZsQkQ4VFVQcjM3YVowQ0xBaHpHZ29IS2luYVhyWkhIbW1ycU1zY05WR0NidUhEblZWQ0VScEhOQlY4bUhYM2NNSWtrdzdlaXRlaXg2WWw4ZlZaY3R0a29PVllncHFJa2d4YlhvdmVkQ3JBU3lXoBEwDxYEUm9sZRYHQ29tcGFueQ=="
+      "decodedPseudonym":
+        "notationIdentifier": "2.16.528.1.1003.10.1.3.2"
+        "schemeVersion": "1"
+        "schemeKeySetVersion": "1"
+        "recipient": "99990020000000000001"
+        "recipientKeySetVersion": "20211207"
+        "type": "B"
+        "pseudonymValue": "BD8TUPr37aZ0CLAhzGgoHKinaXrZHHmmrqMscNVGCbuHDnVVCERpHNBV8mHX3cMIkkw7eiteix6Yl8fVZcttkoOVYgpqIkgxbXovedCrASyW"
+        "diversifier":
+        - "key": "Role"
+          "value": "Company"
+"PTC_5242_2":
+  "request":
+    "migrationIntermediaryPseudonym": "/v1/pseudonyms/mip_99990020000000000002_20191103_to_99990020000000000003_20180420_from_18_to_19_div3.asn1"
+    "serviceProviderKeys":
+    - "/v1/keys/e_mid_migration_99990020000000000002_20191103_to_99990020000000000003_20180420_sksv_10_div1_mid02.target.pem"
+    - "/v1/keys/migration_99990020000000000002_20191103_to_99990020000000000003_20180420_sksv_10_div2.target.pem"
+    - "/v1/keys/migration_99990020000000000002_20191103_to_99990020000000000003_20180420_sksv_10_div3.target.pem"
+  "expectations":
+    "statusCode": "200"
+    "pseudonym": "/v1/pseudonyms/p19_div3.asn1"
+    "responseBody":
+      "decodedInput":
+        "notationIdentifier": "2.16.528.1.1003.10.1.3.3"
+        "schemeVersion": "1"
+        "schemeKeySetVersion": "10"
+        "source": "99990020000000000002"
+        "sourceKeySetVersion": "20191103"
+        "target": "99990020000000000003"
+        "targetKeySetVersion": "20180420"
+        "type": "E"
+        "migrationID": "4FA08203-AAA33FCF-E7432CDD"
+        "pseudonymValue": "BIFqd3y4na/LpLuCwe+L0n1++BaWBkYiRsLoSJEyzp/PC/3qwYhNxp5hhtdO4cazaPHGDnHe8UCUBE02bFluO37BMp9RK+6rseDywfcbs0qC"
+        "diversifier":
+        - "key": "O"
+          "value": "Logius"
+        - "key": "R"
+          "value": "Tester"
+        - "key": "U"
+          "value": "Bsnk"
+      "pseudonym": "MIHGBgpghBABh2sKAQMCAgEBAgEKFhQ5OTk5MDAyMDAwMDAwMDAwMDAwMwIEATPtxAIBRRZsQkg5ZXJ4ZGRUcFNTc1l1Ym52Ty91VGs2R1VER0VndnJIaWNBZ3EwSUFOdmdkUjZFZFRuSFdsbk0rS2ttZFZwQzR3ekZyaGR2cVo4SWN6K214akFhNlJ2d1J3dlduYktRNHE2OWY2OWlsaG5EoCUwCxYBTxYGTG9naXVzMAsWAVIWBlRlc3RlcjAJFgFVFgRCc25r"
+      "decodedPseudonym":
+        "notationIdentifier": "2.16.528.1.1003.10.1.3.2"
+        "schemeVersion": "1"
+        "schemeKeySetVersion": "10"
+        "recipient": "99990020000000000003"
+        "recipientKeySetVersion": "20180420"
+        "type": "E"
+        "pseudonymValue": "BH9erxddTpSSsYubnvO/uTk6GUDGEgvrHicAgq0IANvgdR6EdTnHWlnM+KkmdVpC4wzFrhdvqZ8Icz+mxjAa6RvwRwvWnbKQ4q69f69ilhnD"
+        "diversifier":
+        - "key": "O"
+          "value": "Logius"
+        - "key": "R"
+          "value": "Tester"
+        - "key": "U"
+          "value": "Bsnk"

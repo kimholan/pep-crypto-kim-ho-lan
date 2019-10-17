@@ -1,0 +1,130 @@
+"PTC_5124_1":
+  request:
+    pseudonym: "/v1/pseudonyms/p_04.asn1"
+    serviceProviderKeys:
+      - "/v1/keys/migration_99990020000000000001_20180420_to_99990020000000000002_20191103_sksv_1_mid01.source.pem"
+    migrationID: ""
+  expectations:
+    statusCode: "500"
+
+
+
+"PTC_5124_2":
+  request:
+    pseudonym: "/v1/pseudonyms/p_04.asn1"
+    serviceProviderKeys:
+      - "/v1/keys/migration_99990020000000000001_20180420_to_99990020000000000002_20191103_sksv_1_mid01.source.pem"
+    migrationID: "1FDD3455-3D721438-2F5DEBD1-ABC"
+  expectations:
+    statusCode: "500"
+
+
+
+"PTC_5124_3":
+  request:
+    pseudonym: "/v1/pseudonyms/p_04.asn1"
+    serviceProviderKeys:
+      - "/v1/keys/migration_99990020000000000001_20180420_to_99990020000000000002_20191103_sksv_1_mid01.target.pem"
+    migrationID: "1FDD3455-3D721438-2F5DEBD1"
+  expectations:
+    statusCode: "500"
+
+
+
+"PTC_5124_4":
+  request:
+    pseudonym: "/v1/pseudonyms/p_04.asn1"
+    serviceProviderKeys:
+      - "/v1/keys/migration_99990020000000000003_20180420_to_99990020000000000002_20191103_sksv_1.source.pem"
+    migrationID: "6B548348-E734CD40-CA4F58D6"
+  expectations:
+    statusCode: "500"
+
+
+
+"PTC_5124_5":
+  request:
+    pseudonym: "/v1/pseudonyms/p_07.asn1"
+    serviceProviderKeys:
+      - "/v1/keys/migration_99990020000000000001_20180420_to_99990020000000000002_20191103_sksv_1_mid01.source.pem"
+    migrationID: "1FDD3455-3D721438-2F5DEBD1"
+  expectations:
+    statusCode: "500"
+
+
+
+
+"PTC_5124_6":
+  request:
+    pseudonym: "/v1/pseudonyms/p_04.asn1"
+    serviceProviderKeys:
+      - "/v1/keys/migration_99990020000000000001_20211207_to_99990020000000000002_20191103_sksv_1.source.pem"
+    migrationID: "5F8FF2CF-5FDA7545-73014FDE"
+  expectations:
+    statusCode: "500"
+
+
+
+"PTC_5124_7":
+  request:
+    pseudonym: "/v1/happy_flow/ep04.asn1"
+    serviceProviderKeys:
+      - "/v1/keys/migration_99990020000000000001_20180420_to_99990020000000000002_20191103_sksv_1_mid01.source.pem"
+    migrationID: "1FDD3455-3D721438-2F5DEBD1"
+  expectations:
+    statusCode: "500"
+
+
+
+"PTC_5124_8":
+  request:
+    pseudonym: "/v1/pseudonyms/p_04.asn1"
+    serviceProviderKeys:
+      - "/v1/keys/e_missing_migration_99990020000000000001_20180420_to_99990020000000000002_20191103_sksv_1_mid01.source.pem"
+    migrationID: "1FDD3455-3D721438-2F5DEBD1"
+  expectations:
+    statusCode: "500"
+
+
+
+"PTC_5124_9":
+  request:
+    pseudonym: "/v1/pseudonyms/p_04.asn1"
+    serviceProviderKeys:
+      - "/v1/keys/e_dh_migration_99990020000000000001_20180420_to_99990020000000000002_20191103_sksv_1_mid01.source.pem"
+    migrationID: "1FDD3455-3D721438-2F5DEBD1"
+  expectations:
+    statusCode: "500"
+
+
+
+"PTC_5124_10":
+  request:
+    pseudonym: "/v1/pseudonyms/p_04.asn1"
+    serviceProviderKeys:
+      - "/v1/keys/e_lc_migration_99990020000000000001_20180420_to_99990020000000000002_20191103_sksv_1_mid01_var1.source.pem"
+    migrationID: "1FDD3455-3D721438-2F5DEBD1"
+  expectations:
+    statusCode: "500"
+
+
+
+"PTC_5124_11":
+  request:
+    pseudonym: "/v1/pseudonyms/p_04.asn1"
+    serviceProviderKeys:
+      - "/v1/keys/e_lc_migration_99990020000000000001_20180420_to_99990020000000000002_20191103_sksv_1_mid01_var2.source.pem"
+    migrationID: "1FDD3455-3D721438-2F5DEBD1"
+  expectations:
+    statusCode: "500"
+
+
+"PTC_5124_12":
+  request:
+    pseudonym: "/v1/pseudonyms/p_04.asn1"
+    serviceProviderKeys:
+      - "/v1/keys/migration_99990020000000000001_20180420_to_99990020000000000002_20191103_sksv_1_mid01.source.pem"
+      - "/v1/keys/migration_99990020000000000002_20191103_to_99990020000000000003_20180420_sksv_10.source.pem"
+    migrationID: "1FDD3455-3D721438-2F5DEBD1"
+  expectations:
+    statusCode: "500"

@@ -1,0 +1,155 @@
+"scenario_2":
+  "request":
+    "signedEncryptedIdentity": "/v1/happy_flow/ei01.asn1"
+    "serviceProviderKeys":
+    - "/v1/keys/idd_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+    "schemeKeys":
+      "urn:nl-gdi-eid:1.0:pppp-key:ENVIRONMENT:1:IP_P:1": "/v1/keys/ipp_sksv_1_kv_1.pem"
+  "expectations":
+    "statusCode": "500"
+"scenario_3":
+  "request":
+    "signedEncryptedIdentity": "/v1/happy_flow/ei01.asn1"
+    "serviceProviderKeys":
+    - "/v1/keys/idd_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+    "schemeKeys":
+      "urn:nl-gdi-eid:1.0:pp-key:ENVIRONMENT:1:IP_P:1": "/v1/keys/e_04_ipp_sksv_1.b64"
+  "expectations":
+    "statusCode": "500"
+"scenario_4a":
+  "request":
+    "signedEncryptedIdentity": "/v1/happy_flow/ei01.asn1"
+    "serviceProviderKeys":
+    - "/v1/keys/idd_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+    "schemeKeys":
+      "urn:nl-gdi-eid:1.0:pp-key:ENVIRONMENT:1:IP_P:1": "/v1/keys/e_short_right_ipp_1.b64"
+  "expectations":
+    "statusCode": "500"
+"scenario_4b":
+  "request":
+    "signedEncryptedIdentity": "/v1/happy_flow/ei01.asn1"
+    "serviceProviderKeys":
+    - "/v1/keys/idd_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+    "schemeKeys":
+      "urn:nl-gdi-eid:1.0:pp-key:ENVIRONMENT:1:IP_P:1": "/v1/keys/e_long_ipp_sksv_1.b64"
+  "expectations":
+    "statusCode": "500"
+"scenario_5":
+  "request":
+    "signedEncryptedIdentity": "/v1/happy_flow/ei01.asn1"
+    "serviceProviderKeys":
+    - "/v1/keys/idd_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+    "schemeKeys":
+      "urn:nl-gdi-eid:1.0:pp-key:ENVIRONMENT:1:IP_P:1": "/v1/keys/e_poc_ipp_sksv_1.b64"
+  "expectations":
+    "statusCode": "500"
+"scenario_6":
+  "request":
+    "signedEncryptedIdentity": "/v1/happy_flow/ei01.asn1"
+    "serviceProviderKeys":
+    - "/v1/keys/idd_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+    "schemeKeys":
+      "urn:nl-gdi-eid:3.0:pp-key:ENVIRONMENT:1:IP_P:1": "/v1/keys/ipp_sksv_1_kv_1.pem"
+  "expectations":
+    "statusCode": "500"
+"scenario_7":
+  "request":
+    "signedEncryptedIdentity": "/v1/happy_flow/ei01.asn1"
+    "serviceProviderKeys":
+    - "/v1/keys/idd_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+    "schemeKeys":
+      "urn:nl-gdi-eid:1.0:pp-key:ENVIRONMENT:1:IP_P:1": "/v1/keys/ipp_sksv_1_kv_1.pem"
+      "urn:nl-gdi-eid:1.0:pp-key:ENVIRONMENT:1:IP_P:2": "/v1/keys/ipp_sksv_1_kv_1.pem"
+  "expectations":
+    "statusCode": "500"
+"scenario_8":
+  "request":
+    "signedEncryptedIdentity": "/v1/happy_flow/ei01.asn1"
+    "serviceProviderKeys":
+    - "/v1/keys/idd_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+    "schemeKeys":
+      "urn:nl-gdi-eid:1.0:pp-key:ENVIRONMENT:1:IP_P:1": "/v1/keys/ipp_sksv_1_kv_1.pem"
+      "urn:nl-gdi-eid:1.0:pp-key:TEST:10:IP_P:10": "/v1/keys/ipp_sksv_10_kv_10.pem"
+  "expectations":
+    "statusCode": "500"
+"scenario_9":
+  "request":
+    "signedEncryptedIdentity": "/v1/happy_flow/ei01.asn1"
+    "serviceProviderKeys":
+    - "/v1/keys/e_dh_idd_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+    "schemeKeys":
+      "urn:nl-gdi-eid:1.0:pp-key:ENVIRONMENT:1:IP_P:1": "/v1/keys/ipp_sksv_1_kv_1.pem"
+  "expectations":
+    "statusCode": "500"
+"scenario_10":
+  "request":
+    "signedEncryptedIdentity": "/v1/happy_flow/ei01.asn1"
+    "serviceProviderKeys":
+    - "/v1/keys/e_missing_idd_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+    "schemeKeys":
+      "urn:nl-gdi-eid:1.0:pp-key:ENVIRONMENT:1:IP_P:1": "/v1/keys/ipp_sksv_1_kv_1.pem"
+  "expectations":
+    "statusCode": "500"
+"scenario_13":
+  "request":
+    "signedEncryptedIdentity": "/v1/happy_flow/ei02.asn1"
+    "serviceProviderKeys":
+    - "/v1/keys/idd_extra_label_sksv_1_oin_99990020000000000002_kv_20191103.pem"
+    "schemeKeys":
+      "urn:nl-gdi-eid:1.0:pp-key:ENVIRONMENT:1:IP_P:1": "/v1/keys/ipp_sksv_1_kv_1.pem"
+  "expectations":
+    "statusCode": "200"
+    "auditValue": "/v1/happy_flow/ei02.audit"
+    "signatureValue": "/v1/happy_flow/ei02.signature"
+    "responseBody":
+      "decodedInput":
+        "notationIdentifier": "2.16.528.1.1003.10.1.2.3"
+        "signedEI":
+          "encryptedIdentity":
+            "notationIdentifier": "2.16.528.1.1003.10.1.2.1"
+            "schemeVersion": "1"
+            "schemeKeySetVersion": "1"
+            "creator": "99000001231234567890"
+            "recipient": "99990020000000000002"
+            "recipientKeySetVersion": "20191103"
+            "points":
+            - "BLheADnAqJqgvhymeOURiDXrbuZKAKVP/6j0YT2FvKvmGE/5kiqVuwevue9PG+ausC6zvSOCDSRa8PaMbAbADvymUL6sGk6NQF5mj6H/Sa3d"
+            - "BLpGJ2ZUTedW6CN2YsC4rLfrAo8z94CXwNgmZHiVUFwC74GZhbVwjLaWyAyOQKxgmsGT+JpsT7fnJM41hcfK6weCCW3OSSprAUh6/O05ZVK4"
+            - "BGCG+rBIubyk0jXx+hHyJqmMaFYhvpLF62JF3prSI90NyAKsx0S13dpzdE/WFxQOtD7Tj9/dwhaHUoDfkaVOboBsvL2aKNxO6xyZyj7oxeYF"
+          "auditElement": "Mbm0aCKxoxiS/1C2Thefqg=="
+        "signatureValue":
+          "signatureType": "0.4.0.127.0.7.1.1.4.3.3"
+          "r": "LZYtRm4M2H/GANWGAP8VN30g29oTuS2wc6mxptvfffdIYawsAdh36A=="
+          "s": "Q+Gblu5sqPXLXDKtMlNDSMrF5+Ga4uDBkfuFxdjX6hPM1M7X4BZaGg=="
+      "bsn": "799890133"
+      "decryption_result":
+        "bytes": "AUIJNzk5ODkwMTMzAAAAAAAA"
+        "version": "01"
+        "type": "B"
+        "length": !!int "9"
+        "identifier": "799890133"
+"scenario_14":
+  "request":
+    "signedEncryptedIdentity": "/v1/happy_flow/ei01.asn1"
+    "serviceProviderKeys":
+    - "/v1/keys/e_lc_idd_sksv_1_oin_99990020000000000001_kv_20180420.pem"
+    "schemeKeys":
+      "urn:nl-gdi-eid:1.0:pp-key:ENVIRONMENT:1:IP_P:1": "/v1/keys/ipp_sksv_1_kv_1.pem"
+  "expectations":
+    "statusCode": "500"
+"scenario_15":
+  "request":
+    "signedEncryptedIdentity": "/v1/happy_flow/ei02.asn1"
+    "serviceProviderKeys":
+    - "/v1/keys/idd_sksv_1_oin_99990020000000000002_kv_20191103.pem"
+    - "/v1/keys/idd_sksv_1_oin_99990020000000000003_kv_20180420.pem"
+    "schemeKeys":
+      "urn:nl-gdi-eid:1.0:pp-key:ENVIRONMENT:1:IP_P:1": "/v1/keys/ipp_sksv_1_kv_1.pem"
+  "expectations":
+    "statusCode": "500"
+"scenario_16":
+  "request":
+    "payload": "{ \"serviceProviderKeys\": [],\n  \"schemeKeys\": {\n    \"SEI_DUP_KEY\"\
+      : \"\",\n    \"SEI_DUP_KEY\": \"\"\n  }\n}\n"
+  "expectations":
+    "statusCode": "400"

@@ -1,0 +1,51 @@
+package nl.logius.pepcrypto.api.oid.oid_2_16_528_1_1003_10_1_2_4;
+
+import nl.logius.pepcrypto.api.ApiAsn1Mapper;
+import nl.logius.pepcrypto.api.ApiDecryption;
+import nl.logius.pepcrypto.api.ApiEncryptedPseudonymDecryptable;
+import nl.logius.pepcrypto.api.ApiSignatureVerifier;
+import nl.logius.pepcrypto.api.encrypted.ApiSignedEncryptedPseudonymExchange;
+import nl.logius.pepcrypto.api.encrypted.ApiSignedEncryptedPseudonymService;
+import nl.logius.pepcrypto.api.oid.ApiOID;
+import nl.logius.pepcrypto.lib.asn1.Asn1PseudonymEnvelope;
+import nl.logius.pepcrypto.lib.crypto.PepEcSchnorrVerificationKey;
+
+import javax.enterprise.context.ApplicationScoped;
+import javax.inject.Inject;
+
+import static nl.logius.pepcrypto.api.oid.ApiOID.ApiOIDType.OID_0_4_0_127_0_7_1_1_4_3_3;
+import static nl.logius.pepcrypto.api.oid.ApiOID.ApiOIDType.OID_2_16_528_1_1003_10_1_2_2;
+import static nl.logius.pepcrypto.api.oid.ApiOID.ApiOIDType.OID_2_16_528_1_1003_10_1_2_4;
+
+/**
+ * (Deprecated) SignedEncryptedPseudonym - EC-Schnorr.
+ */
+@ApplicationScoped
+@ApiOID(OID_2_16_528_1_1003_10_1_2_4)
+public class ApiDeprecatedSignedEncryptedPseudonymDecryption
+        implements ApiSignedEncryptedPseudonymService {
+
+    @Inject
+    @ApiOID(OID_2_16_528_1_1003_10_1_2_4)
+    private ApiAsn1Mapper<Asn1PseudonymEnvelope> asn1Mapper;
+
+    @Inject
+    @ApiOID(OID_0_4_0_127_0_7_1_1_4_3_3)
+    private ApiSignatureVerifier<PepEcSchnorrVerificationKey> signatureVerifier;
+
+    @Inject
+    @ApiOID(OID_2_16_528_1_1003_10_1_2_2)
+    private ApiDecryption<ApiEncryptedPseudonymDecryptable> signedEncryptedPseudonym;
+
+    @Override
+    public void processExchange(ApiSignedEncryptedPseudonymExchange exchange) {
+        asn1Mapper.processRawInput(exchange);
+
+        // Verify data before decryption
+        signatureVerifier.verify(exchange);
+
+        // Decryption
+        signedEncryptedPseudonym.processDecryption(exchange);
+    }
+
+}

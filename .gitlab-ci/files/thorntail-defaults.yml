@@ -1,0 +1,16 @@
+swarm:
+  undertow:
+    servers:
+      default-server:
+        http-listeners:
+          default:
+            max-post-size: 1048576
+            max-header-size: 1048576
+            max-parameters: 1
+            max-cookies: 10
+  io:
+    workers:
+      default:
+        io-threads: 1
+        max-pool-size: 1
+        task-max-threads: 1

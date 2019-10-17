@@ -1,0 +1,98 @@
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>nl.logius</groupId>
+    <artifactId>pep-crypto-pom-thorntail</artifactId>
+    <version>@@NEXT-VERSION@@</version>
+    <relativePath>../pep-crypto-pom/pep-crypto-pom-thorntail</relativePath>
+  </parent>
+
+  <artifactId>pep-crypto-thorntail</artifactId>
+  <packaging>war</packaging>
+  <name>PEP decryption - Application (Thorntail)</name>
+
+  <build>
+    <plugins>
+      <plugin>
+        <artifactId>maven-war-plugin</artifactId>
+        <configuration>
+          <webResources>
+            <resource>
+              <directory>${project.basedir}/../pep-crypto-documentation/35-Schema</directory>
+              <includes>
+                <include>openapi.yaml</include>
+              </includes>
+              <targetPath>META-INF</targetPath>
+              <filtering>false</filtering>
+            </resource>
+            <resource>
+              <directory>${project.basedir}/../pep-crypto-documentation/35-Schema</directory>
+              <includes>
+                <include>*.yaml</include>
+              </includes>
+              <filtering>false</filtering>
+            </resource>
+          </webResources>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>io.thorntail</groupId>
+        <artifactId>thorntail-maven-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>package</id>
+            <goals>
+              <goal>package</goal>
+            </goals>
+          </execution>
+          <execution>
+            <id>start</id>
+          </execution>
+          <execution>
+            <id>stop</id>
+          </execution>
+        </executions>
+        <configuration>
+          <jvmArguments>
+            <jvmArgument>-Xmx256M</jvmArgument>
+          </jvmArguments>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+  <dependencies>
+    <dependency>
+      <groupId>io.thorntail</groupId>
+      <artifactId>jaxrs</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>io.thorntail</groupId>
+      <artifactId>microprofile-openapi</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.microprofile-ext.openapi-ext</groupId>
+      <artifactId>swagger-ui</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>nl.logius</groupId>
+      <artifactId>pep-crypto-microprofile</artifactId>
+    </dependency>
+  </dependencies>
+
+  <profiles>
+    <profile>
+      <id>docker</id>
+    </profile>
+    <profile>
+      <id>uberjar</id>
+      <properties>
+        <wildfly-swarm.useUberJar>true</wildfly-swarm.useUberJar>
+      </properties>
+    </profile>
+  </profiles>
+
+</project>

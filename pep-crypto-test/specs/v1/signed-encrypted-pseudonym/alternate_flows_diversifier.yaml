@@ -1,0 +1,36 @@
+scenario_1:
+  request:
+    signedEncryptedPseudonym: "/v1/alternate_flows/e_ep02_div1.asn1"
+    serviceProviderKeys:
+      - "/v1/keys/pdd_sksv_1_oin_99990020000000000002_kv_20191103.pem"
+      - "/v1/keys/pcd_sksv_1_oin_99990020000000000002_ckv_20191103.pem"
+    schemeKeys:
+      "urn:nl-gdi-eid:1.0:pp-key:ENVIRONMENT:1:PP_P:1": "/v1/keys/ppp_sksv_1_kv_1.pem"
+  expectations:
+    statusCode: "500"
+    token: SIGNATURE_VERIFICATION_FAILED
+
+
+scenario_2:
+  request:
+    signedEncryptedPseudonym: "/v1/alternate_flows/e_ep02_div2.asn1"
+    serviceProviderKeys:
+      - "/v1/keys/pdd_sksv_1_oin_99990020000000000002_kv_20191103.pem"
+      - "/v1/keys/pcd_sksv_1_oin_99990020000000000002_ckv_20191103.pem"
+    schemeKeys:
+      "urn:nl-gdi-eid:1.0:pp-key:ENVIRONMENT:1:PP_P:1": "/v1/keys/ppp_sksv_1_kv_1.pem"
+  expectations:
+    statusCode: "500"
+    token: SIGNATURE_VERIFICATION_FAILED
+
+scenario_3:
+  request:
+    signedEncryptedPseudonym: "/v1/alternate_flows/e_ep02_div3.asn1"
+    serviceProviderKeys:
+      - "/v1/keys/pdd_sksv_1_oin_99990020000000000002_kv_20191103.pem"
+      - "/v1/keys/pcd_sksv_1_oin_99990020000000000002_ckv_20191103.pem"
+    schemeKeys:
+      "urn:nl-gdi-eid:1.0:pp-key:ENVIRONMENT:1:PP_P:1": "/v1/keys/ppp_sksv_1_kv_1.pem"
+  expectations:
+    statusCode: "500"
+    token: SIGNATURE_VERIFICATION_FAILED
