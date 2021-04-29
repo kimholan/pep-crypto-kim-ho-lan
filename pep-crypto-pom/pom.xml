@@ -38,7 +38,7 @@
     <version.license-maven-plugin>1.19</version.license-maven-plugin>
     <version.maven-dependency-plugin>3.1.1</version.maven-dependency-plugin>
     <build-helper-maven-plugin.version>3.0.0</build-helper-maven-plugin.version>
-    <version.openapi-generator-maven-plugin>3.3.4</version.openapi-generator-maven-plugin>
+    <version.openapi-generator-maven-plugin>5.1.0</version.openapi-generator-maven-plugin>
     <version.javadoc-plugin>3.1.0</version.javadoc-plugin>
     <version.nl.talsmasoftware.umldoclet>2.0.2</version.nl.talsmasoftware.umldoclet>
     <version.maven-site-plugin>3.7.1</version.maven-site-plugin>
